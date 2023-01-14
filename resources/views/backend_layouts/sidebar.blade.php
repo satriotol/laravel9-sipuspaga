@@ -33,6 +33,13 @@
                         <h3>Konsultasi</h3>
                     </li>
                 @endcan
+                @can('konsultasi-index')
+                    <li>
+                        <a class="side-menu__item {{ active_class(['konsultasi.*']) }}"
+                            href="{{ route('konsultasi.index') }}"><i class="side-menu__icon fe fe-grid"></i><span
+                                class="side-menu__label">Konsultasi</span></a>
+                    </li>
+                @endcan
                 @can('konsultasiCategory-index')
                     <li>
                         <a class="side-menu__item {{ active_class(['konsultasiCategory.*']) }}"
