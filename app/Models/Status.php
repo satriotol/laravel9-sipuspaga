@@ -15,4 +15,16 @@ class Status extends Model
     {
         return $this->hasMany(KonsultasiStatus::class, 'status_id', 'id');
     }
+    public function getStatus()
+    {
+        if ($this->is_waiting) {
+            return 'Menunggu';
+        } elseif ($this->is_process) {
+            return 'Proses';
+        } elseif ($this->is_done) {
+            return 'Selesai';
+        } else {
+            return 'Ditolak';
+        }
+    }
 }

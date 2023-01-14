@@ -40,6 +40,12 @@
                                 class="side-menu__label">Kategori</span></a>
                     </li>
                 @endcan
+                @can('status-index')
+                    <li>
+                        <a class="side-menu__item {{ active_class(['status.*']) }}" href="{{ route('status.index') }}"><i
+                                class="side-menu__icon fe fe-grid"></i><span class="side-menu__label">Status</span></a>
+                    </li>
+                @endcan
                 @canany(['user-index', 'role-index', 'permission-index'])
                     <li class="sub-category">
                         <h3>User Management</h3>
