@@ -23,14 +23,16 @@
                         <table id="example2" class="table table-bordered text-nowrap border-bottom">
                             <thead>
                                 <tr>
-                                    <th>Nama</th>
+                                    <th>Kategori</th>
+                                    <th>User</th>
                                     <th>Action</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 @foreach ($konsultasis as $konsultasi)
                                     <tr>
-                                        <td>{{ $konsultasi->name }}</td>
+                                        <td>{{ $konsultasi->konsultasi_category->name }}</td>
+                                        <td>{{ $konsultasi->user->name }}</td>
                                         <td>
                                             <form action="{{ route('konsultasi.destroy', $konsultasi->id) }}"
                                                 method="post">

@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Konsultasi;
 use App\Models\KonsultasiCategory;
+use App\Models\KonsultasiStatus;
+use App\Models\Status;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -53,30 +55,14 @@ class KonsultasiController extends Controller
             'file' => 'nullable',
         ]);
         $data['user_id'] = Auth::user()->id;
-        Konsultasi::create($data);
-        $message = "Halo Mbak";
-
-        $message = preg_replace("/(\n)/", "<ENTER>", $message);
-        $message = preg_replace("/(\r)/", "<ENTER>", $message);
-
-        $data = array("phone_no" => Auth::user()->phone_number, "key" => "e4d16a0772635a648acd790503fe71a9ebcd9f538952dfbc", "message" => $message);
-        $data_string = json_encode($data);
-        $ch = curl_init('http://116.203.92.59/api/send_message');
-        curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
-        curl_setopt($ch, CURLOPT_POSTFIELDS, $data_string);
-        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-        curl_setopt($ch, CURLOPT_VERBOSE, 0);
-        curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 0);
-        curl_setopt($ch, CURLOPT_TIMEOUT, 15);
-        curl_setopt(
-            $ch,
-            CURLOPT_HTTPHEADER,
-            array(
-                'Content-Type: application/json',
-                'Content-Length: ' . strlen($data_string)
-            )
-        );
-        $result = curl_exec($ch);
+        $konsultasi = Konsultasi::create($data);
+        KonsultasiStatus::create([
+            'konsultasi_id' => $konsultasi->id,
+            'status_id' => Status::where('is_waiting', 1)->first()->id,
+            'user_id' => Auth::user()->id,
+        ]);
+        $whatsapp = new WhatsappController;
+        $whatsapp->kirimPesan('Status Pengajuan Anda Sedang Kami Proses', Auth::user()->phone_number);
         session()->flash('success');
         return redirect(route('konsultasi.index'));
     }
@@ -100,7 +86,8 @@ class KonsultasiController extends Controller
      */
     public function edit(Konsultasi $konsultasi)
     {
-        //
+        $konsultasiCategories = KonsultasiCategory::all();
+        return view('backend.konsultasi.create', compact('konsultasi', 'konsultasiCategories'));
     }
 
     /**
@@ -123,6 +110,8 @@ class KonsultasiController extends Controller
      */
     public function destroy(Konsultasi $konsultasi)
     {
-        //
+        $konsultasi->delete();
+        session()->flash('success');
+        return back();
     }
 }
