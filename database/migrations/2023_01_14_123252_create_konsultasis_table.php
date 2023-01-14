@@ -13,14 +13,12 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('statuses', function (Blueprint $table) {
+        Schema::create('konsultasis', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->string('color');
-            $table->unsignedBigInteger('is_waiting')->nullable();
-            $table->unsignedBigInteger('is_process')->nullable();
-            $table->unsignedBigInteger('is_done')->nullable();
-            $table->unsignedBigInteger('is_declined')->nullable();
+            $table->unsignedBigInteger('user_id');
+            $table->unsignedBigInteger('konsultasi_category_id');
+            $table->longText('message');
+            $table->string('file')->nullable();
             $table->timestamps();
         });
     }
@@ -32,6 +30,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('statuses');
+        Schema::dropIfExists('konsultasis');
     }
 };

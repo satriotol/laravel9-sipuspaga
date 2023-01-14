@@ -13,14 +13,10 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('statuses', function (Blueprint $table) {
+        Schema::create('konsultasi_categories', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('opd_id');
             $table->string('name');
-            $table->string('color');
-            $table->unsignedBigInteger('is_waiting')->nullable();
-            $table->unsignedBigInteger('is_process')->nullable();
-            $table->unsignedBigInteger('is_done')->nullable();
-            $table->unsignedBigInteger('is_declined')->nullable();
             $table->timestamps();
         });
     }
@@ -32,6 +28,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('statuses');
+        Schema::dropIfExists('konsultasi_categories');
     }
 };
