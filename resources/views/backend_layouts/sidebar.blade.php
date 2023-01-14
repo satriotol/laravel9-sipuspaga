@@ -28,6 +28,18 @@
                         href="{{ route('dashboard') }}"><i class="side-menu__icon fe fe-home"></i><span
                             class="side-menu__label">Dashboard</span></a>
                 </li>
+                @canany(['konsultasiCategory-index', 'konsultasi-index'])
+                    <li class="sub-category">
+                        <h3>Konsultasi</h3>
+                    </li>
+                @endcan
+                @can('konsultasiCategory-index')
+                    <li>
+                        <a class="side-menu__item {{ active_class(['konsultasiCategory.*']) }}"
+                            href="{{ route('konsultasiCategory.index') }}"><i class="side-menu__icon fe fe-grid"></i><span
+                                class="side-menu__label">Kategori</span></a>
+                    </li>
+                @endcan
                 @canany(['user-index', 'role-index', 'permission-index'])
                     <li class="sub-category">
                         <h3>User Management</h3>

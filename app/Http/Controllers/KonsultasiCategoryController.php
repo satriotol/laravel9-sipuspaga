@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\KonsultasiCategory;
+use App\Models\Opd;
 use Illuminate\Http\Request;
 
 class KonsultasiCategoryController extends Controller
@@ -12,9 +13,17 @@ class KonsultasiCategoryController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    public function __construct()
+    {
+        $this->middleware('permission:konsultasiCategory-index|konsultasiCategory-create|konsultasiCategory-edit|konsultasiCategory-delete', ['only' => ['index', 'show']]);
+        $this->middleware('permission:konsultasiCategory-create', ['only' => ['create', 'store']]);
+        $this->middleware('permission:konsultasiCategory-edit', ['only' => ['edit', 'update']]);
+        $this->middleware('permission:konsultasiCategory-delete', ['only' => ['destroy']]);
+    }
     public function index()
     {
-        //
+        $konsultasiCategories = KonsultasiCategory::all();
+        return view('backend.konsultasiCategory.index', compact('konsultasiCategories'));
     }
 
     /**
@@ -24,7 +33,8 @@ class KonsultasiCategoryController extends Controller
      */
     public function create()
     {
-        //
+        $opds = Opd::all();
+        return view('backend.konsultasiCategory.create', compact('opds'));
     }
 
     /**
@@ -35,7 +45,14 @@ class KonsultasiCategoryController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = $request->validate([
+            'name' => 'required',
+            'opd_id' => 'required',
+        ]);
+
+        KonsultasiCategory::create($data);
+        session()->flash('success');
+        return redirect(route('konsultasiCategory.index'));
     }
 
     /**
@@ -57,7 +74,8 @@ class KonsultasiCategoryController extends Controller
      */
     public function edit(KonsultasiCategory $konsultasiCategory)
     {
-        //
+        $opds = Opd::all();
+        return view('backend.konsultasiCategory.create', compact('konsultasiCategory', 'opds'));
     }
 
     /**
@@ -69,7 +87,13 @@ class KonsultasiCategoryController extends Controller
      */
     public function update(Request $request, KonsultasiCategory $konsultasiCategory)
     {
-        //
+        $data = $request->validate([
+            'name' => 'required',
+            'opd_id' => 'required'
+        ]);
+        $konsultasiCategory->update($data);
+        session()->flash('success');
+        return redirect(route('konsultasiCategory.index'));
     }
 
     /**
@@ -80,6 +104,8 @@ class KonsultasiCategoryController extends Controller
      */
     public function destroy(KonsultasiCategory $konsultasiCategory)
     {
-        //
+        $konsultasiCategory->delete();
+        session()->flash('success');
+        return back();
     }
 }
