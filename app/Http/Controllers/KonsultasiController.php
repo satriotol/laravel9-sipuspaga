@@ -60,6 +60,7 @@ class KonsultasiController extends Controller
             'konsultasi_id' => $konsultasi->id,
             'status_id' => Status::where('is_waiting', 1)->first()->id,
             'user_id' => Auth::user()->id,
+            'description' => 'Status Pengajuan Sudah Masuk Sistem',
         ]);
         $whatsapp = new WhatsappController;
         $whatsapp->kirimPesan('SIPUSPAGA, Status Pengajuan Anda Sedang Kami Proses', $konsultasi->user->phone_number);
@@ -75,7 +76,8 @@ class KonsultasiController extends Controller
      */
     public function show(Konsultasi $konsultasi)
     {
-        //
+        $statuses = Status::all();
+        return view('backend.konsultasi.show', compact('konsultasi','statuses'));
     }
 
     /**

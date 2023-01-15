@@ -6,6 +6,7 @@ use App\Http\Controllers\CaptchaServiceController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\KonsultasiCategoryController;
 use App\Http\Controllers\KonsultasiController;
+use App\Http\Controllers\KonsultasiStatusController;
 use App\Http\Controllers\StatusController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
@@ -33,6 +34,7 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth']], function () {
     Route::get('/', [DashboardController::class, 'dashboard'])->name('dashboard');
 
     Route::resource('konsultasi', KonsultasiController::class);
+    Route::resource('konsultasiStatus', KonsultasiStatusController::class);
     Route::resource('konsultasiCategory', KonsultasiCategoryController::class);
     Route::resource('status', StatusController::class);
     Route::resource('permission', PermissionController::class);

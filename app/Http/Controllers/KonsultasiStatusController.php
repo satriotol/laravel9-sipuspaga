@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Konsultasi;
 use App\Models\KonsultasiStatus;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class KonsultasiStatusController extends Controller
 {
@@ -35,7 +37,18 @@ class KonsultasiStatusController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = $request->validate([
+            'konsultasi_id' => 'nullable',
+            'status_id' => 'required',
+            'user_id' => 'nullable',
+            'description' => 'nullable',
+        ]);
+        $data['user_id'] = Auth::user()->id;
+        $konsultasiStatus = KonsultasiStatus::create($data);
+        $whatsapp = new WhatsappController;
+        $whatsapp->kirimPesan($data['description'], $konsultasiStatus->konsultasi->user->phone_number);
+        session()->flash('success');
+        return back();
     }
 
     /**
@@ -80,6 +93,8 @@ class KonsultasiStatusController extends Controller
      */
     public function destroy(KonsultasiStatus $konsultasiStatus)
     {
-        //
+        $konsultasiStatus->delete();
+        session()->flash('success');
+        return back();
     }
 }

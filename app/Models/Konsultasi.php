@@ -19,4 +19,13 @@ class Konsultasi extends Model
     {
         return $this->belongsTo(KonsultasiCategory::class, 'konsultasi_category_id', 'id');
     }
+    public function konsultasi_statuses()
+    {
+        return $this->hasMany(KonsultasiStatus::class, 'konsultasi_id', 'id');
+    }
+
+    public function getLatestStatus()
+    {
+        return $this->konsultasi_statuses->last();
+    }
 }

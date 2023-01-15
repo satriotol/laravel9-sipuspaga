@@ -23,21 +23,33 @@
                         <table id="example2" class="table table-bordered text-nowrap border-bottom">
                             <thead>
                                 <tr>
+                                    <th>Tanggal</th>
                                     <th>Kategori</th>
                                     <th>User</th>
+                                    <th>Status</th>
                                     <th>Action</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 @foreach ($konsultasis as $konsultasi)
                                     <tr>
+                                        <td>{{ $konsultasi->created_at }}</td>
                                         <td>{{ $konsultasi->konsultasi_category->name }}</td>
                                         <td>{{ $konsultasi->user->name }}</td>
+                                        <td>
+                                            <div class="badge bg-{{ $konsultasi->getLatestStatus()->status->color }}">
+                                                {{ $konsultasi->getLatestStatus()->status->name }}
+                                            </div>
+                                        </td>
                                         <td>
                                             <form action="{{ route('konsultasi.destroy', $konsultasi->id) }}"
                                                 method="post">
                                                 @csrf
                                                 @method('delete')
+                                                <a class="btn btn-sm btn-primary"
+                                                    href="{{ route('konsultasi.show', $konsultasi->id) }}">
+                                                    Detail
+                                                </a>
                                                 <a class="btn btn-sm btn-warning"
                                                     href="{{ route('konsultasi.edit', $konsultasi->id) }}">
                                                     Edit
