@@ -32,7 +32,7 @@
                         </div>
                         <div class="form-group">
                             <label>Deskripsi</label>
-                            <input type="text" class="form-control" value="" required name="description">
+                            <textarea class="form-control" cols="30" rows="5" placeholder="Isikan Deskripsi" name="description" required></textarea>
                         </div>
                         <div class="text-end">
                             <button class="btn btn-primary" type="submit">Submit</button>
