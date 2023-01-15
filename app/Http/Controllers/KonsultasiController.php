@@ -6,6 +6,7 @@ use App\Models\Konsultasi;
 use App\Models\KonsultasiCategory;
 use App\Models\KonsultasiStatus;
 use App\Models\Status;
+use App\Models\TemporaryFile;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -55,6 +56,11 @@ class KonsultasiController extends Controller
             'file' => 'nullable',
         ]);
         $data['user_id'] = Auth::user()->id;
+        $temporaryFile = TemporaryFile::where('filename', $request->file)->first();
+        if ($temporaryFile) {
+            $data['file'] = $temporaryFile->filename;
+            $temporaryFile->delete();
+        };
         $konsultasi = Konsultasi::create($data);
         KonsultasiStatus::create([
             'konsultasi_id' => $konsultasi->id,
@@ -106,6 +112,11 @@ class KonsultasiController extends Controller
             'message' => 'required',
             'file' => 'nullable',
         ]);
+        $temporaryFile = TemporaryFile::where('filename', $request->file)->first();
+        if ($temporaryFile) {
+            $data['file'] = $temporaryFile->filename;
+            $temporaryFile->delete();
+        };
         $konsultasi->update($data);
         session()->flash('success');
         return redirect(route('konsultasi.index'));

@@ -41,6 +41,13 @@
                                 value="{{ isset($konsultasi) ? $konsultasi->message : @old('message') }}" required
                                 name="message">
                         </div>
+                        <div class="form-group">
+                            <label>File</label>
+                            <input type="file" class="form-control upload-file" name="file">
+                            @isset($konsultasi->file)
+                                <a href="{{ asset('uploads/' . $konsultasi->file) }}" target="_blank">Buka Lampiran</a>
+                            @endisset
+                        </div>
                         <div class="text-end">
                             <a class="btn btn-warning" href="{{ url()->previous() }}">Kembali</a>
                             <button class="btn btn-primary" type="submit">Submit</button>
