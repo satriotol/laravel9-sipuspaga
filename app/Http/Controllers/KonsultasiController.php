@@ -62,7 +62,7 @@ class KonsultasiController extends Controller
             'user_id' => Auth::user()->id,
         ]);
         $whatsapp = new WhatsappController;
-        $whatsapp->kirimPesan('Status Pengajuan Anda Sedang Kami Proses', Auth::user()->phone_number);
+        $whatsapp->kirimPesan('SIPUSPAGA, Status Pengajuan Anda Sedang Kami Proses', $konsultasi->user->phone_number);
         session()->flash('success');
         return redirect(route('konsultasi.index'));
     }
@@ -99,7 +99,14 @@ class KonsultasiController extends Controller
      */
     public function update(Request $request, Konsultasi $konsultasi)
     {
-        //
+        $data = $request->validate([
+            'konsultasi_category_id' => 'required',
+            'message' => 'required',
+            'file' => 'nullable',
+        ]);
+        $konsultasi->update($data);
+        session()->flash('success');
+        return redirect(route('konsultasi.index'));
     }
 
     /**
