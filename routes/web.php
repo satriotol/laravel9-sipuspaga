@@ -8,6 +8,7 @@ use App\Http\Controllers\KonsultasiCategoryController;
 use App\Http\Controllers\KonsultasiController;
 use App\Http\Controllers\KonsultasiStatusController;
 use App\Http\Controllers\StatusController;
+use App\Http\Controllers\UploadController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
@@ -27,6 +28,8 @@ Route::get('/reload-captcha', [CaptchaServiceController::class, 'reloadCaptcha']
 Route::get('/', function () {
     return view('welcome');
 });
+Route::post('upload/store', [UploadController::class, 'store'])->name('upload.store');
+Route::delete('revert/image', [UploadController::class, 'revert'])->name('upload.revert');
 Route::group(['prefix' => 'admin', 'middleware' => ['auth']], function () {
     // Route::get('/', function () {
     //     return view('backend_layouts.main');
@@ -40,6 +43,7 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth']], function () {
     Route::resource('permission', PermissionController::class);
     Route::resource('role', RoleController::class);
     Route::resource('user', UserController::class);
+
     Route::get('user/resetPassword/{user}', [UserController::class, 'reset_password'])->name('user.resetPassword');
 });
 require __DIR__ . '/auth.php';

@@ -77,7 +77,7 @@ class KonsultasiController extends Controller
     public function show(Konsultasi $konsultasi)
     {
         $statuses = Status::all();
-        return view('backend.konsultasi.show', compact('konsultasi','statuses'));
+        return view('backend.konsultasi.show', compact('konsultasi', 'statuses'));
     }
 
     /**

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Konsultasi;
 use App\Models\KonsultasiStatus;
+use App\Models\TemporaryFile;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -42,8 +43,14 @@ class KonsultasiStatusController extends Controller
             'status_id' => 'required',
             'user_id' => 'nullable',
             'description' => 'nullable',
+            'file' => 'nullable'
         ]);
         $data['user_id'] = Auth::user()->id;
+        $temporaryFile = TemporaryFile::where('filename', $request->file)->first();
+        if ($temporaryFile) {
+            $data['file'] = $temporaryFile->filename;
+            $temporaryFile->delete();
+        };
         $konsultasiStatus = KonsultasiStatus::create($data);
         $whatsapp = new WhatsappController;
         $whatsapp->kirimPesan($data['description'], $konsultasiStatus->konsultasi->user->phone_number);

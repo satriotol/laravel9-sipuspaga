@@ -16,7 +16,7 @@
                     <h3 class="card-title">Proses Konsultasi</h3>
                 </div>
                 <div class="card-body">
-                    <form action="{{ route('konsultasiStatus.store') }}" method="POST">
+                    <form action="{{ route('konsultasiStatus.store') }}" method="POST" enctype="multipart/form-data">
                         @csrf
                         <input type="text" value="{{ $konsultasi->id }}" name="konsultasi_id" id=""
                             class="d-none">
@@ -34,8 +34,12 @@
                             <label>Deskripsi</label>
                             <textarea class="form-control" cols="30" rows="5" placeholder="Isikan Deskripsi" name="description" required></textarea>
                         </div>
+                        <div class="form-group">
+                            <label>File</label>
+                            <input type="file" class="form-control upload-file" name="file">
+                        </div>
                         <div class="text-end">
-                            <button class="btn btn-primary" type="submit">Submit</button>
+                            <button class="btn btn-primary" type="submit" id="submit-button">Submit</button>
                         </div>
                     </form>
                 </div>
@@ -81,12 +85,15 @@
                                         </svg></span>
                                 </div>
                                 <div class="timeline-panel">
-
                                     <div class="timeline-heading">
                                         <h6 class="timeline-title">{{ $konsultasi_status->status->name }}</h6>
                                     </div>
                                     <div class="timeline-body">
                                         <p>{{ $konsultasi_status->description }}</p>
+                                        @isset($konsultasi_status->file)
+                                            <a href="{{ asset('uploads/' . $konsultasi_status->file) }}" target="_blank">Buka
+                                                File</a>
+                                        @endisset
                                     </div>
                                     <div class="timeline-footer d-flex align-items-center flex-wrap">
                                         <form action="{{ route('konsultasiStatus.destroy', $konsultasi_status->id) }}"

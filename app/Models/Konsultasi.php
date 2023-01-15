@@ -21,7 +21,7 @@ class Konsultasi extends Model
     }
     public function konsultasi_statuses()
     {
-        return $this->hasMany(KonsultasiStatus::class, 'konsultasi_id', 'id');
+        return $this->hasMany(KonsultasiStatus::class, 'konsultasi_id', 'id')->orderBy('id', 'asc');
     }
 
     public function getLatestStatus()
