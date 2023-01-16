@@ -51,7 +51,7 @@
                 </div>
 
                 <div class="container-login100">
-                    <div class="wrap-login100 p-6">
+                    <div class="wrap-login100 p-6" style="width: 80%">
                         <span class="login100-form-title pb-5">
                             Registrasi
                         </span>
@@ -60,25 +60,31 @@
                             <div class="panel-body tabs-menu-body p-0 pt-5">
                                 <div class="tab-content">
                                     <form v-on:submit.prevent="register">
-
                                         <div class="tab-pane active" id="tab5">
-                                            <div class="wrap-input100 validate-input input-group"
-                                                data-bs-validate="Valid email is required: ex@abc.xyz">
+                                            <div class="wrap-input100 validate-input input-group">
                                                 <a href="javascript:void(0)"
                                                     class="input-group-text bg-white text-muted">
-                                                    <i class="mdi mdi-account" aria-hidden="true"></i>
+                                                    <i class="zmdi zmdi-account text-muted" aria-hidden="true"></i>
                                                 </a>
                                                 <input class="input100 border-start-0 form-control ms-0" type="text"
                                                     v-model="form.name" name="name" required placeholder="Nama">
                                             </div>
-                                            <div class="wrap-input100 validate-input input-group"
-                                                data-bs-validate="Valid email is required: ex@abc.xyz">
+                                            <div class="wrap-input100 validate-input input-group">
                                                 <a href="javascript:void(0)"
                                                     class="input-group-text bg-white text-muted">
                                                     <i class="zmdi zmdi-email text-muted" aria-hidden="true"></i>
                                                 </a>
                                                 <input class="input100 border-start-0 form-control ms-0" type="email"
                                                     v-model="form.email" name="email" required placeholder="Email">
+                                            </div>
+                                            <div class="wrap-input100 validate-input input-group">
+                                                <a href="javascript:void(0)"
+                                                    class="input-group-text bg-white text-muted">
+                                                    <i class="zmdi zmdi-phone text-muted" aria-hidden="true"></i>
+                                                </a>
+                                                <input class="input100 border-start-0 form-control ms-0" type="text"
+                                                    v-model="form.phone_number" name="phone_number" required
+                                                    placeholder="Nomor HP">
                                             </div>
                                             <div class="wrap-input100 validate-input input-group" id="Password-toggle">
                                                 <a href="javascript:void(0)"
@@ -175,6 +181,7 @@
                         password: '',
                         password_confirmation: '',
                         capcha: '',
+                        phone_number: '',
                     },
                     captchaImage: '',
                 }
