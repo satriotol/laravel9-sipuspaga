@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\Auth;
 
 class Konsultasi extends Model
 {
@@ -24,6 +25,14 @@ class Konsultasi extends Model
         return $this->hasMany(KonsultasiStatus::class, 'konsultasi_id', 'id')->orderBy('id', 'asc');
     }
 
+    public static function getKonsultasis()
+    {
+        if (Auth::user()->user_detail) {
+            return Konsultasi::where('user_id', Auth::user()->id);
+        }else{
+            return Konsultasi::query();
+        }
+    }
     public function getLatestStatus()
     {
         return $this->konsultasi_statuses->last();
