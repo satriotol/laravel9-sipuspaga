@@ -60,49 +60,66 @@
                             <div class="panel-body tabs-menu-body p-0 pt-5">
                                 <div class="tab-content">
                                     <form v-on:submit.prevent="register">
-                                        <div class="tab-pane active" id="tab5">
-                                            <div class="wrap-input100 validate-input input-group">
-                                                <a href="javascript:void(0)"
-                                                    class="input-group-text bg-white text-muted">
-                                                    <i class="zmdi zmdi-account text-muted" aria-hidden="true"></i>
-                                                </a>
-                                                <input class="input100 border-start-0 form-control ms-0" type="text"
-                                                    v-model="form.name" name="name" required placeholder="Nama">
-                                            </div>
-                                            <div class="wrap-input100 validate-input input-group">
-                                                <a href="javascript:void(0)"
-                                                    class="input-group-text bg-white text-muted">
-                                                    <i class="zmdi zmdi-email text-muted" aria-hidden="true"></i>
-                                                </a>
-                                                <input class="input100 border-start-0 form-control ms-0" type="email"
-                                                    v-model="form.email" name="email" required placeholder="Email">
-                                            </div>
-                                            <div class="wrap-input100 validate-input input-group">
-                                                <a href="javascript:void(0)"
-                                                    class="input-group-text bg-white text-muted">
-                                                    <i class="zmdi zmdi-phone text-muted" aria-hidden="true"></i>
-                                                </a>
-                                                <input class="input100 border-start-0 form-control ms-0" type="text"
-                                                    v-model="form.phone_number" name="phone_number" required
-                                                    placeholder="Nomor HP">
-                                            </div>
-                                            <div class="wrap-input100 validate-input input-group" id="Password-toggle">
-                                                <a href="javascript:void(0)"
-                                                    class="input-group-text bg-white text-muted">
-                                                    <i class="zmdi zmdi-eye text-muted" aria-hidden="true"></i>
-                                                </a>
-                                                <input class="input100 border-start-0 form-control ms-0" type="password"
-                                                    v-model="form.password" name="password" required
-                                                    placeholder="Password">
-                                            </div>
-                                            <div class="wrap-input100 validate-input input-group" id="Password-toggle">
-                                                <a href="javascript:void(0)"
-                                                    class="input-group-text bg-white text-muted">
-                                                    <i class="zmdi zmdi-eye text-muted" aria-hidden="true"></i>
-                                                </a>
-                                                <input class="input100 border-start-0 form-control ms-0" type="password"
-                                                    v-model="form.password_confirmation" name="password_confirmation"
-                                                    required placeholder="Konfirmasi Password">
+                                        <div class="tab-pane" id="tab5">
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <div class="form-group">
+                                                        <label>Nama Lengkap</label>
+                                                        <input type="text" required v-model="form.name"
+                                                            placeholder="Masukkan Nama Lengkap Anda"
+                                                            class="form-control">
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label>E-mail</label>
+                                                        <input type="email" v-model="form.email" class="form-control"
+                                                            placeholder="Masukkan E-mail Anda">
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label>Nomor Handphone</label>
+                                                        <input type="text" v-model="form.phone_number"
+                                                            class="form-control"
+                                                            placeholder="Masukkan Nomor Handphone Anda">
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label>Password</label>
+                                                        <input type="password" v-model="form.password"
+                                                            class="form-control" placeholder="Masukkan Password Anda">
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label>Konfirmasi Password</label>
+                                                        <input type="password" v-model="form.password_confirmation"
+                                                            class="form-control"
+                                                            placeholder="Masukkan Ulang Password Anda">
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <div class="form-group">
+                                                        <label>Tempat Kelahiran</label>
+                                                        <input type="text" required v-model="form.born_place"
+                                                            placeholder="Masukkan Kota Kelahiran Anda"
+                                                            class="form-control">
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label>Tanggal Kelahiran</label>
+                                                        <input type="date" required v-model="form.birth"
+                                                            placeholder="Masukkan Tanggal Kelahiran Anda"
+                                                            class="form-control">
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label>Jenis Kelamin</label>
+                                                        <select name="" class="form-control"
+                                                            v-model="form.gender" id="">
+                                                            <option value="">Pilih Jenis Kelamin</option>
+                                                            <option value="Pria">Pria</option>
+                                                            <option value="Wanita">Wanita</option>
+                                                        </select>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label>Alamat</label>
+                                                        <textarea name="" class="form-control" placeholder="Masukan Alamat Anda" id="" cols="30"
+                                                            rows="5" v-model="form.address"></textarea>
+                                                    </div>
+                                                </div>
                                             </div>
                                             <div class="form-group mt-4 mb-4">
                                                 <div class="captcha">
@@ -128,6 +145,7 @@
                                                         Disini</a></p>
                                             </div>
                                         </div>
+
                                     </form>
 
                                 </div>
@@ -182,6 +200,9 @@
                         password_confirmation: '',
                         capcha: '',
                         phone_number: '',
+                        born_place: '',
+                        birth: '',
+                        gender: '',
                     },
                     captchaImage: '',
                 }

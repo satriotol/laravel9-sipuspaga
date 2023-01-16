@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use App\Http\Controllers\WhatsappController;
 use App\Models\User;
+use App\Models\UserDetail;
 use App\Models\Verification;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Auth\Events\Registered;
@@ -36,12 +37,15 @@ class RegisteredUserController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate([
+        $data = $request->validate([
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required_without:phone_number', 'max:255', 'unique:' . User::class],
             'phone_number' => ['required', 'max:255', 'unique:' . User::class],
             'password' => ['required', 'confirmed', Rules\Password::defaults()],
-            'captcha' => ['required', 'captcha']
+            'born_place' => ['required'],
+            'birth' => ['required'],
+            'gender' => ['required'],
+            'address' => ['required'],
         ]);
 
         $user = User::create([
@@ -51,6 +55,8 @@ class RegisteredUserController extends Controller
             'password' => Hash::make($request->password),
         ]);
 
+        $data['user_id'] = $user->id;
+        UserDetail::create($data);
         $otp_code = random_int(100000, 999999);
         $token = Str::random(25);
         $verification = Verification::create([
