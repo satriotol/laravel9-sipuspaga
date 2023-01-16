@@ -58,6 +58,21 @@ class VerificationController extends Controller
             return back();
         }
     }
+    public function updateOtp()
+    {
+        $user = Auth::user();
+        $verification = Verification::where('status', 'REQUEST')->where('user_id', $user->id)->first();
+        $otp_code = random_int(100000, 999999);
+
+        $whatsapp = new WhatsappController;
+        $message = "Kode OTP Anda Adalah " . $otp_code;
+        $whatsapp->kirimPesan($message, $user->phone_number);
+        $verification->update([
+            'otp_code' => $otp_code
+        ]);
+        session()->flash('success');
+        return back();
+    }
 
     /**
      * Display the specified resource.

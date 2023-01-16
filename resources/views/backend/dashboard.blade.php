@@ -25,6 +25,7 @@
                                 <label>Masukan KODE OTP Anda</label>
                                 <input type="text" class="form-control" required name="otp_code">
                             </div>
+                            <a href="{{ route('verification.updateOtp') }}">Kirim Ulang OTP</a>
                             <div class="text-end">
                                 <button class="btn btn-primary" type="submit">Submit</button>
                             </div>

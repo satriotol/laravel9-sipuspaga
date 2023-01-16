@@ -45,6 +45,7 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth']], function () {
     Route::resource('role', RoleController::class);
     Route::resource('user', UserController::class);
     Route::resource('verification', VerificationController::class);
+    Route::get('verification/test/updateOtp', [VerificationController::class, 'updateOtp'])->name('verification.updateOtp');
 
     Route::get('user/resetPassword/{user}', [UserController::class, 'reset_password'])->name('user.resetPassword');
 });
