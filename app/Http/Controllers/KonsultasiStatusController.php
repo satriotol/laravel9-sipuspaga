@@ -43,7 +43,8 @@ class KonsultasiStatusController extends Controller
             'status_id' => 'required',
             'user_id' => 'nullable',
             'description' => 'nullable',
-            'file' => 'nullable'
+            'file' => 'nullable',
+            'kirimWa' => 'nullable'
         ]);
         $data['user_id'] = Auth::user()->id;
         $temporaryFile = TemporaryFile::where('filename', $request->file)->first();
@@ -52,8 +53,10 @@ class KonsultasiStatusController extends Controller
             $temporaryFile->delete();
         };
         $konsultasiStatus = KonsultasiStatus::create($data);
-        $whatsapp = new WhatsappController;
-        $whatsapp->kirimPesan($data['description'], $konsultasiStatus->konsultasi->user->phone_number);
+        if ($request->kirimWa) {
+            $whatsapp = new WhatsappController;
+            $whatsapp->kirimPesan($data['description'], $konsultasiStatus->konsultasi->user->phone_number);
+        }
         session()->flash('success');
         return back();
     }
