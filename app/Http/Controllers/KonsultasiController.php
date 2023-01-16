@@ -26,7 +26,7 @@ class KonsultasiController extends Controller
     }
     public function index()
     {
-        $konsultasis = Konsultasi::getKonsultasis();
+        $konsultasis = Konsultasi::getKonsultasis()->get();
         return view('backend.konsultasi.index', compact('konsultasis'));
     }
 
