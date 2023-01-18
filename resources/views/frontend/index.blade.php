@@ -128,7 +128,7 @@
         <div class="row g-0">
             <div class="col-lg-6 py-6 px-5">
                 <h1 class="display-5 mb-4">Selamat Datang di <span class="text-primary">PUSPAGA</span></h1>
-                <h4 class="text-primary mb-4">APA ITU PUSPAGA</h4>
+                {{-- <h4 class="text-primary mb-4">APA ITU PUSPAGA</h4> --}}
                 <p class="mb-4">Tempat pembelajaran untuk meningkatkan kehidupan keluarga yang dilakukan oleh tenaga
                     profesional melalui peningkatan kapasitas orang tua/keluarga atau orang yang bertanggung jawab dalam
                     mengasuh dan melindungi anak.</p>
@@ -161,12 +161,11 @@
                     <div class="d-flex text-white">
                         <div class="d-flex flex-shrink-0 align-items-center justify-content-center bg-white text-primary rounded-circle mx-auto mb-4"
                             style="width: 60px; height: 60px;">
-                            <i class="fa-sharp fa-solid fa-people"></i>
+                            <i class="fa-sharp fa-solid fa-user-friends fs-4"></i>
                         </div>
                         <div class="ps-4">
                             <h3>Pengguna/Keluarga</h3>
-                            <p class="mb-0">Tempor erat elitr rebum at clita. Diam dolor ipsum amet eos erat ipsum
-                                lorem et sit sed stet lorem sit clita duo</p>
+                            <p class="mb-0">Tempor erat elitr rebum at clita. Diam dolor ipsum amet eos erat ipsum lorem et sit sed stet lorem sit clita duo</p>
                         </div>
                     </div>
                 </div>
@@ -187,7 +186,7 @@
                 <div class="service-item bg-secondary text-center px-5">
                     <div class="d-flex align-items-center justify-content-center bg-primary text-white rounded-circle mx-auto mb-4"
                         style="width: 90px; height: 90px;">
-                        <i class="fa fa-user-tie fa-2x"></i>
+                        <i class="fa fa-child-reaching fa-2x"></i>
                     </div>
                     <h3 class="mb-3">Anak</h3>
                 </div>
@@ -246,15 +245,14 @@
         <div class="row g-0">
             <div class="col-lg-6" style="min-height: 500px;">
                 <div class="position-relative h-100">
-                    <img class="position-absolute w-100 h-100" src="{{ asset('frontend_assets/img/dkksemarang.jpg') }}">
+                    <img class="position-absolute w-100 h-100" src="{{ asset('frontend_assets/img/puspaga3.jpg') }}">
                 </div>
             </div>
             <div class="col-lg-6 py-6 px-5">
                 <h1 class="display-5 mb-4">Bagaimana Melayaninya??</h1>
                 <div class="owl-carousel testimonial-carousel">
                     <div class="testimonial-item">
-                        <p class="fs-4 fw-normal mb-4"><i class="fa fa-quote-left text-primary me-3"></i>Pertama,
-                            pengguna datang ke PUSPAGA.</p>
+                        <p class="fs-4 fw-normal mb-4"><i class="fa fa-quote-left text-primary me-3"></i>Pertama, pengguna datang ke PUSPAGA.</p>
                         <div class="d-flex align-items-center">
                             <div class="ps-4">
                                 <h3></h3>
@@ -263,9 +261,7 @@
                         </div>
                     </div>
                     <div class="testimonial-item">
-                        <p class="fs-4 fw-normal mb-4"><i class="fa fa-quote-left text-primary me-3"></i>Selanjutnya,
-                            Psiko-edukasi ke Komunitas Keluarga dan "jemput bola", out reach terutama untuk kelompok
-                            keluarga rentan.</p>
+                        <p class="fs-4 fw-normal mb-4"><i class="fa fa-quote-left text-primary me-3"></i>Selanjutnya, Psiko-edukasi ke Komunitas Keluarga dan "jemput bola", out reach terutama untuk kelompok keluarga rentan.</p>
                         <div class="d-flex align-items-center">
                             <div class="ps-4">
                                 <h3></h3>
@@ -293,14 +289,14 @@
                     <div class="col-12">
                         <div class="bg-primary rounded-circle d-flex align-items-center justify-content-center mb-3"
                             style="width: 60px; height: 60px;">
-                            <i class="fa-solid fa-people-pants-simple fs-4 text-white"></i>
+                            <i class="fa-solid fa-user-group fs-4 text-white"></i>
                         </div>
                         <h7>Minimal Dua Tenaga Profesi (Psikolog)</h7>
                     </div>
                     <div class="col-12">
                         <div class="bg-primary rounded-circle d-flex align-items-center justify-content-center mb-3"
                             style="width: 60px; height: 60px;">
-                            <i class="fa-solid fa-person-simple fs-4 text-white"></i>
+                            <i class="fa-solid fa-user fs-4 text-white"></i>
                         </div>
                         <h7>Dibantu Satu Tenaga Administrasi</h7>
                     </div>
@@ -320,14 +316,14 @@
                     <div class="col-12">
                         <div class="bg-primary rounded-circle d-flex align-items-center justify-content-center mb-3"
                             style="width: 60px; height: 60px;">
-                            <i class="fa-solid fa-clock fs-4 text-white"></i>
+                            <i class="fa-solid fa-sun fs-4 text-white"></i>
                         </div>
                         <h7>Jam Kerja</h7>
                     </div>
                     <div class="col-12">
                         <div class="bg-primary rounded-circle d-flex align-items-center justify-content-center mb-3"
                             style="width: 60px; height: 60px;">
-                            <i class="fa-solid fa-hourglass-clock fs-4 text-white"></i>
+                            <i class="fa-solid fa-moon fs-4 text-white"></i>
                         </div>
                         <h7>Di Luar Jam Kerja (Sistem Piket)</h7>
                     </div>
