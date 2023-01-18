@@ -127,7 +127,7 @@
     <div class="container-fluid bg-secondary p-0" id="about">
         <div class="row g-0">
             <div class="col-lg-6 py-6 px-5">
-                <h1 class="display-5 mb-4">Welcome To <span class="text-primary">PUSPAGA</span></h1>
+                <h1 class="display-5 mb-4">Selamat Datang di <span class="text-primary">PUSPAGA</span></h1>
                 <h4 class="text-primary mb-4">APA ITU PUSPAGA</h4>
                 <p class="mb-4">Tempat pembelajaran untuk meningkatkan kehidupan keluarga yang dilakukan oleh tenaga
                     profesional melalui peningkatan kapasitas orang tua/keluarga atau orang yang bertanggung jawab dalam
@@ -246,11 +246,11 @@
         <div class="row g-0">
             <div class="col-lg-6" style="min-height: 500px;">
                 <div class="position-relative h-100">
-                    <img class="position-absolute w-100 h-100" src="img/puspaga3.jpg" style="object-fit: cover;">
+                    <img class="position-absolute w-100 h-100" src="{{ asset('frontend_assets/img/dkksemarang.jpg') }}">
                 </div>
             </div>
             <div class="col-lg-6 py-6 px-5">
-                <h1 class="display-5 mb-4">Bagaimana Melayaninya?</h1>
+                <h1 class="display-5 mb-4">Bagaimana Melayaninya??</h1>
                 <div class="owl-carousel testimonial-carousel">
                     <div class="testimonial-item">
                         <p class="fs-4 fw-normal mb-4"><i class="fa fa-quote-left text-primary me-3"></i>Pertama,
@@ -379,7 +379,7 @@
     <div class="container-fluid bg-dark text-secondary p-5" id="kontak">
         <div class="row g-5">
             <div class="col-lg-3 col-md-6">
-                <h3 class="text-white mb-4">Quick Links</h3>
+                <h3 class="text-white mb-4">Akses Cepat</h3>
                 <div class="d-flex flex-column justify-content-start">
                     <a class="text-secondary mb-2" href="#"><i
                             class="bi bi-arrow-right text-primary me-2"></i>Beranda</a>
@@ -398,7 +398,7 @@
                 </div>
             </div>
             <div class="col-lg-3 col-md-6">
-                <h3 class="text-white mb-4">Popular Links</h3>
+                <h3 class="text-white mb-4">Link Populer</h3>
                 <div class="d-flex flex-column justify-content-start">
                     <a class="text-secondary mb-2" href="#"><i
                             class="bi bi-arrow-right text-primary me-2"></i>Beranda</a>
@@ -411,14 +411,14 @@
                 </div>
             </div>
             <div class="col-lg-3 col-md-6">
-                <h3 class="text-white mb-4">Get In Touch</h3>
+                <h3 class="text-white mb-4">Alamat</h3>
                 <p class="mb-2"><i class="bi bi-geo-alt text-primary me-2"></i>Jl. Prof. Sudarto No.116, Sumurboto,
                     Kec. Banyumanik, Kota Semarang, Jawa Tengah 50269</p>
                 <p class="mb-2"><i class="bi bi-envelope-open text-primary me-2"></i>@semarangkota.go.id</p>
                 <p class="mb-0"><i class="bi bi-telephone text-primary me-2"></i>+012 345 67890</p>
             </div>
             <div class="col-lg-3 col-md-6">
-                <h3 class="text-white mb-4">Follow Us</h3>
+                <h3 class="text-white mb-4">Ikuti Kami</h3>
                 <div class="d-flex">
                     <a class="btn btn-lg btn-primary btn-lg-square rounded-circle me-2" href="#"><i
                             class="fab fa-twitter fw-normal"></i></a>
