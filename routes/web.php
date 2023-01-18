@@ -27,7 +27,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/reload-captcha', [CaptchaServiceController::class, 'reloadCaptcha']);
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('frontend.index');
 });
 Route::post('upload/store', [UploadController::class, 'store'])->name('upload.store');
 Route::delete('revert/image', [UploadController::class, 'revert'])->name('upload.revert');

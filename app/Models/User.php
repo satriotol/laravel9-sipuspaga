@@ -94,7 +94,9 @@ class User extends Authenticatable
     }
     public static function getUser($user)
     {
-        if ($user->getUserRole($user) != 'SUPERADMIN') {
+        if (Auth::user()->user_detail) {
+            return User::where('id', Auth::user()->id)->get();
+        } elseif ($user->getUserRole($user) != 'SUPERADMIN') {
             return User::notRole('SUPERADMIN')->get();
         } else {
             return User::all();
