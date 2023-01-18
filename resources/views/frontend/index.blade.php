@@ -308,7 +308,8 @@
             </div>
             <div class="col-lg-4">
                 <div class="d-block bg-primary h-100 text-center">
-                    <img class="img-fluid h-100" src="img/dkksemarang.jpg" alt="">
+                    <img class="img-fluid h-100" src="{{ asset('frontend_assets/img/dkksemarang.jpg') }}"
+                        alt="">
                 </div>
             </div>
             <div class="col-lg-4">
@@ -348,7 +349,8 @@
             </div>
             <div class="col-lg-6" style="min-height: 400px;">
                 <div class="position-relative h-100">
-                    <img class="position-absolute w-100 h-100" src="img/puspaga4.jpg" style="object-fit: cover;">
+                    <img class="position-absolute w-100 h-100" src="{{ asset('frontend_assets/img/puspaga4.jpg') }}"
+                        style="object-fit: cover;">
                 </div>
             </div>
         </div>
