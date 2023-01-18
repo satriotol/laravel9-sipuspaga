@@ -436,7 +436,6 @@
             Reserved. Designed by <a class="text-secondary border-bottom" href="https://htmlcodex.com">Diskominfo Kota
                 Semarang</a></p>
     </div>
-    Footer End
 
 
     <!-- Back to Top -->
