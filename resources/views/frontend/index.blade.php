@@ -133,37 +133,33 @@
                 <a href="" class="btn btn-primary py-md-3 px-md-5 rounded-pill">Dimana Melayaninya? -></a>
             </div>
             <div class="col-lg-6" id="lokasi_pelayanan">
-                <div class="h-100 d-flex flex-column justify-content-center bg-primary p-5">
+                <div class="kotak">
+                {{-- <div class="h-100 d-flex flex-column justify-content-center bg-primary p-5"> --}}
                     <div class="d-flex text-white mb-5">
-                        <div class="d-flex flex-shrink-0 align-items-center justify-content-center bg-white text-primary rounded-circle mx-auto mb-4"
+                        <div class="d-flex flex-shrink-0 align-items-center justify-content-center bg-white text-primary rounded-circle mb-4"
                             style="width: 60px; height: 60px;">
                             <i class="fa-sharp fa-solid fa-building fs-4"></i>
                         </div>
                         <div class="ps-4">
                             <h3>PUSPAGA Provinsi (Rujukan Lanjutan)</h3>
-                            <p class="mb-0">Tempor erat elitr rebum at clita. Diam dolor ipsum amet eos erat ipsum
-                                lorem et sit sed stet lorem sit clita duo</p>
                         </div>
                     </div>
                     <div class="d-flex text-white mb-5">
-                        <div class="d-flex flex-shrink-0 align-items-center justify-content-center bg-white text-primary rounded-circle mx-auto mb-4"
+                        <div class="d-flex flex-shrink-0 align-items-center justify-content-center bg-white text-primary rounded-circle mb-4"
                             style="width: 60px; height: 60px;">
                             <i class="fa-solid fa-city fs-4"></i>
                         </div>
                         <div class="ps-4">
                             <h3>PUSPAGA Kab/Kota (Kecamatan, Desa, Kelurahan)</h3>
-                            <p class="mb-0">Tempor erat elitr rebum at clita. Diam dolor ipsum amet eos erat ipsum
-                                lorem et sit sed stet lorem sit clita duo</p>
                         </div>
                     </div>
                     <div class="d-flex text-white">
-                        <div class="d-flex flex-shrink-0 align-items-center justify-content-center bg-white text-primary rounded-circle mx-auto mb-4"
+                        <div class="d-flex flex-shrink-0 align-items-center justify-content-center bg-white text-primary rounded-circle mb-4"
                             style="width: 60px; height: 60px;">
                             <i class="fa-sharp fa-solid fa-user-friends fs-4"></i>
                         </div>
                         <div class="ps-4">
                             <h3>Pengguna/Keluarga</h3>
-                            <p class="mb-0">Tempor erat elitr rebum at clita. Diam dolor ipsum amet eos erat ipsum lorem et sit sed stet lorem sit clita duo</p>
                         </div>
                     </div>
                 </div>
@@ -246,11 +242,11 @@
                     <img class="position-absolute w-100 h-100" src="{{ asset('frontend_assets/img/puspaga3.jpg') }}">
                 </div>
             </div>
-            <div class="col-lg-6 py-6 px-5">
+            <div class="col-lg-6 py-6 px-5 bg-primary">
                 <h1 class="display-5 mb-4">Bagaimana Melayaninya??</h1>
                 <div class="owl-carousel testimonial-carousel">
                     <div class="testimonial-item">
-                        <p class="fs-4 fw-normal mb-4"><i class="fa fa-quote-left text-primary me-3"></i>Pertama, pengguna datang ke PUSPAGA.</p>
+                        <p class="fs-4 fw-normal mb-4 text-secondary"><i class="fa-solid fa-1 text-secondary me-3"></i>Pengguna datang ke PUSPAGA.</p>
                         <div class="d-flex align-items-center">                    
                             <div class="ps-4">
                                 <h3></h3>
@@ -259,7 +255,7 @@
                         </div>
                     </div>
                     <div class="testimonial-item">
-                        <p class="fs-4 fw-normal mb-4"><i class="fa fa-quote-left text-primary me-3"></i>Selanjutnya, Psiko-edukasi ke Komunitas Keluarga dan "jemput bola", out reach terutama untuk kelompok keluarga rentan.</p>
+                        <p class="fs-4 fw-normal mb-4 text-secondary"><i class="fa-solid fa-2 text-secondary me-3"></i>Selanjutnya, Psiko-edukasi ke Komunitas Keluarga dan "jemput bola", out reach terutama untuk kelompok keluarga rentan.</p>
                         <div class="d-flex align-items-center">
                             <div class="ps-4">
                                 <h3></h3>
@@ -375,26 +371,26 @@
             <div class="col-lg-3 col-md-6">
                 <h3 class="text-white mb-4">Akses Cepat</h3>
                 <div class="d-flex flex-column justify-content-start">
-                    <a class="text-secondary mb-2" href="#"><i
+                    <a class="tulisan-bawah text-secondary mb-2" href="#"><i
                             class="bi bi-arrow-right text-primary me-2"></i>Beranda</a>
-                    <a class="text-secondary mb-2" href="#about"><i
+                    <a class="tulisan-bawah text-secondary mb-2" href="#about"><i
                             class="bi bi-arrow-right text-primary me-2"></i>Tentang</a>
-                    <a class="text-secondary mb-2" href="#lokasi_pelayanan"><i
+                    <a class="tulisan-bawah text-secondary mb-2" href="#lokasi_pelayanan"><i
                             class="bi bi-arrow-right text-primary me-2"></i>Lokasi Pelayanan</a>
-                    <a class="text-secondary mb-2" href="#siapa"><i
+                    <a class="tulisan-bawah text-secondary mb-2" href="#siapa"><i
                             class="bi bi-arrow-right text-primary me-2"></i>Tujuan Pelayanan</a>
-                    <a class="text-secondary mb-2" href="#bagaimana"><i
+                    <a class="tulisan-bawah text-secondary mb-2" href="#bagaimana"><i
                             class="bi bi-arrow-right text-primary me-2"></i>Tata Cara</a>
-                    <a class="text-secondary mb-2" href="#siapa_kapan"><i
+                    <a class="tulisan-bawah text-secondary mb-2" href="#siapa_kapan"><i
                             class="bi bi-arrow-right text-primary me-2"></i>Siapa dan Kapan</a>
-                    <a class="text-secondary mb-2" href="#bentuk_pelayanan"><i
+                    <a class="tulisan-bawah text-secondary mb-2" href="#bentuk_pelayanan"><i
                             class="bi bi-arrow-right text-primary me-2"></i>Bentuk Pelayanan</a>
                 </div>
             </div>
             <div class="col-lg-3 col-md-6">
                 <h3 class="text-white mb-4">Link Populer</h3>
                 <div class="d-flex flex-column justify-content-start">
-                    <a class="text-secondary mb-2" href="#"><i
+                    <a class="tulisan-bawah text-secondary mb-2" href="#"><i
                             class="bi bi-arrow-right text-primary me-2"></i>Beranda</a>
                     <!-- <a class="text-secondary mb-2" href="#"><i class="bi bi-arrow-right text-primary me-2"></i>Tentang</a>
                     <a class="text-secondary mb-2" href="#"><i class="bi bi-arrow-right text-primary me-2"></i>Lokasi Pelayanan</a>
@@ -445,7 +441,7 @@
     <script src="{{ asset('frontend_assets/lib/owlcarousel/owl.carousel.min.js') }}"></script>
 
     <!-- Template Javascript -->
-    <script src="js/main.js"></script>
+    <script src="{{ asset('frontend_assets/js/main.js') }}"></script>
     </body>
 
 </html>
