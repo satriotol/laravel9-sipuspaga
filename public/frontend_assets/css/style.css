@@ -103,10 +103,6 @@ h6,
     transition: .5s;
 }
 
-.navbar-nav::after{
-    float: right;
-}
-
 .sticky-top.navbar-light .navbar-nav .nav-link {
     padding: 20px 15px;
 }

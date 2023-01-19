@@ -66,9 +66,7 @@
     <!-- Navbar Start -->
     <nav class="navbar navbar-expand-lg bg-white navbar-light shadow-sm px-5 py-3 py-lg-0">
         <a href="index.html" class="navbar-brand p-0">
-            <h1 class="m-0 text-uppercase text-primary"><img class="pemkot"
-                    src="{{ asset('frontend_assets/img/logopuspaga.png') }}"
-                    {{-- style="width: 80px; height: 60px;"></i>.</h1> --}}
+            <img class="pemkot" src="{{ asset('frontend_assets/img/logopuspaga.png') }}"></a>
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
             <span class="navbar-toggler-icon"></span>
