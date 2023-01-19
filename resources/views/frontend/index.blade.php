@@ -201,7 +201,7 @@
                 </div>
             </div>
             <div class="col-lg-4 col-md-6">
-                <div class="service-item bg-secondary text-center px-5">
+                <div class="service-item bg-secondary text-center px-10">
                     <div class="d-flex align-items-center justify-content-center bg-primary text-white rounded-circle mx-auto mb-4"
                         style="width: 90px; height: 90px;">
                         <i class="fa-solid fa-user-clock fa-2x"></i>
