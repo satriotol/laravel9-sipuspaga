@@ -67,8 +67,8 @@
     <nav class="navbar navbar-expand-lg bg-white navbar-light shadow-sm px-5 py-3 py-lg-0">
         <a href="index.html" class="navbar-brand p-0">
             <h1 class="m-0 text-uppercase text-primary"><img class="pemkot"
-                    src="{{ asset('frontend_assets/img/logopemkot.jpg') }}"
-                    style="width: 80px; height: 60px;"></i>PUSPAGA</h1>
+                    src="{{ asset('frontend_assets/img/logopuspaga.png') }}"
+                    {{-- style="width: 80px; height: 60px;"></i>.</h1> --}}
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
             <span class="navbar-toggler-icon"></span>
@@ -253,7 +253,7 @@
                 <div class="owl-carousel testimonial-carousel">
                     <div class="testimonial-item">
                         <p class="fs-4 fw-normal mb-4"><i class="fa fa-quote-left text-primary me-3"></i>Pertama, pengguna datang ke PUSPAGA.</p>
-                        <div class="d-flex align-items-center">
+                        <div class="d-flex align-items-center">                    
                             <div class="ps-4">
                                 <h3></h3>
                                 <span class="text-uppercase"></span>

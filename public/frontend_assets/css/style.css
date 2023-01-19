@@ -37,6 +37,10 @@ h6,
     padding-bottom: 90px;
 }
 
+.pemkot{
+    size: 50%;
+}
+
 .btn {
     font-family: 'Barlow', sans-serif;
     font-weight: 600;
@@ -97,6 +101,10 @@ h6,
     color: var(--dark);
     outline: none;
     transition: .5s;
+}
+
+.navbar-nav::after{
+    float: right;
 }
 
 .sticky-top.navbar-light .navbar-nav .nav-link {
