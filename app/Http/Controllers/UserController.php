@@ -106,14 +106,19 @@ class UserController extends Controller
             $data['password'] = Hash::make($request->password);
         }
         if ($user->phone_number != $request->phone_number) {
-            $verification = Verification::where('status', 'REQUEST')->where('user_id', $user->id)->first();
+            $verification = Verification::where('user_id', $user->id)->first();
             $otp_code = random_int(100000, 999999);
             $whatsapp = new WhatsappController;
             $message = "Kode OTP Anda Adalah " . $otp_code;
             $whatsapp->kirimPesan($message, $request->phone_number);
             $verification->update([
+                'status' => 'REQUEST',
                 'otp_code' => $otp_code
             ]);
+            DB::table('model_has_roles')->where('model_id', $user->id)->delete();
+            $user->assignRole('USER-CONFIRMATION');
+            $user->update($data);
+            return redirect(route('dashboard'));
         }
         $user->update($data);
         if ($request->roles) {
