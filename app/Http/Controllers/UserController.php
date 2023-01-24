@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
+use App\Models\Verification;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
@@ -97,15 +98,28 @@ class UserController extends Controller
             'name' => 'required',
             'email' => 'required|unique:users,email,' . $user->id,
             'password' => 'nullable|confirmed',
-            'roles' => 'required'
+            'roles' => 'nullable',
+            'phone_number' => 'nullable',
         ]);
         $data = $request->except('password');
         if ($request->password) {
             $data['password'] = Hash::make($request->password);
         }
+        if ($user->phone_number != $request->phone_number) {
+            $verification = Verification::where('status', 'REQUEST')->where('user_id', $user->id)->first();
+            $otp_code = random_int(100000, 999999);
+            $whatsapp = new WhatsappController;
+            $message = "Kode OTP Anda Adalah " . $otp_code;
+            $whatsapp->kirimPesan($message, $request->phone_number);
+            $verification->update([
+                'otp_code' => $otp_code
+            ]);
+        }
         $user->update($data);
-        DB::table('model_has_roles')->where('model_id', $user->id)->delete();
-        $user->assignRole($request['roles']);
+        if ($request->roles) {
+            DB::table('model_has_roles')->where('model_id', $user->id)->delete();
+            $user->assignRole($request['roles']);
+        }
         session()->flash('success');
         return redirect(route('user.index'));
     }

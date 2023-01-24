@@ -34,6 +34,14 @@
                             <input type="email" class="form-control"
                                 value="{{ isset($user) ? $user->email : @old('email') }}" required name="email">
                         </div>
+                        @hasrole(['USER', 'USER-CONFIRMATION'])
+                            <div class="form-group">
+                                <label>Nomor HP</label>
+                                <input type="number" class="form-control"
+                                    value="{{ isset($user) ? $user->phone_number : @old('phone_number') }}" required
+                                    name="phone_number">
+                            </div>
+                        @endhasrole
                         <div class="form-group">
                             <label>Password</label>
                             <input type="password" class="form-control" value="""
@@ -41,22 +49,24 @@
                         </div>
                         <div class="form-group">
                             <label>Password Confirmation</label>
-                            <input type="password" class="form-control" value="""
+                            <input type="password" class="form-control" value=""
                                 @empty($user) required @endempty name="password_confirmation">
                         </div>
-                        <div class="form-group">
-                            <label for="roles">Role</label>
-                            <select name="roles" class="form-control" id="" required>
-                                <option value="">Pilih Role</option>
-                                @foreach ($roles as $r)
-                                    <option value="{{ $r->id }}"
-                                        @isset($user) @if ($r->name === $user->getUserRole($user)) selected @endif
+                        @can('user-create')
+                            <div class="form-group">
+                                <label for="roles">Role</label>
+                                <select name="roles" class="form-control" id="" required>
+                                    <option value="">Pilih Role</option>
+                                    @foreach ($roles as $r)
+                                        <option value="{{ $r->id }}"
+                                            @isset($user) @if ($r->name === $user->getUserRole($user)) selected @endif
                                 @endisset>
-                                        {{ $r->name }}
-                                    </option>
-                                @endforeach
-                            </select>
-                        </div>
+                                            {{ $r->name }}
+                                        </option>
+                                    @endforeach
+                                </select>
+                            </div>
+                        @endcan
                         <div class="text-end">
                             <a class="btn btn-warning" href="{{ url()->previous() }}">Kembali</a>
                             <button class="btn btn-primary" type="submit">Submit</button>
