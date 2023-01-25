@@ -2,7 +2,6 @@
 <html class="no-js" lang="zxx">
 
 <head>
-    <link rel="manifest" href="site.webmanifest">
     <link rel="shortcut icon" type="image/x-icon" href="{{ asset('frontend_assets/img/logo/logokota.png') }}">
     <!-- Place favicon.ico in the root directory -->
 
@@ -30,7 +29,7 @@
                     <div class="col-xl-4 col-lg-3">
                         <div class="header-left mr-40">
                             <div class="logo logo-mt f-left">
-                                <a href="index.html"><img src="{{ asset('frontend_assets/img/logo/logopuspaga.png') }}"
+                                <a href="#"><img src="{{ asset('frontend_assets/img/logo/logopuspaga.png') }}"
                                         alt="" /></a>
                             </div>
                         </div>
@@ -82,7 +81,7 @@
                 </button>
             </div>
             <div class="logo-side mb-30">
-                <a href="index.html">
+                <a href="#">
                     <img src="{{ asset('frontend_assets/img/logo/white.png') }}" alt="" />
                 </a>
             </div>
@@ -492,82 +491,6 @@
         </div>
         <!-- newsletters-area-end -->
 
-        <!-- blog-area-start -->
-        <div class="blog-area pt-125 pb-100">
-            <div class="container">
-                <div class="row">
-                    <div class="col-xl-6 col-lg-6 offset-lg-3 offset-xl-3">
-                        <div class="section-title section-2 text-center pos-rel ml-60 mr-60 mb-80">
-                            <span class="border-left-1"></span>
-                            <span>Berita</span>
-                            <span class="border-right-1"></span>
-                            <h2>Berita Terbaru</h2>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-xl-4 col-lg-4 col-md-6">
-                        <div class="blog-wrapper mb-30">
-                            <div class="blog-img">
-                                <a href="blog-details.html"><img
-                                        src="{{ asset('frontend_assets/img/blog/puspaga1.jpg') }}"
-                                        alt=""></a>
-                                <div class="blog-date">
-                                    <a href="blog-details.html">Feb<br>2023</a>
-                                </div>
-                                <div class="blog-text">
-                                    <h3><a href="blog-details.html">Ibu Walikota Semarang ingin Program Puspaga Lebih
-                                            Ditingkatkan Lagi Dalam Melakukan Sosialisasi</a></h3>
-                                    <div class="b-button b-02-button">
-                                        <a href="blog-details.html">Read More</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-4 col-lg-4 col-md-6">
-                        <div class="blog-wrapper mb-30">
-                            <div class="blog-img">
-                                <a href="blog-details.html"><img
-                                        src="{{ asset('frontend_assets/img/blog/puspaga2.jpg') }}"
-                                        alt=""></a>
-                                <div class="blog-date">
-                                    <a href="blog-details.html">Feb<br> 2023</a>
-                                </div>
-                                <div class="blog-text">
-                                    <h3><a href="blog-details.html">Resmi! Puspaga akan Menggunakan Logo yang Sama di
-                                            Seluruh Wilayah</a></h3>
-                                    <div class="b-button b-02-button">
-                                        <a href="blog-details.html">Read More</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-4 col-lg-4 col-md-6">
-                        <div class="blog-wrapper mb-30">
-                            <div class="blog-img">
-                                <a href="blog-details.html"><img
-                                        src="{{ asset('frontend_assets/img/blog/puspaga3.jpg') }}"
-                                        alt=""></a>
-                                <div class="blog-date">
-                                    <a href="blog-details.html">Feb<br>2023</a>
-                                </div>
-                                <div class="blog-text">
-                                    <h3><a href="blog-details.html">Wow! Puspaga Kota Semarang Hadir dengan Tampilan
-                                            Terbaru</a></h3>
-                                    <div class="b-button b-02-button">
-                                        <a href="blog-details.html">Read More</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- blog-area-end -->
-
         <!-- footer-area-start -->
         <footer>
             <div class="footer-top-area black-bg pt-80 pb-50"
@@ -577,7 +500,7 @@
                         <div class="col-xl-3 col-lg-3 col-md-6">
                             <iframe
                                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3959.6282273328147!2d110.42590811431853!3d-7.052896771071706!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e708c00e19e3db1%3A0xde471feee960ce9f!2sDinas%20Pemberdayaan%20Perempuan%20Dan%20Perlindungan%20Anak!5e0!3m2!1sid!2sid!4v1674576110738!5m2!1sid!2sid"
-                                width="250" height="250" style="border:0;" allowfullscreen="" loading="lazy"
+                                width="100%" height="250" style="border:0;" allowfullscreen="" loading="lazy"
                                 referrerpolicy="no-referrer-when-downgrade"></iframe>
                         </div>
                         <div class="col-xl-3 col-lg-3 col-md-6">
@@ -669,7 +592,7 @@
         </div>
 
         <!-- JS here -->
-        <script src="{{ asset('frontend_asset/js/vendor/modernizr-3.5.0.min.js') }}"></script>
+        <script src="{{ asset('frontend_assets/js/vendor/modernizr-3.5.0.min.js') }}"></script>
         <script src="{{ asset('frontend_assets/js/vendor/jquery-1.12.4.min.js') }}"></script>
         <script src="{{ asset('frontend_assets/js/popper.min.js') }}"></script>
         <script src="{{ asset('frontend_assets/js/bootstrap.min.js') }}"></script>
