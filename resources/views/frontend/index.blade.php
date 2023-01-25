@@ -1,16 +1,9 @@
 <!doctype html>
 <html class="no-js" lang="zxx">
 
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Puspaga - Pusat Pembelajaran Keluarga</title>
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <link rel="manifest" href="site.webmanifest">
-    <link rel="shortcut icon" type="image/x-icon" href="{{ asset('frontend_assets/img/favicon.ico') }}">
-    <!-- Place favicon.ico in the root directory -->
+        <link rel="manifest" href="site.webmanifest">
+		<link rel="shortcut icon" type="image/x-icon" href="{{ asset('frontend_assets/img/logo/logokota.png') }}">
+        <!-- Place favicon.ico in the root directory -->
 
     <!-- CSS here -->
     <link rel="stylesheet" href="{{ asset('frontend_assets/css/bootstrap.min.css') }}">
@@ -576,8 +569,8 @@
 
         <!-- footer-area-start -->
         <footer>
-            <div class="footer-top-area black-bg pt-80 pb-50">
-                <div class="container">
+            <div class="footer-top-area black-bg pt-80 pb-50" style="background-image:url({{ asset('frontend_assets/img/bg/bg-04.jpg') }})">
+                <div class="container" >
                     <div class="row">
                         <div class="col-xl-3 col-lg-3 col-md-6">
                             <iframe
