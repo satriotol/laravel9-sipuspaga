@@ -8,7 +8,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <link rel="manifest" href="site.webmanifest">
-		<link rel="shortcut icon" type="image/x-icon" href="{{ asset('frontend_assets/img/favicon.ico') }}">
+		<link rel="shortcut icon" type="image/x-icon" href="{{ asset('frontend_assets/img/logo/logokota.png') }}">
         <!-- Place favicon.ico in the root directory -->
 
 		<!-- CSS here -->
@@ -485,7 +485,7 @@
             <!-- newsletters-area-end -->
 
             <!-- blog-area-start -->
-            <div class="blog-area pt-125 pb-100">
+            {{-- <div class="blog-area pt-125 pb-100">
                 <div class="container">
                     <div class="row">
                         <div class="col-xl-6 col-lg-6 offset-lg-3 offset-xl-3">
@@ -548,13 +548,13 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> --}}
             <!-- blog-area-end -->
 
         <!-- footer-area-start -->
         <footer>
-            <div class="footer-top-area black-bg pt-80 pb-50">
-                <div class="container">
+            <div class="footer-top-area black-bg pt-80 pb-50" style="background-image:url({{ asset('frontend_assets/img/bg/bg-04.jpg') }})">
+                <div class="container" >
                     <div class="row">
                         <div class="col-xl-3 col-lg-3 col-md-6">
                             <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3959.6282273328147!2d110.42590811431853!3d-7.052896771071706!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e708c00e19e3db1%3A0xde471feee960ce9f!2sDinas%20Pemberdayaan%20Perempuan%20Dan%20Perlindungan%20Anak!5e0!3m2!1sid!2sid!4v1674576110738!5m2!1sid!2sid" width="250" height="250" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe> 
