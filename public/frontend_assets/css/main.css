@@ -2885,7 +2885,7 @@ label {
   }
 }
 .features-02-link ul li {
-  padding-bottom: 23px;
+  padding-bottom: 44px;
 }
 .features-02-link ul li:last-child {
   padding-bottom: 0;
@@ -2917,7 +2917,7 @@ label {
   overflow: hidden;
 }
 .features-02-info h3 {
-  font-size: 22px;
+  font-size: 12px;
   margin-bottom: 12px;
 }
 .features-02-info p {
@@ -3492,7 +3492,8 @@ label {
 }
 
 .services-text:hover{
-  background-color: red;
+  background-image: linear-gradient(#ff5e14,#fd7e14,#ffc107);
+  transition: all .55s ease;
 }
 .services-text h1 {
   font-size: 80px;

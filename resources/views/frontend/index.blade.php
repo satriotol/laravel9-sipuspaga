@@ -354,7 +354,7 @@
                                     <ul>
                                         <li>
                                             <div class="features-02-icon f-left l-0">
-                                                <i class="fal fa-child"></i>
+                                                <i class="far fa-baby"></i>
                                             </div>
                                             <div class="features-02-info" style="padding-bottom: 1px;">
                                                 <h3>Anak</h3>
@@ -362,7 +362,7 @@
                                         </li>
                                         <li>
                                             <div class="features-02-icon f-left l-0">
-                                                <i class="far fa-car"></i>
+                                                <i class="fal fa-users"></i>
                                             </div>
                                             <div class="features-02-info" style="padding-bottom: 1px;">
                                                 <h3>Keluarga</h3>
@@ -370,7 +370,7 @@
                                         </li>
                                         <li>
                                             <div class="features-02-icon f-left">
-                                                <i class="far fa-car-side"></i>
+                                                <i class="far fa-user-friends"></i>
                                             </div>
                                             <div class="features-02-info" style="padding-bottom: 1px;">
                                                 <h3>Calon Keluarga</h3>
@@ -386,7 +386,7 @@
                                         </li>
                                         <li>
                                             <div class="features-02-icon f-left">
-                                                <i class="far fa-car"></i>
+                                                <i class="fal fa-university"></i>
                                             </div>
                                             <div class="features-02-info" style="padding-bottom: 1px;">
                                                 <h3>Lembaga Penyedia Layanan Anak dan Keluarga</h3>
@@ -434,7 +434,7 @@
                                     </li>
                                     <li>
                                         <div class="features-02-icon f-left l-0">
-                                            <i class="far fa-family"></i>
+                                            <i class="far fa-city"></i>
                                         </div>
                                         <div class="features-02-info" style="padding-bottom: 30px;">
                                             <h3>Lingkungan, Keluarga, dan Pengasuhan Alternatif</h3>
@@ -442,7 +442,7 @@
                                     </li>
                                     <li>
                                         <div class="features-02-icon f-left">
-                                            <i class="far fa-car-side"></i>
+                                            <i class="far fa-medkit"></i>
                                         </div>
                                         <div class="features-02-info" style="padding-bottom: 30px;">
                                             <h3>Kesehatan Dasar dan Kesejahteraan</h3>
