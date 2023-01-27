@@ -473,7 +473,6 @@
                     <div class="col-xl-6 col-lg-6">
                         <div class="newsletters-text mb-30">
                             <div class="section-title white-title pos-rel mb-35">
-                                <h1>PUSPAGA</h1>
                                 <h2>Buat Konsultasi Anda</h2>
                             </div>
                         </div>
@@ -531,7 +530,7 @@
                                             <i class="far fa-envelope-open"></i>
                                         </div>
                                         <div class="contact-address-text">
-                                            <span>dinasp3a.kotasemarang@gmail.com</span>
+                                            <span>dinasp3a.kotasemarang<br>@gmail.com</span>
                                         </div>
                                     </li>
                                     <li>
