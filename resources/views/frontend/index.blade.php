@@ -506,7 +506,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-xl-3 col-lg-3 col-md-6" id="kontak">
+                        <div class="col-xl-6 col-lg-6 col-md-6" id="kontak">
                             <div class="footer-wrapper mb-30">
                                 <h3 class="footer-title">Kontak</h3>
                                 <ul class="contact-link">
@@ -523,7 +523,7 @@
                                 </ul>
                             </div>
                         </div>
-                        <div class="col-xl-3 col-lg-3 col-md-6">
+                        {{-- <div class="col-xl-3 col-lg-3 col-md-6">
                             <div class="footer-wrapper mb-30">
                                 <h3 class="footer-title">Sosial Media</h3>
                                 <div class="footer-icon">
@@ -533,7 +533,7 @@
                                     <a href="#"><i class="fab fa-google-plus-g"></i></a>
                                 </div>
                             </div>
-                        </div>
+                        </div> --}}
                     </div>
                 </div>
             </div>
