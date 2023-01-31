@@ -42,7 +42,7 @@
                                 <span><i class="far fa-phone"></i>(024) 76402252 </span>
                             </div>
                             <div class="header-right-img f-right">
-                                <img src="{{ asset('frontend_assets/img/shape/line-1.png') }}" alt="" >
+                                <img src="{{ asset('frontend_assets/img/shape/line-1.png') }}" alt="">
                             </div>
                             {{-- <div class="search-icon f-right d-none d-lg-block">
                                 <a href="#" data-toggle="modal" data-target="#search-modal"><i
@@ -498,8 +498,10 @@
                                 <h3 class="footer-title">Link Terkait</h3>
                                 <div class="footer-link">
                                     <ul>
-                                        <li><a href="https://dp3a.semarangkota.go.id/">DP3A</a></li>
-                                        <li><a href="https://semarangkota.go.id/">Semarangkota.go.id</a></li>
+                                        @foreach ($links as $link)
+                                            <li><a href="{{ $link->url }}"
+                                                    target="_blank">{{ $link->name }}</a></li>
+                                        @endforeach
                                     </ul>
                                 </div>
                             </div>
