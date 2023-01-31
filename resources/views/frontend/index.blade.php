@@ -20,6 +20,11 @@
     <link rel="stylesheet" href="{{ asset('frontend_assets/css/main.css') }}">
     <link rel="stylesheet" href="{{ asset('frontend_assets/css/responsive.css') }}">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <style>
+        html {
+            scroll-behavior: smooth
+        }
+    </style>
 </head>
 
 <body>
