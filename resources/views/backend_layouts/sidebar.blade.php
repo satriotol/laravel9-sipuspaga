@@ -53,7 +53,7 @@
                                 class="side-menu__icon fe fe-grid"></i><span class="side-menu__label">Status</span></a>
                     </li>
                 @endcan
-                @canany(['slider-index', 'link-index'])
+                @canany(['slider-index', 'link-index', 'contact-index'])
                     <li class="sub-category">
                         <h3>Slider</h3>
                     </li>
@@ -68,6 +68,13 @@
                     <li>
                         <a class="side-menu__item {{ active_class(['link.*']) }}" href="{{ route('link.index') }}"><i
                                 class="side-menu__icon fe fe-grid"></i><span class="side-menu__label">Link</span></a>
+                    </li>
+                @endcan
+                @can('contact-index')
+                    <li>
+                        <a class="side-menu__item {{ active_class(['contact.*']) }}"
+                            href="{{ route('contact.index') }}"><i class="side-menu__icon fe fe-grid"></i><span
+                                class="side-menu__label">Kontak</span></a>
                     </li>
                 @endcan
                 @canany(['user-index', 'role-index', 'permission-index'])

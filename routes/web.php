@@ -3,6 +3,7 @@
 use App\Http\Controllers\PermissionController;
 use App\Http\Controllers\RoleController;
 use App\Http\Controllers\CaptchaServiceController;
+use App\Http\Controllers\ContactController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\KonsultasiCategoryController;
@@ -48,6 +49,7 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth']], function () {
     Route::resource('verification', VerificationController::class);
     Route::resource('slider', SliderController::class);
     Route::resource('link', LinkController::class);
+    Route::resource('contact', ContactController::class);
     Route::get('verification/test/updateOtp', [VerificationController::class, 'updateOtp'])->name('verification.updateOtp');
 
     Route::get('user/resetPassword/{user}', [UserController::class, 'reset_password'])->name('user.resetPassword');

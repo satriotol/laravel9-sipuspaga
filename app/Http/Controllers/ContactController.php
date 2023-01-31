@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Link;
+use App\Models\Contact;
 use Illuminate\Http\Request;
 
-class LinkController extends Controller
+class ContactController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -21,8 +21,8 @@ class LinkController extends Controller
     }
     public function index()
     {
-        $links = Link::all();
-        return view('backend.link.index', compact('links'));
+        $contacts = Contact::all();
+        return view('backend.contact.index', compact('contacts'));
     }
 
     /**
@@ -32,7 +32,7 @@ class LinkController extends Controller
      */
     public function create()
     {
-        return view('backend.link.create');
+        return view('backend.contact.create');
     }
 
     /**
@@ -45,20 +45,22 @@ class LinkController extends Controller
     {
         $data = $request->validate([
             'name' => 'required',
-            'url' => 'required|active_url',
+            'description' => 'required',
+            'icon' => 'required',
+            'is_phone' => 'nullable'
         ]);
-        Link::create($data);
+        Contact::create($data);
         session()->flash('success');
-        return redirect(route('link.index'));
+        return redirect(route('contact.index'));
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Link  $link
+     * @param  \App\Models\Contact  $contact
      * @return \Illuminate\Http\Response
      */
-    public function show(Link $link)
+    public function show(Contact $contact)
     {
         //
     }
@@ -66,42 +68,44 @@ class LinkController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Link  $link
+     * @param  \App\Models\Contact  $contact
      * @return \Illuminate\Http\Response
      */
-    public function edit(Link $link)
+    public function edit(Contact $contact)
     {
-        return view('backend.link.create', compact('link'));
+        return view('backend.contact.create', compact('contact'));
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Link  $link
+     * @param  \App\Models\Contact  $contact
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Link $link)
+    public function update(Request $request, Contact $contact)
     {
         $data = $request->validate([
             'name' => 'required',
-            'url' => 'required|active_url',
+            'description' => 'required',
+            'icon' => 'required',
+            'is_phone' => 'nullable'
         ]);
-        $link->update($data);
+        $contact->update($data);
         session()->flash('success');
-        return redirect(route('link.index'));
+        return redirect(route('contact.index'));
     }
-    
+
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Link  $link
+     * @param  \App\Models\Contact  $contact
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Link $link)
+    public function destroy(Contact $contact)
     {
-        $link->delete();
+        $contact->delete();
         session()->flash('success');
-        return redirect(route('link.index'));
+        return redirect(route('contact.index'));
     }
 }
