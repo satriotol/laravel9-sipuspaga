@@ -2,6 +2,8 @@
 <html class="no-js" lang="zxx">
 
 <head>
+    <meta charset="utf-8">
+    <title>PUSPAGA - Pusat Pembelajaran Keluarga</title>
     <link rel="shortcut icon" type="image/x-icon" href="{{ asset('frontend_assets/img/logo/logokota.png') }}">
     <!-- Place favicon.ico in the root directory -->
 
@@ -40,12 +42,12 @@
                                 <span><i class="far fa-phone"></i>(024) 76402252 </span>
                             </div>
                             <div class="header-right-img f-right">
-                                <img src="{{ asset('frontend_assets/img/shape/line-1.png') }}" alt="">
+                                <img src="{{ asset('frontend_assets/img/shape/line-1.png') }}" alt="" >
                             </div>
-                            <div class="search-icon f-right d-none d-lg-block">
+                            {{-- <div class="search-icon f-right d-none d-lg-block">
                                 <a href="#" data-toggle="modal" data-target="#search-modal"><i
                                         class="far fa-search"></i></a>
-                            </div>
+                            </div> --}}
                         </div>
                         <div class="main-menu text-right">
                             <nav id="mobile-menu">
@@ -63,7 +65,7 @@
                                             <li><a href="#apa">Apa Bentuk Pelayanannya?</a>
                                         </ul>
                                     </li>
-                                    <li><a href="#kontak">Kontak</a></li>
+                                    <li><a href="#kontak" style="margin-right: 20px;">Kontak</a></li>
                                 </ul>
                             </nav>
                         </div>
@@ -182,6 +184,10 @@
                                 <p>Tempat pembelajaran untuk meningkatkan kehidupan keluarga yang dilakukan oleh tenaga
                                     profesional melalui peningkatan kapasitas orang tua/keluarga atau orang yang
                                     bertanggung jawab dalam mengasuh dan melindungi anak.</p>
+                            </div>
+                            <div class="newsletter-form">
+                                <a href="{{ route('dashboard') }}" target="_blank" class="btn blue-success">Buat
+                                    Konsultasi Sekarang<i class="far fa-paper-plane"></i></a>
                             </div>
                         </div>
                     </div>
@@ -465,7 +471,7 @@
                     <div class="col-xl-6 col-lg-6">
                         <div class="single-newsletters mb-30">
                             <div class="newsletter-form">
-                                <a href="{{ route('dashboard') }}" class="btn blue-success">Buat
+                                <a href="{{ route('dashboard') }}" target="_blank" class="btn blue-success">Buat
                                     Konsultasi Sekarang<i class="far fa-paper-plane"></i></a>
                             </div>
                         </div>
