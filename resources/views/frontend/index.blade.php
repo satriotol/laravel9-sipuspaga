@@ -19,6 +19,7 @@
     <link rel="stylesheet" href="{{ asset('frontend_assets/css/default.css') }}">
     <link rel="stylesheet" href="{{ asset('frontend_assets/css/main.css') }}">
     <link rel="stylesheet" href="{{ asset('frontend_assets/css/responsive.css') }}">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 
 <body>
@@ -167,13 +168,13 @@
             <div class="container">
                 <div class="row">
                     <div class="col-xl-6 col-lg-6">
-                        <div class="about-us-img mb-30">
+                        <div class="about-us-img mb-30" data-aos="fade-right">
                             <img src="{{ asset('frontend_assets/img/about/puspaga4.jpg') }}" alt
                                 style="height: 400px; width: 600px;">
                         </div>
                     </div>
                     <div class="col-xl-6 col-lg-6">
-                        <div class="about-us-wrapper mb-30">
+                        <div class="about-us-wrapper mb-30" data-aos="fade-left">
                             <div class="section-title pos-rel mb-35">
                                 <h1></h1>
                                 <span class="line">Tentang</span>
@@ -341,7 +342,7 @@
                                     <span>Siapa yang Dilayani?</span>
                                     <h2>Siapapun Akan Kami Bantu Dengan Tulus dan Ikhlas</h2>
                                 </div>
-                                <div class="features-02-link">
+                                <div class="features-02-link" data-aos="fade-up">
                                     <ul>
                                         <li>
                                             <div class="features-02-icon f-left l-0">
@@ -413,7 +414,7 @@
                                 <span>Apa Bentuk Pelayanannya?</span>
                                 <h2>Kami Mengutamakan Prinsip Profesional</h2>
                             </div>
-                            <div class="features-02-link">
+                            <div class="features-02-link" data-aos="fade-up">
                                 <ul>
                                     <li>
                                         <div class="features-02-icon f-left l-0">
@@ -585,6 +586,10 @@
         <script src="{{ asset('frontend_assets/js/jquery.magnific-popup.min.js') }}"></script>
         <script src="{{ asset('frontend_assets/js/plugins.js') }}"></script>
         <script src="{{ asset('frontend_assets/js/main.js') }}"></script>
+        <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+        <script>
+            AOS.init();
+        </script>
 </body>
 
 </html>
