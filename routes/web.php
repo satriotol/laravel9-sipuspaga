@@ -4,9 +4,11 @@ use App\Http\Controllers\PermissionController;
 use App\Http\Controllers\RoleController;
 use App\Http\Controllers\CaptchaServiceController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\KonsultasiCategoryController;
 use App\Http\Controllers\KonsultasiController;
 use App\Http\Controllers\KonsultasiStatusController;
+use App\Http\Controllers\SliderController;
 use App\Http\Controllers\StatusController;
 use App\Http\Controllers\UploadController;
 use App\Http\Controllers\UserController;
@@ -26,9 +28,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/reload-captcha', [CaptchaServiceController::class, 'reloadCaptcha']);
 
-Route::get('/', function () {
-    return view('frontend.index');
-});
+Route::get('/', [HomeController::class, 'index'])->name('home.index');
 Route::post('upload/store', [UploadController::class, 'store'])->name('upload.store');
 Route::delete('revert/image', [UploadController::class, 'revert'])->name('upload.revert');
 Route::group(['prefix' => 'admin', 'middleware' => ['auth']], function () {
@@ -45,6 +45,7 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth']], function () {
     Route::resource('role', RoleController::class);
     Route::resource('user', UserController::class);
     Route::resource('verification', VerificationController::class);
+    Route::resource('slider', SliderController::class);
     Route::get('verification/test/updateOtp', [VerificationController::class, 'updateOtp'])->name('verification.updateOtp');
 
     Route::get('user/resetPassword/{user}', [UserController::class, 'reset_password'])->name('user.resetPassword');

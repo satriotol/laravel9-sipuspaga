@@ -145,32 +145,17 @@
         <!-- slider-start -->
         <div class="slider-area">
             <div class="slider-active">
-                <div class="single-slider slider-height d-flex align-items-center"
-                    style="background-image:url({{ asset('frontend_assets/img/slider/balkot.jpg') }})">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-xl-10 col-lg-10 ">
-                                <div class="slider-content pos-rel">
-                                    <h2 data-animation="fadeInLeft" data-delay=".3s">Selamat Datang di
-                                        Website<span>PUSPAGA</span> </h2>
+                @foreach ($sliders as $slider)
+                    <div class="single-slider slider-height d-flex align-items-center"
+                        style="background-image:url({{ asset('uploads/' . $slider->image) }})">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-xl-10 col-lg-10 ">
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="single-slider slider-height d-flex align-items-center"
-                    style="background-image:url({{ asset('frontend_assets/img/slider/balkot.jpg') }})">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-xl-10 col-lg-10 ">
-                                <div class="slider-content pos-rel">
-                                    <h2 data-animation="fadeInLeft" data-delay=".3s">Selamat Datang di
-                                        Website<span>PUSPAGA</span> </h2>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                @endforeach
             </div>
         </div>
         <!-- slider-start -->

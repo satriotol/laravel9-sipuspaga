@@ -53,6 +53,17 @@
                                 class="side-menu__icon fe fe-grid"></i><span class="side-menu__label">Status</span></a>
                     </li>
                 @endcan
+                @canany(['slider-index'])
+                    <li class="sub-category">
+                        <h3>Slider</h3>
+                    </li>
+                @endcan
+                @can('slider-index')
+                    <li>
+                        <a class="side-menu__item {{ active_class(['slider.*']) }}" href="{{ route('slider.index') }}"><i
+                                class="side-menu__icon fe fe-grid"></i><span class="side-menu__label">Slider</span></a>
+                    </li>
+                @endcan
                 @canany(['user-index', 'role-index', 'permission-index'])
                     <li class="sub-category">
                         <h3>User Management</h3>

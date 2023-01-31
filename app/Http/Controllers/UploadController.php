@@ -23,6 +23,17 @@ class UploadController extends Controller
             ]);
             return $file;
         };
+        if ($request->hasFile('image')) {
+            $file = $request->file('image');
+            $name = $file->getClientOriginalName();
+            $file_name = date('mdYHis') . '-' . $name;
+            $file = $file->storeAs('image', $file_name, 'public_uploads');
+
+            TemporaryFile::create([
+                'filename' => $file
+            ]);
+            return $file;
+        };
     }
     public function revert(Request $request)
     {
