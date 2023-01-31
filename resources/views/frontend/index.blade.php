@@ -66,7 +66,9 @@
                                             <li><a href="#apa">Apa Bentuk Pelayanannya?</a>
                                         </ul>
                                     </li>
-                                    <li><a href="#kontak" style="margin-right: 20px;">Kontak</a></li>
+                                    <li><a href="#kontak">Kontak</a></li>
+                                    <li><a href="{{ route('dashboard') }}" target="_blank"
+                                            style="margin-right: 20px;">Login</a></li>
                                 </ul>
                             </nav>
                         </div>
@@ -87,23 +89,6 @@
                 <a href="#">
                     <img src="{{ asset('frontend_assets/img/logo/white.png') }}" alt="" />
                 </a>
-            </div>
-            <div class="side-info mb-30">
-                <div class="contact-list mb-30">
-                    <h4>Office Address</h4>
-                    <p>123/A, Miranda City Likaoli
-                        Prikano, Dope</p>
-                </div>
-                <div class="contact-list mb-30">
-                    <h4>Phone Number</h4>
-                    <p>+0989 7876 9865 9</p>
-                    <p>+(090) 8765 86543 85</p>
-                </div>
-                <div class="contact-list mb-30">
-                    <h4>Email Address</h4>
-                    <p>info@example.com</p>
-                    <p>example.mail@hum.com</p>
-                </div>
             </div>
             <div class="instagram">
                 <a href="#">
