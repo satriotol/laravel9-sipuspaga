@@ -20,4 +20,8 @@ class Contact extends Model
         }
         return $data;
     }
+    public static function getPhoneContact()
+    {
+        return Contact::where('is_phone', 1)->first();
+    }
 }

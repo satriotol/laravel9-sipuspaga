@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Contact;
 use App\Models\Link;
 use App\Models\Slider;
 use Illuminate\Http\Request;
@@ -12,6 +13,8 @@ class HomeController extends Controller
     {
         $sliders = Slider::orderBy('id', 'desc')->get();
         $links = Link::orderBy('id', 'desc')->get();
-        return view('frontend.index', compact('sliders', 'links'));
+        $contacts = Contact::orderBy('id', 'desc')->get();
+        $contactPhone = Contact::getPhoneContact();
+        return view('frontend.index', compact('sliders', 'links', 'contacts', 'contactPhone'));
     }
 }

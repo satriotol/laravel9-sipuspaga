@@ -39,7 +39,7 @@
                     <div class="col-xl-8 col-lg-9">
                         <div class="header-right f-right d-none d-lg-block">
                             <div class="header-info f-right">
-                                <span><i class="far fa-phone"></i>(024) 76402252 </span>
+                                <span><i class="far fa-phone"></i>{{ $contactPhone->description }} </span>
                             </div>
                             <div class="header-right-img f-right">
                                 <img src="{{ asset('frontend_assets/img/shape/line-1.png') }}" alt="">
@@ -510,32 +510,16 @@
                             <div class="footer-wrapper mb-30">
                                 <h3 class="footer-title">Kontak</h3>
                                 <ul class="contact-link">
-                                    <li>
-                                        <div class="contact-address-icon">
-                                            <i class="far fa-phone"></i>
-                                        </div>
-                                        <div class="contact-address-text">
-                                            <span>(024) 76402252</span>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="contact-address-icon">
-                                            <i class="far fa-envelope-open"></i>
-                                        </div>
-                                        <div class="contact-address-text">
-                                            <span>dinasp3a.kotasemarang<br>@gmail.com</span>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="contact-address-icon">
-                                            <i class="far fa-map-marker-alt"></i>
-                                        </div>
-                                        <div class="contact-address-text">
-                                            <span>Jl. Prof. Sudarto No.116, Sumurboto, Kec. Banyumanik, Kota Semarang,
-                                                Jawa Tengah 50269</span>
-                                        </div>
-                                    </li>
-
+                                    @foreach ($contacts as $contact)
+                                        <li>
+                                            <div class="contact-address-icon">
+                                                <i class="{{ $contact->icon }}"></i>
+                                            </div>
+                                            <div class="contact-address-text">
+                                                <span>{{ $contact->description }}</span>
+                                            </div>
+                                        </li>
+                                    @endforeach
                                 </ul>
                             </div>
                         </div>
