@@ -33,10 +33,10 @@
                             <tbody>
                                 @foreach ($contacts as $contact)
                                     <tr>
-                                        <td>
+                                        <td class="text-wrap">
                                             {{ $contact->name }}
                                         </td>
-                                        <td>
+                                        <td class="text-wrap">
                                             {{ $contact->description }}
                                         </td>
                                         <td>
