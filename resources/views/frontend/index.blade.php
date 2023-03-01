@@ -202,9 +202,8 @@
                 <div class="row">
                     <div class="col-xl-8 col-lg-8 offset-lg-2 offset-xl-2">
                         <div class="section-title white-title section-2 text-center pos-rel mr-80 ml-80">
-                            <h1></h1>
                             <span class="border-left-1 border-left-white"></span>
-                            <span>Halaman</span>
+                            <span>Tujuan</span>
                             <span class="border-right-1 border-right-white"></span>
                             <h2>Kami Sangat Terpercaya Dalam Pelayanan Kami</h2>
                         </div>
@@ -338,11 +337,12 @@
                         <div class="features-02-wrapper">
                             <div class="about-us-wrapper">
                                 <div class="section-title pos-rel mb-35">
-                                    <span>Siapa yang Dilayani?</span>
-                                    <h2>Siapapun Akan Kami Bantu Dengan Tulus dan Ikhlas</h2>
+                                    <span>Tujuan</span>
+                                    <h2>Tujuan Puspaga</h2>
                                 </div>
                                 <div class="features-02-link" data-aos="fade-up">
-                                    <ul>
+                                    {!! $setting->tujuan !!}
+                                    {{-- <ul>
                                         <li>
                                             <div class="features-02-icon f-left l-0">
                                                 <i class="far fa-baby"></i>
@@ -391,7 +391,7 @@
                                                 <h3>Pemerintah Daerah</h3>
                                             </div>
                                         </li>
-                                    </ul>
+                                    </ul> --}}
                                 </div>
                             </div>
                         </div>
@@ -410,11 +410,12 @@
                     <div class="col-xl-6 col-lg-6">
                         <div class="skills-wrapper">
                             <div class="section-title pos-rel mb-40">
-                                <span>Apa Bentuk Pelayanannya?</span>
-                                <h2>Kami Mengutamakan Prinsip Profesional</h2>
+                                <span>Tugas Fungsi</span>
+                                <h2>Tugas Fungsi Puspaga</h2>
                             </div>
                             <div class="features-02-link" data-aos="fade-up">
-                                <ul>
+                                {!! $setting->tugas_fungsi !!}
+                                {{-- <ul>
                                     <li>
                                         <div class="features-02-icon f-left l-0">
                                             <i class="fal fa-child"></i>
@@ -447,7 +448,7 @@
                                             <h3>Pendidikan, Pemanfaatan Waktu Luang, dan Kegiatan Budaya</h3>
                                         </div>
                                     </li>
-                                </ul>
+                                </ul> --}}
                             </div>
                         </div>
                     </div>
