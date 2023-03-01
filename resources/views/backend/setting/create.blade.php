@@ -39,7 +39,7 @@
                                     {!! Form::label('tujuan', 'Tujuan') !!}
                                     {!! Form::textarea('tujuan', isset($setting) ? $setting->tujuan : @old('tujuan'), [
                                         'required',
-                                        'class' => 'form-control',
+                                        'class' => 'form-control summernote',
                                     ]) !!}
                                 </div>
                             </div>
@@ -68,7 +68,7 @@
                             {!! Form::label('tugas_fungsi', 'Tugas Fungsi') !!}
                             {!! Form::textarea('tugas_fungsi', isset($setting) ? $setting->tugas_fungsi : @old('tugas_fungsi'), [
                                 'required',
-                                'class' => 'form-control',
+                                'class' => 'form-control summernote',
                             ]) !!}
                         </div>
                         <div class="form-group">
