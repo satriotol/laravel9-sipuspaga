@@ -55,7 +55,13 @@
                 @endcan
                 @canany(['slider-index', 'link-index', 'contact-index'])
                     <li class="sub-category">
-                        <h3>Slider</h3>
+                        <h3>Master</h3>
+                    </li>
+                @endcan
+                @can('setting-index')
+                    <li>
+                        <a class="side-menu__item {{ active_class(['setting.*']) }}" href="{{ route('setting.index') }}"><i
+                                class="side-menu__icon fe fe-grid"></i><span class="side-menu__label">Setting</span></a>
                     </li>
                 @endcan
                 @can('slider-index')

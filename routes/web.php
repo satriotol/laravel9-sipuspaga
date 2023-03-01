@@ -10,6 +10,7 @@ use App\Http\Controllers\KonsultasiCategoryController;
 use App\Http\Controllers\KonsultasiController;
 use App\Http\Controllers\KonsultasiStatusController;
 use App\Http\Controllers\LinkController;
+use App\Http\Controllers\SettingController;
 use App\Http\Controllers\SliderController;
 use App\Http\Controllers\StatusController;
 use App\Http\Controllers\UploadController;
@@ -48,6 +49,7 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth']], function () {
     Route::resource('user', UserController::class);
     Route::resource('verification', VerificationController::class);
     Route::resource('slider', SliderController::class);
+    Route::resource('setting', SettingController::class);
     Route::resource('link', LinkController::class);
     Route::resource('contact', ContactController::class);
     Route::get('verification/test/updateOtp', [VerificationController::class, 'updateOtp'])->name('verification.updateOtp');
