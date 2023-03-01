@@ -16,6 +16,9 @@
     <link rel="stylesheet" href="{{ asset('frontend_assets/css/themify-icons.css') }}">
     <link rel="stylesheet" href="{{ asset('frontend_assets/css/meanmenu.css') }}">
     <link rel="stylesheet" href="{{ asset('frontend_assets/css/slick.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css"
+        integrity="sha512-17EgCFERpgZKcm0j0fEq1YCJuyAWdz9KUtv1EjVuaOz8pDnh/0nZxmU6BBXwaaxqoi9PQXnRWqlcDB027hgv9A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="{{ asset('frontend_assets/css/default.css') }}">
     <link rel="stylesheet" href="{{ asset('frontend_assets/css/main.css') }}">
     <link rel="stylesheet" href="{{ asset('frontend_assets/css/responsive.css') }}">
@@ -170,11 +173,17 @@
                                 <span class="line">Tentang</span>
                                 <h2>SELAMAT DATANG DI PUSPAGA</h2>
                             </div>
-                            <div class="about-us-text pos-rel">
-                                <span>Apa Itu Puspaga?</span>
-                                <p>Tempat pembelajaran untuk meningkatkan kehidupan keluarga yang dilakukan oleh tenaga
-                                    profesional melalui peningkatan kapasitas orang tua/keluarga atau orang yang
-                                    bertanggung jawab dalam mengasuh dan melindungi anak.</p>
+                            <div class="setting">
+                                <div class="about-us-text pos-rel">
+                                    <span>Pengertian Puspaga</span>
+                                    <p>{{ $setting->pengertian }}</p>
+                                </div>
+                                <div class="about-us-text pos-rel">
+                                    <span>Visi Puspaga</span>
+                                    <p>{{ $setting->visi }}</p>
+                                    <span>Misi Puspaga</span>
+                                    <p>{{ $setting->misi }}</p>
+                                </div>
                             </div>
                             <div class="newsletter-form">
                                 <a href="{{ route('dashboard') }}" target="_blank" class="btn blue-success">Buat
@@ -579,6 +588,15 @@
         <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
         <script>
             AOS.init();
+        </script>
+        <script>
+            $('.setting').slick({
+                dots: true,
+                infinite: true,
+                speed: 300,
+                slidesToShow: 1,
+                adaptiveHeight: true
+            });
         </script>
 </body>
 
