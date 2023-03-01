@@ -13,5 +13,14 @@ class Berita extends Model implements Auditable
 
     protected $table = 'beritas';
 
-    protected $fillable = ["user_id","berita_category_id","title","content","image"];
+    protected $fillable = ["user_id", "berita_category_id", "title", "content", "image"];
+
+    public function berita_category()
+    {
+        return $this->belongsTo(BeritaCategory::class, 'berita_category_id', 'id');
+    }
+    public function user()
+    {
+        return $this->belongsTo(User::class, 'user_id', 'id');
+    }
 }

@@ -23,8 +23,8 @@
                         <table class="table border table-bordered text-nowrap text-md-nowrap table-sm mb-0">
                             <thead>
                                 <tr class="text-center">
-                                    <th>user_id</th>
-                                    <th>berita_category_id</th>
+                                    <th>User</th>
+                                    <th>Kategori</th>
                                     <th>title</th>
                                     <th>content</th>
                                     <th>image</th>
@@ -34,8 +34,8 @@
                             <tbody>
                                 @foreach ($beritas as $berita)
                                     <tr>
-                                        <td>{{ $berita->user_id }}</td>
-                                        <td>{{ $berita->berita_category_id }}</td>
+                                        <td>{{ $berita->user->name }}</td>
+                                        <td>{{ $berita->berita_category->name }}</td>
                                         <td>{{ $berita->title }}</td>
                                         <td>{!! $berita->content !!}</td>
                                         <td><img src="{{ asset('uploads/' . $berita->image) }}" height="100px"
