@@ -97,7 +97,22 @@ class SettingController extends Controller
      */
     public function update(Request $request, Setting $setting)
     {
-        //
+        $data = $request->validate([
+            'logo' => 'required',
+            'pengertian' => 'required',
+            'visi' => 'required',
+            'misi' => 'required',
+            'tujuan' => 'required',
+            'tugas_fungsi' => 'required',
+        ]);
+        $logo = TemporaryFile::where('filename', $request->logo)->first();
+        if ($logo) {
+            $data['logo'] = $logo->filename;
+            $logo->delete();
+        };
+        $setting->update($data);
+        session()->flash('success');
+        return back();
     }
 
     /**
