@@ -65,6 +65,13 @@
                                 class="side-menu__label">Kategori</span></a>
                     </li>
                 @endcan
+                @can('berita-index')
+                    <li>
+                        <a class="side-menu__item {{ active_class(['berita.*']) }}"
+                            href="{{ route('berita.index') }}"><i class="side-menu__icon fe fe-grid"></i><span
+                                class="side-menu__label">Berita</span></a>
+                    </li>
+                @endcan
                 @canany(['slider-index', 'link-index', 'contact-index'])
                     <li class="sub-category">
                         <h3>Master</h3>
@@ -99,6 +106,12 @@
                 @canany(['user-index', 'role-index', 'permission-index'])
                     <li class="sub-category">
                         <h3>User Management</h3>
+                    </li>
+                @endcan
+                @can('crud-index')
+                    <li>
+                        <a class="side-menu__item {{ active_class(['crud.*']) }}" href="{{ route('crud.index') }}"><i
+                                class="side-menu__icon fe fe-grid"></i><span class="side-menu__label">CRUD</span></a>
                     </li>
                 @endcan
                 @can('user-index')
