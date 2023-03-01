@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\BeritaCategoryController;
 use App\Http\Controllers\PermissionController;
 use App\Http\Controllers\RoleController;
 use App\Http\Controllers\CaptchaServiceController;
@@ -50,6 +51,7 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth']], function () {
     Route::resource('verification', VerificationController::class);
     Route::resource('slider', SliderController::class);
     Route::resource('setting', SettingController::class);
+    Route::resource('beritaCategory', BeritaCategoryController::class);
     Route::resource('link', LinkController::class);
     Route::resource('contact', ContactController::class);
     Route::get('verification/test/updateOtp', [VerificationController::class, 'updateOtp'])->name('verification.updateOtp');

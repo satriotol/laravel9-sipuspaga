@@ -53,6 +53,18 @@
                                 class="side-menu__icon fe fe-grid"></i><span class="side-menu__label">Status</span></a>
                     </li>
                 @endcan
+                @canany(['beritaCategory-index'])
+                    <li class="sub-category">
+                        <h3>Berita</h3>
+                    </li>
+                @endcan
+                @can('beritaCategory-index')
+                    <li>
+                        <a class="side-menu__item {{ active_class(['beritaCategory.*']) }}"
+                            href="{{ route('beritaCategory.index') }}"><i class="side-menu__icon fe fe-grid"></i><span
+                                class="side-menu__label">Kategori</span></a>
+                    </li>
+                @endcan
                 @canany(['slider-index', 'link-index', 'contact-index'])
                     <li class="sub-category">
                         <h3>Master</h3>
@@ -60,8 +72,9 @@
                 @endcan
                 @can('setting-index')
                     <li>
-                        <a class="side-menu__item {{ active_class(['setting.*']) }}" href="{{ route('setting.index') }}"><i
-                                class="side-menu__icon fe fe-grid"></i><span class="side-menu__label">Setting</span></a>
+                        <a class="side-menu__item {{ active_class(['setting.*']) }}"
+                            href="{{ route('setting.index') }}"><i class="side-menu__icon fe fe-grid"></i><span
+                                class="side-menu__label">Setting</span></a>
                     </li>
                 @endcan
                 @can('slider-index')
