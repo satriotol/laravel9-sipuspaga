@@ -98,7 +98,7 @@ class SettingController extends Controller
     public function update(Request $request, Setting $setting)
     {
         $data = $request->validate([
-            'logo' => 'required',
+            'logo' => 'nullable',
             'pengertian' => 'required',
             'visi' => 'required',
             'misi' => 'required',
