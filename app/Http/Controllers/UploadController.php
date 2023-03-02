@@ -10,7 +10,7 @@ class UploadController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'file' => 'max:10000',
+            'file' => 'mimes:pdf',
             'logo' => 'image',
         ]);
         if ($request->hasFile('file')) {

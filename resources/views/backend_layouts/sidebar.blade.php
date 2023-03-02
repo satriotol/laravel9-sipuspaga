@@ -67,9 +67,14 @@
                 @endcan
                 @can('berita-index')
                     <li>
-                        <a class="side-menu__item {{ active_class(['berita.*']) }}"
-                            href="{{ route('berita.index') }}"><i class="side-menu__icon fe fe-grid"></i><span
-                                class="side-menu__label">Berita</span></a>
+                        <a class="side-menu__item {{ active_class(['berita.*']) }}" href="{{ route('berita.index') }}"><i
+                                class="side-menu__icon fe fe-grid"></i><span class="side-menu__label">Berita</span></a>
+                    </li>
+                @endcan
+                @can('ebook-index')
+                    <li>
+                        <a class="side-menu__item {{ active_class(['ebook.*']) }}" href="{{ route('ebook.index') }}"><i
+                                class="side-menu__icon fe fe-grid"></i><span class="side-menu__label">E-Book</span></a>
                     </li>
                 @endcan
                 @canany(['slider-index', 'link-index', 'contact-index'])

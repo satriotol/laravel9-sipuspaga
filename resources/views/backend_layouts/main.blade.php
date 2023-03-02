@@ -163,15 +163,17 @@
         const inputElementLogo = document.querySelector('.upload-logo');
         const inputElementIcon = document.querySelector('.upload-icon');
         const inputElementImages = document.querySelector('.upload-images');
-
+        const validation = {
+            acceptedFileTypes: ['image/*', 'application/pdf']
+        };
         FilePond.registerPlugin(
             FilePondPluginFileValidateType,
         );
-        const pond = FilePond.create(inputElement);
-        const pond2 = FilePond.create(inputElementFile);
-        const pond3 = FilePond.create(inputElementLogo);
-        const pond4 = FilePond.create(inputElementImages);
-        const pond5 = FilePond.create(inputElementIcon);
+        const pond = FilePond.create(inputElement, validation);
+        const pond2 = FilePond.create(inputElementFile, validation);
+        const pond3 = FilePond.create(inputElementLogo, validation);
+        const pond4 = FilePond.create(inputElementImages, validation);
+        const pond5 = FilePond.create(inputElementIcon, validation);
         FilePond.setOptions({
             server: {
                 process: '{{ route('upload.store') }}',
