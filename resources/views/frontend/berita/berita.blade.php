@@ -1,6 +1,6 @@
 @extends('frontend_layouts.main')
 @section('content')
-    <div class="breadcrumb-area pt-230 pb-240" style="background-image:url({{ asset('frontend_assets/img/bg/bg-10.jpg') }})">
+    <div class="breadcrumb-area pt-230 pb-240" style="background-image:url(https://inspektorat.semarangkota.go.id/public/uploads/file/12172022105115-banner.jpg)">
         <div class="container">
             <div class="row">
                 <div class="col-xl-12">

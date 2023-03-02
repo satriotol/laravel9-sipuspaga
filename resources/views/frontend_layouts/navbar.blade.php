@@ -26,7 +26,8 @@
                     <div class="main-menu text-right">
                         <nav id="mobile-menu">
                             <ul>
-                                <li class="{{ active_class(['beranda']) }}"><a href="{{ route('home.index') }}">Beranda</a>
+                                <li class="{{ active_class(['home.index']) }}"><a
+                                        href="{{ route('home.index') }}">Beranda</a>
                                 </li>
                                 <li class="{{ active_class(['berita']) }}"><a href="{{ route('berita') }}">Berita</a>
                                 </li>

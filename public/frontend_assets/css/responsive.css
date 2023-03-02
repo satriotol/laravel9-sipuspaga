@@ -505,8 +505,8 @@
         right: 9px;
     }
     .breadcrumb-area {
-        padding-top: 200px;
-        padding-bottom: 200px;
+        padding-top: 100px;
+        padding-bottom: 100px;
     }
     .inner-history {
         padding: 30px 15px 28px;
@@ -552,8 +552,8 @@
         font-size: 24px;
     }
     .breadcrumb-area {
-        padding-top: 140px;
-        padding-bottom: 140px;
+        padding-top: 70px;
+        padding-bottom: 70px;
     }
     .breadcrumb-menu span {
         font-size: 25px;
@@ -871,8 +871,8 @@
         right: 40px;
     }
     .breadcrumb-area {
-        padding-top: 150px;
-        padding-bottom: 150px;
+        padding-top: 75px;
+        padding-bottom: 75px;
     }
     .breadcrumb-text > h1 {
         font-size: 55px;
@@ -1304,8 +1304,8 @@
         left: 25px;
     }
     .breadcrumb-area {
-        padding-top: 120px;
-        padding-bottom: 120px;
+        padding-top: 60px;
+        padding-bottom: 60px;
     }
     .breadcrumb-text > h1 {
         font-size: 32px;
