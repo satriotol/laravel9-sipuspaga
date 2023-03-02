@@ -23,9 +23,8 @@
                         <table class="table border table-bordered text-nowrap text-md-nowrap table-sm mb-0">
                             <thead>
                                 <tr class="text-center">
-                                    <th>User</th>
+                                    <th>Judul</th>
                                     <th>Kategori</th>
-                                    <th>title</th>
                                     <th>content</th>
                                     <th>image</th>
                                     <th>Action</th>
@@ -34,10 +33,11 @@
                             <tbody>
                                 @foreach ($beritas as $berita)
                                     <tr>
-                                        <td>{{ $berita->user->name }}</td>
+                                        <td>{{ $berita->title }} <br>
+                                            <div class="badge bg-primary">{{ $berita->created_at }}</div>
+                                        </td>
                                         <td>{{ $berita->berita_category->name }}</td>
-                                        <td>{{ $berita->title }}</td>
-                                        <td>{!! $berita->content !!}</td>
+                                        <td class="text-wrap">{!! $berita->content !!}</td>
                                         <td><img src="{{ asset('uploads/' . $berita->image) }}" height="100px"
                                                 alt=""></td>
                                         <td class="text-center">

@@ -52,7 +52,7 @@
                         <div class="form-group">
                             {!! Form::label('image', 'Gambar') !!}
                             {!! Form::text('image', isset($beritum) ? $beritum->image : @old('image'), [
-                                'required',
+                                isset($beritum) ? '' : 'required',
                                 'class' => 'form-control',
                                 'placeholder' => 'Masukkan image',
                             ]) !!}

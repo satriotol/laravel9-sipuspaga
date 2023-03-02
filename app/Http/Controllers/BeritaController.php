@@ -59,7 +59,7 @@ class BeritaController extends Controller
             'berita_category_id' => 'required',
             'title' => 'required',
             'content' => 'required',
-            'image' => 'required'
+            'image' => 'nullable'
         ]);
         $data['user_id'] = Auth::user()->id;
         $image = TemporaryFile::where('filename', $request->image)->first();
