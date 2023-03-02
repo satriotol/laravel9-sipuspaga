@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Berita;
+use App\Models\BeritaCategory;
 use App\Models\Contact;
 use App\Models\Link;
 use App\Models\Setting;
@@ -24,6 +26,8 @@ class HomeController extends Controller
     }
     public function berita()
     {
-        return view('frontend.berita.berita');
+        $beritas = Berita::paginate(1);
+        $beritaCategories = BeritaCategory::all();
+        return view('frontend.berita.berita', compact('beritas', 'beritaCategories'));
     }
 }
