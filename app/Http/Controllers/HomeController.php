@@ -24,10 +24,20 @@ class HomeController extends Controller
         $sliders = Slider::orderBy('id', 'desc')->get();
         return view('frontend.index', compact('sliders', 'setting'));
     }
-    public function berita()
+    public function berita(Request $request)
     {
-        $beritas = Berita::paginate(1);
+        $berita_category_id = $request->berita_category_id;
+        $title = $request->title;
+        $beritas = Berita::query();
+        if ($title) {
+            $beritas->where('title', 'LIKE', '%' . $title . '%');
+        }
+        if ($berita_category_id) {
+            $beritas->where('berita_category_id', $berita_category_id);
+        }
+        $beritas = $beritas->paginate();
         $beritaCategories = BeritaCategory::all();
+        $request->flash();
         return view('frontend.berita.berita', compact('beritas', 'beritaCategories'));
     }
 }

@@ -7,7 +7,7 @@
                     <div class="breadcrumb-text text-center">
                         <h1>Berita</h1>
                         <ul class="breadcrumb-menu">
-                            <li><a href="index.html">Beranda</a></li>
+                            <li><a href="{{ route('home.index') }}">Beranda</a></li>
                             <li><span>Berita</span></li>
                         </ul>
                     </div>
@@ -65,7 +65,7 @@
                 <div class="col-xl-4 col-lg-4 mb-30">
                     <div class="widget mb-40">
                         <form class="search-form">
-                            <input type="text" placeholder="Search...">
+                            <input type="text" name="title" placeholder="Search..." value="{{ @old('title') }}">
                             <button type="submit"><i class="fas fa-search"></i></button>
                         </form>
                     </div>
@@ -74,25 +74,12 @@
                         <ul class="service-list">
                             @foreach ($beritaCategories as $beritaCategory)
                                 <li>
-                                    <a href="blog-details.html">{{ $beritaCategory->name }} </a>
+                                    <a
+                                        href="{{ route('berita', ['berita_category_id' => $beritaCategory->id, 'title' => old('title')]) }}">{{ $beritaCategory->name }}
+                                    </a>
                                 </li>
                             @endforeach
                         </ul>
-                    </div>
-                    <div class="widget mb-40">
-                        <h3 class="widget-title">Social Profile</h3>
-                        <div class="social-profile">
-                            <a href="#"><i class="fab fa-facebook-f"></i></a>
-                            <a href="#"><i class="fab fa-twitter"></i></a>
-                            <a href="#"><i class="fab fa-behance"></i></a>
-                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                            <a href="#"><i class="fab fa-youtube"></i></a>
-                        </div>
-                    </div>
-                    <div class="widget widget-2 p-0 b-0">
-                        <div class="banner-widget">
-                            <a href="blog-details.html"><img src="assets/img/blog/details/banner.jpg" alt=""></a>
-                        </div>
                     </div>
                 </div>
             </div>
