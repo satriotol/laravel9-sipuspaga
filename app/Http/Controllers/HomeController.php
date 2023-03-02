@@ -35,9 +35,14 @@ class HomeController extends Controller
         if ($berita_category_id) {
             $beritas->where('berita_category_id', $berita_category_id);
         }
-        $beritas = $beritas->paginate();
+        $beritas = $beritas->latest()->paginate();
         $beritaCategories = BeritaCategory::all();
         $request->flash();
         return view('frontend.berita.berita', compact('beritas', 'beritaCategories'));
+    }
+    public function detailBerita(Berita $beritum)
+    {
+        $beritas = Berita::where('id', '!=', $beritum->id)->paginate(3);
+        return view('frontend.berita.detailBerita', compact('beritum', 'beritas'));
     }
 }

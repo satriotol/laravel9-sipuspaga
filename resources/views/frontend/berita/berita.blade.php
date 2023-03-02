@@ -1,6 +1,7 @@
 @extends('frontend_layouts.main')
 @section('content')
-    <div class="breadcrumb-area pt-230 pb-240" style="background-image:url(https://inspektorat.semarangkota.go.id/public/uploads/file/12172022105115-banner.jpg)">
+    <div class="breadcrumb-area pt-230 pb-240"
+        style="background-image:url(https://inspektorat.semarangkota.go.id/public/uploads/file/12172022105115-banner.jpg)">
         <div class="container">
             <div class="row">
                 <div class="col-xl-12">
@@ -28,7 +29,7 @@
                                 <article class="postbox post format-image mb-40"
                                     style="box-shadow: -9px 14px 13px -3px rgba(0, 0, 0, 0.35);">
                                     <div class="postbox__thumb">
-                                        <a href="#">
+                                        <a href="{{ route('detailBerita', $berita->id) }}">
                                             <img src="{{ asset('uploads/' . $berita->image) }}" height="300px"
                                                 style="object-fit: cover" alt="blog image">
                                         </a>
@@ -36,11 +37,11 @@
                                     <div class="postbox__text p-30">
                                         <div class="post-meta mb-15">
                                             <span><i class="far fa-calendar-check"></i> {{ $berita->created_at }} </span>
-                                            <span><a href="#"><i class="far fa-comments"></i>
+                                            <span><a href="{{ route('detailBerita', $berita->id) }}"><i class="far fa-comments"></i>
                                                     {{ $berita->berita_category->name }}</a></span>
                                         </div>
                                         <h3 class="blog-title">
-                                            <a href="#">{{ $berita->title }}</a>
+                                            <a href="{{ route('detailBerita', $berita->id) }}">{{ $berita->title }}</a>
                                         </h3>
                                         <div class="read-more mt-30">
                                             <a href="">Lihat Selengkapnya</a>
