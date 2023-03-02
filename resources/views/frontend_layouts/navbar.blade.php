@@ -5,7 +5,8 @@
                 <div class="col-xl-4 col-lg-3">
                     <div class="header-left mr-40">
                         <div class="logo logo-mt f-left">
-                            <a href="#"><img src="{{ asset('frontend_assets/img/logo/logopuspaga.png') }}" alt="" /></a>
+                            <a href="#"><img src="{{ asset('frontend_assets/img/logo/logopuspaga.png') }}"
+                                    alt="" /></a>
                         </div>
                     </div>
                 </div>
@@ -25,21 +26,14 @@
                     <div class="main-menu text-right">
                         <nav id="mobile-menu">
                             <ul>
-                                <li class="active"><a href="#">Beranda</a>
+                                <li class="{{ active_class(['beranda']) }}"><a href="{{ route('home.index') }}">Beranda</a>
+                                </li>
+                                <li class="{{ active_class(['berita']) }}"><a href="{{ route('berita') }}">Berita</a>
                                 </li>
                                 <li><a href="#Beranda">Tentang</a></li>
-                                <li><a href="#">Halaman<i class="far fa-chevron-down"></i></a>
-                                    <ul class="sub-menu text-left">
-                                        <li><a href="#siapa_melayani">Siapa yang Melayani?</a>
-                                        <li><a href="#bagaimana">Bagaimana Melayaninya?</a>
-                                        <li><a href="#kapan">Kapan Melayaninya?</a>
-                                        <li><a href="#dimana">Dimana Melayaninya?</a>
-                                        <li><a href="#siapadilayani">Siapa yang Dilayani?</a>
-                                        <li><a href="#apa">Apa Bentuk Pelayanannya?</a>
-                                    </ul>
-                                </li>
                                 <li><a href="#kontak">Kontak</a></li>
-                                <li><a href="{{ route('dashboard') }}" target="_blank" style="margin-right: 20px;">Login</a></li>
+                                <li><a href="{{ route('dashboard') }}" target="_blank"
+                                        style="margin-right: 20px;">Login</a></li>
                             </ul>
                         </nav>
                     </div>

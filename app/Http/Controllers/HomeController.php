@@ -10,13 +10,20 @@ use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
+    public function __construct()
+    {
+        view()->share('contactPhone', Contact::getPhoneContact());
+        view()->share('links', Link::orderBy('id', 'desc')->get());
+        view()->share('contacts', Contact::orderBy('id', 'desc')->get());
+    }
     public function index()
     {
         $setting = Setting::first();
         $sliders = Slider::orderBy('id', 'desc')->get();
-        $links = Link::orderBy('id', 'desc')->get();
-        $contacts = Contact::orderBy('id', 'desc')->get();
-        $contactPhone = Contact::getPhoneContact();
-        return view('frontend.index', compact('sliders', 'links', 'contacts', 'contactPhone', 'setting'));
+        return view('frontend.index', compact('sliders', 'setting'));
+    }
+    public function berita()
+    {
+        return view('frontend.berita.berita');
     }
 }

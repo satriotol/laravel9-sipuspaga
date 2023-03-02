@@ -36,6 +36,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/reload-captcha', [CaptchaServiceController::class, 'reloadCaptcha']);
 
 Route::get('/', [HomeController::class, 'index'])->name('home.index');
+Route::get('berita', [HomeController::class, 'berita'])->name('berita');
 Route::post('upload/store', [UploadController::class, 'store'])->name('upload.store');
 Route::delete('revert/image', [UploadController::class, 'revert'])->name('upload.revert');
 Route::group(['prefix' => 'admin', 'middleware' => ['auth']], function () {
