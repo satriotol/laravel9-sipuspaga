@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Berita;
 use App\Models\BeritaCategory;
 use App\Models\Contact;
+use App\Models\Ebook;
 use App\Models\Link;
 use App\Models\Setting;
 use App\Models\Slider;
@@ -47,6 +48,7 @@ class HomeController extends Controller
     }
     public function ebook()
     {
-        return view('frontend.ebook.ebook');
+        $ebooks = Ebook::all();
+        return view('frontend.ebook.ebook', compact('ebooks'));
     }
 }
