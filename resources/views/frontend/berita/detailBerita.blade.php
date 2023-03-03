@@ -1,22 +1,10 @@
 @extends('frontend_layouts.main')
 @section('content')
-    <div class="breadcrumb-area pt-230 pb-240"
-        style="background-image:url(https://inspektorat.semarangkota.go.id/public/uploads/file/12172022105115-banner.jpg)">
-        <div class="container">
-            <div class="row">
-                <div class="col-xl-12">
-                    <div class="breadcrumb-text text-center">
-                        <h1>Berita</h1>
-                        <ul class="breadcrumb-menu">
-                            <li><a href="{{ route('home.index') }}">Beranda</a></li>
-                            <li><a href="{{ route('berita') }}">Berita</a></li>
-                            <li><span>{{ $beritum->title }}</span></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+    @include('frontend.breadcumb', [
+        'mainTitle' => 'Berita',
+        'subTitle' => $beritum->title,
+        'route' => 'berita',
+    ])
     <!-- breadcrumb-area-end -->
     <!-- blog-area start -->
     <section class="blog-area pt-120 pb-80">

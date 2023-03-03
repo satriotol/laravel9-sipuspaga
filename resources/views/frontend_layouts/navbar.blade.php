@@ -31,6 +31,8 @@
                                 </li>
                                 <li class="{{ active_class(['berita']) }}"><a href="{{ route('berita') }}">Berita</a>
                                 </li>
+                                <li class="{{ active_class(['berita']) }}"><a href="{{ route('berita') }}">E-Book</a>
+                                </li>
                                 <li><a href="{{ route('dashboard') }}" target="_blank"
                                         style="margin-right: 20px;">Login</a></li>
                             </ul>
