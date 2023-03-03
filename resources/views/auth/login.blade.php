@@ -86,11 +86,16 @@
                                                 placeholder="Nomor Hp">
                                         </div>
                                         <div class="wrap-input100 validate-input input-group" id="Password-toggle">
-                                            <a href="javascript:void(0)" class="input-group-text bg-white text-muted">
-                                                <i class="zmdi zmdi-eye text-muted" aria-hidden="true"></i>
+                                            <a href="javascript:void(0)" @click="toggleShow"
+                                                class="input-group-text bg-white text-muted">
+                                                <i class=" text-muted" :class="{ 'zmdi zmdi-eye-off': showPassword, 'zmdi zmdi-eye': !showPassword }" aria-hidden="true"></i>
                                             </a>
-                                            <input class="input100 border-start-0 form-control ms-0" type="password"
+                                            <input v-if="!showPassword"
+                                                class="input100 border-start-0 form-control ms-0" type="password"
                                                 v-model="form.password" name="password" required placeholder="Password">
+                                            <input v-else class="input100 border-start-0 form-control ms-0"
+                                                type="text" v-model="form.password" name="password" required
+                                                placeholder="Password">
                                         </div>
                                         <div class="form-group mt-4 mb-4">
                                             <div class="captcha">
@@ -163,6 +168,7 @@
                 return {
                     message: 'Hello Vue!',
                     default: 'email',
+                    showPassword: false,
                     form: {
                         email: '',
                         phone_number: '',
@@ -180,6 +186,9 @@
                     this.default = defaultValue;
                     this.form.email = '';
                     this.form.phone_number = '';
+                },
+                toggleShow() {
+                    this.showPassword = !this.showPassword;
                 },
                 login() {
                     Swal.fire({
