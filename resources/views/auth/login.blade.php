@@ -58,15 +58,32 @@
                         @include('partials.errors')
                         <div class="panel panel-primary">
                             <div class="panel-body tabs-menu-body p-0 pt-5">
+                                <div class="text-end mb-2">
+                                    <div class="btn btn-primary" v-if="this.default == 'email'"
+                                        @click="changeMethod('phone_number')">Login Nomor HP</div>
+                                    <div class="btn btn-primary" v-if="this.default == 'phone_number'"
+                                        @click="changeMethod('email')">Login Email</div>
+                                </div>
                                 <div class="tab-content">
                                     <div class="tab-pane active" id="tab5">
                                         <div class="wrap-input100 validate-input input-group"
+                                            v-if="this.default == 'email'"
                                             data-bs-validate="Valid email is required: ex@abc.xyz">
                                             <a href="javascript:void(0)" class="input-group-text bg-white text-muted">
                                                 <i class="zmdi zmdi-email text-muted" aria-hidden="true"></i>
                                             </a>
                                             <input class="input100 border-start-0 form-control ms-0" type="email"
                                                 v-model="form.email" name="email" required placeholder="Email">
+                                        </div>
+                                        <div class="wrap-input100 validate-input input-group"
+                                            v-if="this.default == 'phone_number'"
+                                            data-bs-validate="Valid email is required: ex@abc.xyz">
+                                            <a href="javascript:void(0)" class="input-group-text bg-white text-muted">
+                                                <i class="zmdi zmdi-phone-end text-muted" aria-hidden="true"></i>
+                                            </a>
+                                            <input class="input100 border-start-0 form-control ms-0" type="text"
+                                                v-model="form.phone_number" name="phone_number" required
+                                                placeholder="Nomor Hp">
                                         </div>
                                         <div class="wrap-input100 validate-input input-group" id="Password-toggle">
                                             <a href="javascript:void(0)" class="input-group-text bg-white text-muted">
@@ -95,7 +112,8 @@
                                         </div>
                                         <div class="text-center pt-3">
                                             <p class="text-dark mb-0">Tidak Punya Akun ?<a
-                                                    href="{{ route('register') }}" class="text-primary ms-1">Daftar</a>
+                                                    href="{{ route('register') }}"
+                                                    class="text-primary ms-1">Daftar</a>
                                             </p>
                                         </div>
                                     </div>
@@ -144,8 +162,10 @@
             data() {
                 return {
                     message: 'Hello Vue!',
+                    default: 'email',
                     form: {
                         email: '',
+                        phone_number: '',
                         password: '',
                         capcha: '',
                     },
@@ -156,6 +176,11 @@
                 this.reloadCaptcha();
             },
             methods: {
+                changeMethod(defaultValue) {
+                    this.default = defaultValue;
+                    this.form.email = '';
+                    this.form.phone_number = '';
+                },
                 login() {
                     Swal.fire({
                         title: 'Mencoba Masuk',
@@ -186,7 +211,9 @@
                                 icon: 'error',
                                 text: err.response.data.message,
                                 confirmButtonText: 'Ok',
-                            })
+                            });
+                            this.reloadCaptcha();
+
                         });
                 },
                 reloadCaptcha() {

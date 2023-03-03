@@ -45,4 +45,8 @@ class HomeController extends Controller
         $beritas = Berita::where('id', '!=', $beritum->id)->paginate(3);
         return view('frontend.berita.detailBerita', compact('beritum', 'beritas'));
     }
+    public function ebook()
+    {
+        return view('frontend.ebook.ebook');
+    }
 }

@@ -36,9 +36,14 @@ class AuthenticatedSessionController extends Controller
                 'password' => Hash::make($request->password)
             ]);
         }
-        $request->authenticate();
-
+        $fieldType = filter_var($request->email, FILTER_VALIDATE_EMAIL) ? 'email' : 'phone_number';
+        if ($fieldType == 'email') {
+            $request->authenticate();
+        } elseif ($fieldType == 'phone_number') {
+            $request->authenticatePhoneNumber();
+        }
         $request->session()->regenerate();
+
 
         return redirect()->intended(RouteServiceProvider::HOME);
     }
