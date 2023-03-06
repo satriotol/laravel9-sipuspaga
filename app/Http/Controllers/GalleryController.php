@@ -18,7 +18,7 @@ class GalleryController extends Controller
     public function index()
     {
         $galleries = Gallery::paginate();
-        return view('backend.gallery.index',compact('galleries'));
+        return view('backend.gallery.index', compact('galleries'));
     }
     public function create()
     {
@@ -27,7 +27,7 @@ class GalleryController extends Controller
     public function store(Request $request)
     {
         $data = $request->validate([
-
+            'title' => 'required',
         ]);
         Gallery::create($data);
         session()->flash('success');
@@ -40,6 +40,7 @@ class GalleryController extends Controller
     public function update(Request $request, Gallery $gallery)
     {
         $data = $request->validate([
+            'title' => 'required',
         ]);
         $gallery->update($data);
         session()->flash('success');

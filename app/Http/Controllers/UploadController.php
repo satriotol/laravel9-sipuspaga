@@ -12,6 +12,7 @@ class UploadController extends Controller
         $request->validate([
             'file' => 'mimes:pdf',
             'logo' => 'image',
+            'images' => 'image'
         ]);
         if ($request->hasFile('file')) {
             $file = $request->file('file');

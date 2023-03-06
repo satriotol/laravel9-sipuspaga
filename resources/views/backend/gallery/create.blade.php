@@ -24,11 +24,11 @@
                         @isset($gallery)
                             @method('PUT')
                         @endisset
-                        <div class="form-group">{!! Form::label('title', 'title') !!}{!! Form::text('title', isset($gallery) ? $gallery->title : @old('title'), [
-                    'required',
-                    'class' => 'form-control',
-                    'placeholder' => 'Masukkan title',
-                ]) !!}</div>
+                        <div class="form-group">{!! Form::label('title', 'Judul') !!}{!! Form::text('title', isset($gallery) ? $gallery->title : @old('title'), [
+                            'required',
+                            'class' => 'form-control',
+                            'placeholder' => 'Masukkan Judul',
+                        ]) !!}</div>
                         <div class="text-end">
                             <a class="btn btn-warning" href="{{ route('gallery.index') }}">Kembali</a>
                             <button class="btn btn-primary" type="submit">Submit</button>

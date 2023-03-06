@@ -23,7 +23,7 @@
                         <table class="table border table-bordered text-nowrap text-md-nowrap table-sm mb-0">
                             <thead>
                                 <tr class="text-center">
-                                    <th>title</th>
+                                    <th>Judul</th>
                                     <th>Action</th>
                                 </tr>
                             </thead>
