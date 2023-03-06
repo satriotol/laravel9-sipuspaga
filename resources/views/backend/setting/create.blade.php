@@ -72,7 +72,7 @@
                             ]) !!}
                         </div>
                         <div class="form-group">
-                            {!! Form::label('tugas_fungsi', 'Tugas Fungsi') !!}
+                            {!! Form::label('logo', 'Logo') !!}
                             {!! Form::file('logo', ['class' => 'form-control upload-logo']) !!}
                             @isset($setting)
                                 <img src="{{ asset('uploads/' . $setting->logo) }}" height="100px" alt="">

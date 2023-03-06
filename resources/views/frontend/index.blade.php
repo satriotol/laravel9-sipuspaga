@@ -34,13 +34,13 @@
                         <div class="setting">
                             <div class="about-us-text pos-rel">
                                 <span>Pengertian Puspaga</span>
-                                <p>{{ $setting->pengertian }}</p>
+                                <p style="font-size:18px">{{ $setting->pengertian }}</p>
                             </div>
                             <div class="about-us-text pos-rel">
                                 <span>Visi Puspaga</span>
-                                <p>{{ $setting->visi }}</p>
+                                <p style="font-size:18px">{{ $setting->visi }}</p>
                                 <span>Misi Puspaga</span>
-                                <p>{{ $setting->misi }}</p>
+                                <p style="font-size:18px">{{ $setting->misi }}</p>
                             </div>
                         </div>
                         <div class="newsletter-form">

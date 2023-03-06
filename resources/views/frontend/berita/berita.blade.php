@@ -1,4 +1,15 @@
 @extends('frontend_layouts.main')
+@push('css')
+    <style>
+        img.img-berita {
+            transition: 0.3s;
+        }
+
+        img.img-berita:hover {
+            height: 400px;
+        }
+    </style>
+@endpush
 @section('content')
     @include('frontend.breadcumb', [
         'mainTitle' => 'Berita',
@@ -17,8 +28,8 @@
                                     style="box-shadow: -9px 14px 13px -3px rgba(0, 0, 0, 0.35);">
                                     <div class="postbox__thumb">
                                         <a href="{{ route('detailBerita', $berita->id) }}">
-                                            <img src="{{ asset('uploads/' . $berita->image) }}" height="300px"
-                                                style="object-fit: cover" alt="blog image">
+                                            <img src="{{ asset('uploads/' . $berita->image) }}" class="img-berita"
+                                                height="300px" style="object-fit: cover" alt="blog image">
                                         </a>
                                     </div>
                                     <div class="postbox__text p-30">
