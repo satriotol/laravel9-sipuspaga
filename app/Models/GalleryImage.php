@@ -7,16 +7,11 @@ use Illuminate\Database\Eloquent\Model;
 use OwenIt\Auditing\Contracts\Auditable;
 use OwenIt\Auditing\Auditable as AuditableTrait;
 
-class Gallery extends Model implements Auditable
+class GalleryImage extends Model implements Auditable
 {
     use HasFactory, AuditableTrait;
 
-    protected $table = 'galleries';
+    protected $table = 'gallery_images';
 
-    protected $fillable = ["title"];
-
-    public function gallery_images()
-    {
-        return $this->hasMany(GalleryImage::class, 'gallery_id', 'id');
-    }
+    protected $fillable = ["image", "gallery_id"];
 }

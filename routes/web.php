@@ -20,6 +20,7 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\VerificationController;
 use App\Http\Controllers\BeritaController;
 // URL_CRUD_GENERATOR
+use App\Http\Controllers\GalleryImageController;
 use App\Http\Controllers\GalleryController;
 use App\Http\Controllers\EbookController;
 use Illuminate\Support\Facades\Route;
@@ -64,6 +65,7 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth']], function () {
     Route::resource('contact', ContactController::class);
     Route::resource('crud', CrudController::class);
     // CRUD_GENERATOR
+Route::resource('gallery_image', GalleryImageController::class);
 Route::resource('gallery', GalleryController::class);
 Route::resource('ebook', EbookController::class);
     Route::resource('berita', BeritaController::class);

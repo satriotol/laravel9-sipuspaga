@@ -1,11 +1,11 @@
 @extends('backend_layouts.main')
 @section('content')
     <div class="page-header">
-        <h1 class="page-title">Gallery</h1>
+        <h1 class="page-title">GalleryImage</h1>
         <div>
             <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="{{ route('gallery.index') }}">Gallery</a></li>
-                <li class="breadcrumb-item active" aria-current="page">Gallery Tabel</li>
+                <li class="breadcrumb-item"><a href="{{ route('gallery_image.index') }}">GalleryImage</a></li>
+                <li class="breadcrumb-item active" aria-current="page">GalleryImage Tabel</li>
             </ol>
         </div>
     </div>
@@ -13,45 +13,35 @@
         <div class="col-lg-12">
             <div class="card">
                 <div class="card-header">
-                    <h3 class="card-title">Gallery</h3>
+                    <h3 class="card-title">GalleryImage</h3>
                 </div>
                 <div class="card-body">
                     <div class="text-end mb-2">
-                        <a href="{{ route('gallery.create') }}" class="btn btn-sm btn-primary">Tambah</a>
+                        <a href="{{ route('gallery_image.create') }}" class="btn btn-sm btn-primary">Tambah</a>
                     </div>
                     <div class="table-responsive">
                         <table class="table border table-bordered text-nowrap text-md-nowrap table-sm mb-0">
                             <thead>
                                 <tr class="text-center">
-                                    <th>Judul</th>
-                                    <th>Galeri</th>
+                                    <th>image</th>
                                     <th>Action</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                @foreach ($galleries as $gallery)
+                                @foreach ($gallery_images as $gallery_image)
                                     <tr>
-                                        <td>{{ $gallery->title }}</td>
-                                        <td>
-                                            <div class="row">
-                                                @foreach ($gallery->gallery_images as $gallery_image)
-                                                    <div class="col-1">
-                                                        <img src="{{ asset('uploads/' . $gallery_image->image) }}"
-                                                            height="100px" alt="">
-                                                    </div>
-                                                @endforeach
-                                            </div>
-                                        </td>
+                                        <td>{{$gallery_image->image}}</td>
                                         <td class="text-center">
-                                            <form action="{{ route('gallery.destroy', $gallery->id) }}" method="post">
+                                            <form action="{{ route('gallery_image.destroy', $gallery_image->id) }}" method="post">
                                                 @csrf
                                                 @method('delete')
                                                 <a class="btn btn-sm btn-warning"
-                                                    href="{{ route('gallery.edit', $gallery->id) }}">
+                                                    href="{{ route('gallery_image.edit', $gallery_image->id) }}">
                                                     Edit
                                                 </a>
                                                 <input type="submit" class="btn btn-sm btn-danger"
-                                                    onclick="return confirm('Are you sure?')" value="Delete" id="">
+                                                    onclick="return confirm('Are you sure?')" value="Delete"
+                                                    id="">
                                             </form>
                                         </td>
                                     </tr>

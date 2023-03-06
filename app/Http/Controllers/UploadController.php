@@ -12,7 +12,7 @@ class UploadController extends Controller
         $request->validate([
             'file' => 'mimes:pdf',
             'logo' => 'image',
-            'images' => 'image'
+            'images.*' => 'image'
         ]);
         if ($request->hasFile('file')) {
             $file = $request->file('file');
@@ -24,6 +24,18 @@ class UploadController extends Controller
                 'filename' => $file
             ]);
             return $file;
+        };
+        if ($request->hasFile('images')) {
+            foreach ($request->file('images') as $images) {
+                $name = $images->getClientOriginalName();
+                $image_name = date('mdYHis') . '-' . $name;
+                $images = $images->storeAs('images', $image_name, 'public_uploads');
+
+                TemporaryFile::create([
+                    'filename' => $images
+                ]);
+                return $images;
+            }
         };
         if ($request->hasFile('image')) {
             $file = $request->file('image');
