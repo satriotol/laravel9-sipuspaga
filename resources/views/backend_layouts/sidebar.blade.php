@@ -77,6 +77,18 @@
                                 class="side-menu__icon fe fe-grid"></i><span class="side-menu__label">E-Book</span></a>
                     </li>
                 @endcan
+                @canany(['gallery-index'])
+                    <li class="sub-category">
+                        <h3>Galeri</h3>
+                    </li>
+                @endcan
+                @can('gallery-index')
+                    <li>
+                        <a class="side-menu__item {{ active_class(['gallery.*']) }}"
+                            href="{{ route('gallery.index') }}"><i class="side-menu__icon fe fe-grid"></i><span
+                                class="side-menu__label">Galeri</span></a>
+                    </li>
+                @endcan
                 @canany(['slider-index', 'link-index', 'contact-index'])
                     <li class="sub-category">
                         <h3>Master</h3>
