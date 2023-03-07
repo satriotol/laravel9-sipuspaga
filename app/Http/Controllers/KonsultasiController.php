@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Jobs\KirimWaJob;
 use App\Models\Konsultasi;
 use App\Models\KonsultasiCategory;
 use App\Models\KonsultasiStatus;
@@ -68,8 +69,13 @@ class KonsultasiController extends Controller
             'user_id' => Auth::user()->id,
             'description' => 'Status Pengajuan Sudah Masuk Sistem',
         ]);
-        $whatsapp = new WhatsappController;
-        $whatsapp->kirimPesan('SIPUSPAGA, Status Pengajuan Anda Sedang Kami Proses', $konsultasi->user->phone_number);
+        if ($request->kirimWa) {
+            $asset = [
+                'SIPUSPAGA, Status Pengajuan Anda Sedang Kami Proses',
+                $konsultasi->user->phone_number
+            ];
+            KirimWaJob::dispatch($asset);
+        }
         session()->flash('success');
         return redirect(route('konsultasi.index'));
     }
