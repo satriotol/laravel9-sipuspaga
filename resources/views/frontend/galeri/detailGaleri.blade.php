@@ -4,13 +4,14 @@
         img.img-galeri {
             border-radius: 2rem;
             box-shadow: -9px 14px 13px -3px rgba(0, 0, 0, 0.35);
-            height: 25rem;
+            height: 13rem;
+            width: 100%;
             object-fit: cover;
             transition: 0.3s;
         }
 
         img.img-galeri:hover {
-            height: 26rem;
+            height: 15rem;
         }
     </style>
     <link href="https://cdn.jsdelivr.net/npm/lightbox2@2.11.4/dist/css/lightbox.min.css" rel="stylesheet">
