@@ -10,7 +10,7 @@
         </div>
     </div>
     <div class="row">
-        <div class="col-lg-12 col-md-12">
+        <div class="col-md-{{ isset($gallery) ? '6' : '12' }}">
             <div class="card">
                 <div class="card-header">
                     <h3 class="card-title">Form Gallery</h3>
@@ -34,7 +34,11 @@
                         </div>
                         <div class="form-group">
                             {!! Form::label('images', 'Galeri') !!}
-                            {!! Form::file('images[]', ['multiple', 'required', 'class' => 'form-control upload-images']) !!}
+                            {!! Form::file('images[]', [
+                                'multiple',
+                                isset($gallery) ? '' : 'required',
+                                'class' => 'form-control upload-images',
+                            ]) !!}
                         </div>
                         <div class="text-end">
                             <a class="btn btn-warning" href="{{ route('gallery.index') }}">Kembali</a>
@@ -44,6 +48,13 @@
                 </div>
             </div>
         </div>
+        @isset($gallery)
+            <div class="col-md-6">
+                @include('backend.gallery_image.index', [
+                    'gallery' => $gallery,
+                ])
+            </div>
+        @endisset
     </div>
 @endsection
 @push('custom-scripts')

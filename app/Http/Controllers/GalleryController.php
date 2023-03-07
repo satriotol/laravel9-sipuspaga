@@ -64,7 +64,25 @@ class GalleryController extends Controller
         $data = $request->validate([
             'title' => 'required',
         ]);
-        $gallery->update($data);
+        DB::beginTransaction();
+        try {
+            $gallery->update($data);
+            foreach ($request->images as $image) {
+                $images = TemporaryFile::where('filename', $image)->first();
+                if ($images) {
+                    $data['images'] = $images->filename;
+                    GalleryImage::create([
+                        'gallery_id' => $gallery->id,
+                        'image' => $data['images']
+                    ]);
+                    $images->delete();
+                };
+            }
+            DB::commit();
+        } catch (\Throwable $th) {
+            DB::rollBack();
+        }
+
         session()->flash('success');
         return redirect(route('gallery.index'));
     }
