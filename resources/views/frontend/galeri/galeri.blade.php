@@ -6,7 +6,7 @@
         }
 
         img.img-berita:hover {
-            height: 400px;
+            height: 250px;
         }
     </style>
 @endpush
