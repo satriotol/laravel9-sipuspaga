@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Jobs\KirimWaJob;
 use App\Models\Konsultasi;
 use App\Models\KonsultasiStatus;
 use App\Models\TemporaryFile;
@@ -54,8 +55,11 @@ class KonsultasiStatusController extends Controller
         };
         $konsultasiStatus = KonsultasiStatus::create($data);
         if ($request->kirimWa) {
-            $whatsapp = new WhatsappController;
-            $whatsapp->kirimPesan($data['description'], $konsultasiStatus->konsultasi->user->phone_number);
+            $asset = [
+                $data['description'],
+                $konsultasiStatus->konsultasi->user->phone_number
+            ];
+            KirimWaJob::dispatch($asset);
         }
         session()->flash('success');
         return back();
