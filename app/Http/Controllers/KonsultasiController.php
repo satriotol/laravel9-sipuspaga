@@ -69,13 +69,11 @@ class KonsultasiController extends Controller
             'user_id' => Auth::user()->id,
             'description' => 'Status Pengajuan Sudah Masuk Sistem',
         ]);
-        if ($request->kirimWa) {
-            $asset = [
-                'SIPUSPAGA, Status Pengajuan Anda Sedang Kami Proses',
-                $konsultasi->user->phone_number
-            ];
-            KirimWaJob::dispatch($asset);
-        }
+        $asset = [
+            'SIPUSPAGA, Status Pengajuan Anda Sedang Kami Proses',
+            $konsultasi->user->phone_number
+        ];
+        KirimWaJob::dispatch($asset);
         session()->flash('success');
         return redirect(route('konsultasi.index'));
     }
