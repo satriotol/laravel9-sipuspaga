@@ -88,7 +88,7 @@ class GalleryController extends Controller
     }
     public function destroy(Gallery $gallery)
     {
-        $gallery->delete;
+        $gallery->delete();
         session()->flash('success');
         return back();
     }
