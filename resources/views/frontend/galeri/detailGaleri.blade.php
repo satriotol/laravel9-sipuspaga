@@ -31,7 +31,7 @@
                     <h3>{{ $gallery->title }}</h3>
                 </div>
                 @foreach ($gallery->gallery_images as $gallery_image)
-                    <div class="col-md-4 mb-5">
+                    <div class="col-md-4 col-sm-6 mb-5">
                         <a href="{{ asset('uploads/' . $gallery_image->image) }}" data-lightbox="example">
                             <img class="img-galeri" src="{{ asset('uploads/' . $gallery_image->image) }}" alt="">
                         </a>
