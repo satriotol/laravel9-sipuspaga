@@ -29,7 +29,8 @@
                                 <li class="{{ active_class(['home.index']) }}"><a
                                         href="{{ route('home.index') }}">Beranda</a>
                                 </li>
-                                <li class="{{ active_class(['berita']) }}"><a href="{{ route('berita') }}">Berita</a>
+                                <li class="{{ active_class(['berita', 'detailBerita']) }}"><a
+                                        href="{{ route('berita') }}">Berita</a>
                                 </li>
                                 <li class="{{ active_class(['ebook']) }}"><a href="{{ route('ebook') }}">E-Book</a>
                                 </li>

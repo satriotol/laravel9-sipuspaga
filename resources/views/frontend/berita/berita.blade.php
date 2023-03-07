@@ -43,7 +43,7 @@
                                             <a href="{{ route('detailBerita', $berita->id) }}">{{ $berita->title }}</a>
                                         </h3>
                                         <div class="read-more mt-30">
-                                            <a href="">Lihat Selengkapnya</a>
+                                            <a href="{{ route('detailBerita', $berita->id) }}">Lihat Selengkapnya</a>
                                         </div>
                                     </div>
                                 </article>
