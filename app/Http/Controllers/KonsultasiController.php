@@ -82,6 +82,13 @@ class KonsultasiController extends Controller
      */
     public function show(Konsultasi $konsultasi)
     {
+        $user = Auth::user();
+        if (Auth::user()->user_detail) {
+            if ($user->id != $konsultasi->user_id) {
+                session()->flash('bug', 'Bukan Data Anda');
+                return redirect(route('konsultasi.index'));
+            }
+        }
         $statuses = Status::all();
         return view('backend.konsultasi.show', compact('konsultasi', 'statuses'));
     }
@@ -94,6 +101,13 @@ class KonsultasiController extends Controller
      */
     public function edit(Konsultasi $konsultasi)
     {
+        $user = Auth::user();
+        if (Auth::user()->user_detail) {
+            if ($user->id != $konsultasi->user_id) {
+                session()->flash('bug', 'Bukan Data Anda');
+                return redirect(route('konsultasi.index'));
+            }
+        }
         $konsultasiCategories = KonsultasiCategory::all();
         return view('backend.konsultasi.create', compact('konsultasi', 'konsultasiCategories'));
     }
