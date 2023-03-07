@@ -6,6 +6,7 @@ use App\Models\Berita;
 use App\Models\BeritaCategory;
 use App\Models\Contact;
 use App\Models\Ebook;
+use App\Models\Gallery;
 use App\Models\Link;
 use App\Models\Setting;
 use App\Models\Slider;
@@ -50,5 +51,14 @@ class HomeController extends Controller
     {
         $ebooks = Ebook::all();
         return view('frontend.ebook.ebook', compact('ebooks'));
+    }
+    public function galeri()
+    {
+        $galleries = Gallery::paginate();
+        return view('frontend.galeri.galeri', compact('galleries'));
+    }
+    public function detailGaleri(Gallery $gallery)
+    {
+        return view('frontend.galeri.detailGaleri', compact('gallery'));
     }
 }

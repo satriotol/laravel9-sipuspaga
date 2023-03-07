@@ -26,13 +26,17 @@
                     <div class="main-menu text-right">
                         <nav id="mobile-menu">
                             <ul>
-                                <li class="{{ active_class(['home.index']) }}"><a
-                                        href="{{ route('home.index') }}">Beranda</a>
+                                <li class="{{ active_class(['home.index']) }}">
+                                    <a href="{{ route('home.index') }}">Beranda</a>
                                 </li>
-                                <li class="{{ active_class(['berita', 'detailBerita']) }}"><a
-                                        href="{{ route('berita') }}">Berita</a>
+                                <li class="{{ active_class(['berita', 'detailBerita']) }}">
+                                    <a href="{{ route('berita') }}">Berita</a>
                                 </li>
-                                <li class="{{ active_class(['ebook']) }}"><a href="{{ route('ebook') }}">E-Book</a>
+                                <li class="{{ active_class(['ebook']) }}">
+                                    <a href="{{ route('ebook') }}">E-Book</a>
+                                </li>
+                                <li class="{{ active_class(['galeri', 'detailGaleri']) }}">
+                                    <a href="{{ route('galeri') }}">Galeri</a>
                                 </li>
                                 <li><a href="{{ route('dashboard') }}" target="_blank"
                                         style="margin-right: 20px;">Login</a></li>

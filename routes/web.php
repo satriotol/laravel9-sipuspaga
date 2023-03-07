@@ -42,6 +42,8 @@ Route::get('/', [HomeController::class, 'index'])->name('home.index');
 Route::get('berita', [HomeController::class, 'berita'])->name('berita');
 Route::get('berita/detail/{beritum}', [HomeController::class, 'detailBerita'])->name('detailBerita');
 Route::get('ebook', [HomeController::class, 'ebook'])->name('ebook');
+Route::get('galeri', [HomeController::class, 'galeri'])->name('galeri');
+Route::get('galeri/detail/{gallery}}', [HomeController::class, 'detailGaleri'])->name('detailGaleri');
 Route::post('upload/store', [UploadController::class, 'store'])->name('upload.store');
 Route::delete('revert/image', [UploadController::class, 'revert'])->name('upload.revert');
 Route::group(['prefix' => 'admin', 'middleware' => ['auth']], function () {
@@ -65,9 +67,9 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth']], function () {
     Route::resource('contact', ContactController::class);
     Route::resource('crud', CrudController::class);
     // CRUD_GENERATOR
-Route::resource('gallery_image', GalleryImageController::class);
-Route::resource('gallery', GalleryController::class);
-Route::resource('ebook', EbookController::class);
+    Route::resource('gallery_image', GalleryImageController::class);
+    Route::resource('gallery', GalleryController::class);
+    Route::resource('ebook', EbookController::class);
     Route::resource('berita', BeritaController::class);
     Route::get('verification/test/updateOtp', [VerificationController::class, 'updateOtp'])->name('verification.updateOtp');
 
