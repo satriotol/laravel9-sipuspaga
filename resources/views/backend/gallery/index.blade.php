@@ -1,4 +1,7 @@
 @extends('backend_layouts.main')
+@push('style')
+    <link href="https://cdn.jsdelivr.net/npm/lightbox2@2.11.4/dist/css/lightbox.min.css" rel="stylesheet">
+@endpush
 @section('content')
     <div class="page-header">
         <h1 class="page-title">Gallery</h1>
@@ -33,11 +36,15 @@
                                     <tr>
                                         <td>{{ $gallery->title }}</td>
                                         <td>
-                                            <div class="row">
+                                            <div class="row gallery">
                                                 @foreach ($gallery->gallery_images as $gallery_image)
                                                     <div class="col-1">
-                                                        <img src="{{ asset('uploads/' . $gallery_image->image) }}"
-                                                            height="100px" alt="">
+                                                        <a href="{{ asset('uploads/' . $gallery_image->image) }}"
+                                                            data-lightbox="example">
+                                                            <img src="{{ asset('uploads/' . $gallery_image->image) }}"
+                                                                height="100px" alt="">
+
+                                                        </a>
                                                     </div>
                                                 @endforeach
                                             </div>
@@ -64,3 +71,12 @@
         </div>
     </div>
 @endsection
+@push('custom-scripts')
+    <script src="https://cdn.jsdelivr.net/npm/lightbox2@2.11.4/dist/js/lightbox.min.js"></script>
+    <script>
+        lightbox.option({
+            'resizeDuration': 200,
+            'wrapAround': true
+        })
+    </script>
+@endpush
