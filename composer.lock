@@ -4,8 +4,146 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "e73b9a3aba2a63d2ea01b72487839bba",
+    "content-hash": "defc8ce96cced3f869a6143b9dd02d08",
     "packages": [
+        {
+            "name": "arcanedev/log-viewer",
+            "version": "9.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/ARCANEDEV/LogViewer.git",
+                "reference": "ba0c14ef65c93fae6745ff0607a14d83d39e3faa"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/ARCANEDEV/LogViewer/zipball/ba0c14ef65c93fae6745ff0607a14d83d39e3faa",
+                "reference": "ba0c14ef65c93fae6745ff0607a14d83d39e3faa",
+                "shasum": ""
+            },
+            "require": {
+                "arcanedev/support": "^9.0",
+                "ext-json": "*",
+                "php": "^8.0",
+                "psr/log": "^1.0|^2.0|^3.0"
+            },
+            "require-dev": {
+                "laravel/framework": "^9.0",
+                "mockery/mockery": "^1.4.4",
+                "orchestra/testbench-core": "^7.0",
+                "phpunit/phpunit": "^9.5.10"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-develop": "10.x-dev"
+                },
+                "laravel": {
+                    "providers": [
+                        "Arcanedev\\LogViewer\\LogViewerServiceProvider",
+                        "Arcanedev\\LogViewer\\Providers\\DeferredServicesProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "files": [
+                    "helpers.php"
+                ],
+                "psr-4": {
+                    "Arcanedev\\LogViewer\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "ARCANEDEV",
+                    "email": "arcanedev.maroc@gmail.com",
+                    "homepage": "https://github.com/arcanedev-maroc",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Provides a Log Viewer for Laravel",
+            "homepage": "https://github.com/ARCANEDEV/LogViewer",
+            "keywords": [
+                "arcanedev",
+                "arcanesoft",
+                "laravel",
+                "log",
+                "log viewer",
+                "log-viewer",
+                "logviewer"
+            ],
+            "support": {
+                "issues": "https://github.com/ARCANEDEV/LogViewer/issues",
+                "source": "https://github.com/ARCANEDEV/LogViewer/tree/9.0.0"
+            },
+            "time": "2022-02-10T21:20:19+00:00"
+        },
+        {
+            "name": "arcanedev/support",
+            "version": "9.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/ARCANEDEV/Support.git",
+                "reference": "046d87b2d638cd0687b4ba06991947df2422970d"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/ARCANEDEV/Support/zipball/046d87b2d638cd0687b4ba06991947df2422970d",
+                "reference": "046d87b2d638cd0687b4ba06991947df2422970d",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/contracts": "^9.0",
+                "illuminate/support": "^9.0",
+                "php": "^8.0.2"
+            },
+            "require-dev": {
+                "laravel/framework": "^9.0",
+                "orchestra/testbench-core": "^7.0",
+                "phpunit/phpunit": "^9.5.8"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-develop": "10.x-dev"
+                }
+            },
+            "autoload": {
+                "files": [
+                    "helpers.php"
+                ],
+                "psr-4": {
+                    "Arcanedev\\Support\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "ARCANEDEV",
+                    "email": "arcanedev.maroc@gmail.com",
+                    "homepage": "https://github.com/arcanedev-maroc"
+                }
+            ],
+            "description": "ARCANEDEV Support Helpers",
+            "homepage": "https://github.com/ARCANEDEV/Support",
+            "keywords": [
+                "arcanedev",
+                "arcanesoft",
+                "laravel",
+                "support"
+            ],
+            "support": {
+                "issues": "https://github.com/ARCANEDEV/Support/issues",
+                "source": "https://github.com/ARCANEDEV/Support/tree/9.0.0"
+            },
+            "time": "2022-02-10T19:52:50+00:00"
+        },
         {
             "name": "barryvdh/laravel-dompdf",
             "version": "v2.0.1",
@@ -4002,6 +4140,68 @@
             "time": "2021-12-11T13:40:54+00:00"
         },
         {
+            "name": "satriotol/fastcrud",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/satriotol/fastcrud.git",
+                "reference": "18dd83e60854ea4b155beff8f9665ba40bad0d1b"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/satriotol/fastcrud/zipball/18dd83e60854ea4b155beff8f9665ba40bad0d1b",
+                "reference": "18dd83e60854ea4b155beff8f9665ba40bad0d1b",
+                "shasum": ""
+            },
+            "require": {
+                "arcanedev/log-viewer": "9.x",
+                "barryvdh/laravel-dompdf": "^2.0",
+                "doctrine/dbal": "^3.5",
+                "guzzlehttp/guzzle": "^7.2",
+                "laravel/framework": "^9.19",
+                "laravel/sanctum": "^3.2",
+                "laravel/tinker": "^2.7",
+                "laravelcollective/html": "^6.0",
+                "mews/captcha": "^3.2",
+                "owen-it/laravel-auditing": "^13.0",
+                "php": "^8.0.2",
+                "spatie/laravel-permission": "^5.7"
+            },
+            "default-branch": true,
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Satriotol\\Fastcrud\\FastCrudServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "files": [
+                    "src/app/helpers.php"
+                ],
+                "psr-4": {
+                    "Satriotol\\Fastcrud\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "satriotol",
+                    "email": "satriotol69@gmail.com"
+                }
+            ],
+            "description": "Laravel Fast Crud Buatan Satrio Tamvan",
+            "support": {
+                "issues": "https://github.com/satriotol/fastcrud/issues",
+                "source": "https://github.com/satriotol/fastcrud/tree/master"
+            },
+            "time": "2023-03-08T16:22:33+00:00"
+        },
+        {
             "name": "spatie/laravel-permission",
             "version": "5.9.1",
             "source": {
@@ -7078,16 +7278,16 @@
         },
         {
             "name": "laravel/sail",
-            "version": "v1.21.1",
+            "version": "v1.21.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/sail.git",
-                "reference": "fd8d04bc546457b504aa2b3c2d541840551f836f"
+                "reference": "19d6fe167e2389b41fe1b4ee52293d1eaf8a43fc"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/sail/zipball/fd8d04bc546457b504aa2b3c2d541840551f836f",
-                "reference": "fd8d04bc546457b504aa2b3c2d541840551f836f",
+                "url": "https://api.github.com/repos/laravel/sail/zipball/19d6fe167e2389b41fe1b4ee52293d1eaf8a43fc",
+                "reference": "19d6fe167e2389b41fe1b4ee52293d1eaf8a43fc",
                 "shasum": ""
             },
             "require": {
@@ -7139,7 +7339,7 @@
                 "issues": "https://github.com/laravel/sail/issues",
                 "source": "https://github.com/laravel/sail"
             },
-            "time": "2023-03-01T23:07:57+00:00"
+            "time": "2023-03-06T14:23:15+00:00"
         },
         {
             "name": "mockery/mockery",
@@ -7215,16 +7415,16 @@
         },
         {
             "name": "myclabs/deep-copy",
-            "version": "1.11.0",
+            "version": "1.11.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/myclabs/DeepCopy.git",
-                "reference": "14daed4296fae74d9e3201d2c4925d1acb7aa614"
+                "reference": "7284c22080590fb39f2ffa3e9057f10a4ddd0e0c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/myclabs/DeepCopy/zipball/14daed4296fae74d9e3201d2c4925d1acb7aa614",
-                "reference": "14daed4296fae74d9e3201d2c4925d1acb7aa614",
+                "url": "https://api.github.com/repos/myclabs/DeepCopy/zipball/7284c22080590fb39f2ffa3e9057f10a4ddd0e0c",
+                "reference": "7284c22080590fb39f2ffa3e9057f10a4ddd0e0c",
                 "shasum": ""
             },
             "require": {
@@ -7262,7 +7462,7 @@
             ],
             "support": {
                 "issues": "https://github.com/myclabs/DeepCopy/issues",
-                "source": "https://github.com/myclabs/DeepCopy/tree/1.11.0"
+                "source": "https://github.com/myclabs/DeepCopy/tree/1.11.1"
             },
             "funding": [
                 {
@@ -7270,7 +7470,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2022-03-03T13:19:32+00:00"
+            "time": "2023-03-08T13:26:56+00:00"
         },
         {
             "name": "nunomaduro/collision",
@@ -9340,7 +9540,9 @@
     ],
     "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": [],
+    "stability-flags": {
+        "satriotol/fastcrud": 20
+    },
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {

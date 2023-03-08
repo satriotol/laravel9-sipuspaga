@@ -107,6 +107,12 @@
                                 class="side-menu__icon fe fe-grid"></i><span class="side-menu__label">Slider</span></a>
                     </li>
                 @endcan
+                @can('page-index')
+                    <li>
+                        <a class="side-menu__item {{ active_class(['page.*']) }}" href="{{ route('page.index') }}"><i
+                                class="side-menu__icon fe fe-grid"></i><span class="side-menu__label">Halaman</span></a>
+                    </li>
+                @endcan
                 @can('link-index')
                     <li>
                         <a class="side-menu__item {{ active_class(['link.*']) }}" href="{{ route('link.index') }}"><i
