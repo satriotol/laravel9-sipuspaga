@@ -3,7 +3,9 @@
 
 <head>
     <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
     <title>PUSPAGA - Pusat Pembelajaran Keluarga</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="shortcut icon" type="image/x-icon" href="{{ asset('frontend_assets/img/logo/logokota.png') }}">
     <!-- Place favicon.ico in the root directory -->
 
@@ -24,11 +26,6 @@
     <link rel="stylesheet" href="{{ asset('frontend_assets/css/responsive.css') }}">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     @stack('css')
-    <style>
-        html {
-            scroll-behavior: smooth
-        }
-    </style>
 </head>
 
 <body>
