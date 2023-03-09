@@ -1,19 +1,9 @@
 @extends('frontend_layouts.main')
 @section('content')
-    <div class="slider-area">
-        <div class="slider-active">
-            @foreach ($sliders as $slider)
-                <div class="single-slider slider-height d-flex align-items-center"
-                    style="background-image:url({{ asset('uploads/' . $slider->image) }})">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-xl-10 col-lg-10 ">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            @endforeach
-        </div>
+    <div class="slider">
+        @foreach ($sliders as $slider)
+            <div><img src="{{ asset('uploads/' . $slider->image) }}" alt=""></div>
+        @endforeach
     </div>
     <div class="about-us-area pt-50" id="Beranda">
         <div class="container">
@@ -21,7 +11,7 @@
                 <div class="col-xl-6 col-lg-6">
                     <div class="about-us-img mb-30" data-aos="fade-right">
                         <img src="{{ asset('frontend_assets/img/about/puspaga4.jpg') }}" alt
-                            style="height: 400px; width: 600px;">
+                            style="width: 100%;object-fit:cover">
                     </div>
                 </div>
                 <div class="col-xl-6 col-lg-6">
@@ -191,56 +181,6 @@
                             </div>
                             <div class="features-02-link" data-aos="fade-up">
                                 {!! $setting->tujuan !!}
-                                {{-- <ul>
-                                        <li>
-                                            <div class="features-02-icon f-left l-0">
-                                                <i class="far fa-baby"></i>
-                                            </div>
-                                            <div class="features-02-info" style="padding-bottom: 1px;">
-                                                <h3>Anak</h3>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class="features-02-icon f-left l-0">
-                                                <i class="fal fa-users"></i>
-                                            </div>
-                                            <div class="features-02-info" style="padding-bottom: 1px;">
-                                                <h3>Keluarga</h3>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class="features-02-icon f-left">
-                                                <i class="far fa-user-friends"></i>
-                                            </div>
-                                            <div class="features-02-info" style="padding-bottom: 1px;">
-                                                <h3>Calon Keluarga</h3>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class="features-02-icon f-left">
-                                                <i class="far fa-school"></i>
-                                            </div>
-                                            <div class="features-02-info" style="padding-bottom: 1px;">
-                                                <h3>Sekolah</h3>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class="features-02-icon f-left">
-                                                <i class="fal fa-university"></i>
-                                            </div>
-                                            <div class="features-02-info" style="padding-bottom: 1px;">
-                                                <h3>Lembaga Penyedia Layanan Anak dan Keluarga</h3>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class="features-02-icon f-left">
-                                                <i class="far fa-city"></i>
-                                            </div>
-                                            <div class="features-02-info" style="padding-bottom: 1px;">
-                                                <h3>Pemerintah Daerah</h3>
-                                            </div>
-                                        </li>
-                                    </ul> --}}
                             </div>
                         </div>
                     </div>
@@ -261,40 +201,6 @@
                         </div>
                         <div class="features-02-link" data-aos="fade-up">
                             {!! $setting->tugas_fungsi !!}
-                            {{-- <ul>
-                                    <li>
-                                        <div class="features-02-icon f-left l-0">
-                                            <i class="fal fa-child"></i>
-                                        </div>
-                                        <div class="features-02-info" style="padding-bottom: 30px;">
-                                            <h3>Hak Sipil dan Kebebasan</h3>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="features-02-icon f-left l-0">
-                                            <i class="far fa-city"></i>
-                                        </div>
-                                        <div class="features-02-info" style="padding-bottom: 30px;">
-                                            <h3>Lingkungan, Keluarga, dan Pengasuhan Alternatif</h3>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="features-02-icon f-left">
-                                            <i class="far fa-medkit"></i>
-                                        </div>
-                                        <div class="features-02-info" style="padding-bottom: 30px;">
-                                            <h3>Kesehatan Dasar dan Kesejahteraan</h3>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="features-02-icon f-left">
-                                            <i class="far fa-school"></i>
-                                        </div>
-                                        <div class="features-02-info" style="padding-bottom: 30px;">
-                                            <h3>Pendidikan, Pemanfaatan Waktu Luang, dan Kegiatan Budaya</h3>
-                                        </div>
-                                    </li>
-                                </ul> --}}
                         </div>
                     </div>
                 </div>
