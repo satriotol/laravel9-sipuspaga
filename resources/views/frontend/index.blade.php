@@ -27,8 +27,9 @@
                 <div class="col-xl-6 col-lg-6">
                     <div class="about-us-wrapper mb-30" data-aos="fade-left">
                         <div class="section-title pos-rel mb-35">
-                            <h1></h1>
-                            <span class="line">Pengertian Dan Visi Misi</span>
+                            <span>
+                                Pengertian Dan Visi Misi
+                            </span>
                             <h2>SELAMAT DATANG DI PUSPAGA</h2>
                         </div>
                         <div class="setting">
