@@ -15,7 +15,7 @@
                     </div>
                 </div>
                 <div class="col-xl-6 col-lg-6">
-                    <div class="about-us-wrapper mb-30" data-aos="fade-left">
+                    <div class="about-us-wrapper mb-30" data-aos="fade-up">
                         <div class="section-title pos-rel mb-35">
                             <span>
                                 Pengertian Dan Visi Misi

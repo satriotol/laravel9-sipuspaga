@@ -5,8 +5,9 @@
                 <div class="col-xl-4 col-lg-3">
                     <div class="header-left mr-40">
                         <div class="logo logo-mt f-left">
-                            <a href="{{ route('home.index') }}"><img
-                                    src="{{ asset('frontend_assets/img/logo/logopuspaga.png') }}" alt="" /></a>
+                            <a href="{{ route('home.index') }}">
+                                <img src="{{ asset('frontend_assets/img/logo/logopuspaga.png') }}" alt="" />
+                            </a>
                         </div>
                     </div>
                 </div>
