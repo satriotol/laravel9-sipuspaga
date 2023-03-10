@@ -18,9 +18,8 @@
     <link rel="stylesheet" href="{{ asset('frontend_assets/css/themify-icons.css') }}">
     <link rel="stylesheet" href="{{ asset('frontend_assets/css/meanmenu.css') }}">
     <link rel="stylesheet" href="{{ asset('frontend_assets/css/slick.css') }}">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css"
-        integrity="sha512-17EgCFERpgZKcm0j0fEq1YCJuyAWdz9KUtv1EjVuaOz8pDnh/0nZxmU6BBXwaaxqoi9PQXnRWqlcDB027hgv9A=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
+
     <link rel="stylesheet" href="{{ asset('frontend_assets/css/default.css') }}">
     <link rel="stylesheet" href="{{ asset('frontend_assets/css/main.css') }}">
     <link rel="stylesheet" href="{{ asset('frontend_assets/css/responsive.css') }}">
@@ -51,24 +50,25 @@
         <script src="{{ asset('frontend_assets/js/jquery.magnific-popup.min.js') }}"></script>
         <script src="{{ asset('frontend_assets/js/plugins.js') }}"></script>
         <script src="{{ asset('frontend_assets/js/main.js') }}"></script>
+        <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
         <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
         <script>
             AOS.init();
         </script>
         <script>
-            $('.setting').slick({
-                dots: true,
-                infinite: true,
-                speed: 300,
-                slidesToShow: 1,
-                adaptiveHeight: true
+            $('.setting').flickity({
+                // options
+                cellAlign: 'left',
+                contain: true,
+                prevNextButtons: false,
+                wrapAround: true
             });
-            $('.slider').slick({
-                dots: true,
-                infinite: true,
-                speed: 300,
-                slidesToShow: 1,
-                adaptiveHeight: true
+            $('.slider').flickity({
+                // options
+                cellAlign: 'left',
+                contain: true,
+                draggable: true,
+                wrapAround: true
             });
         </script>
         @stack('script')
