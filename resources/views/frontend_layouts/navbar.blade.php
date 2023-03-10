@@ -6,7 +6,7 @@
                     <div class="header-left mr-40">
                         <div class="logo logo-mt f-left">
                             <a href="{{ route('home.index') }}">
-                                <img src="{{ asset('frontend_assets/img/logo/logopuspaga.png') }}" alt="" />
+                                <img src="{{ asset('uploads/' . $setting->image) }}" alt="" />
                             </a>
                         </div>
                     </div>

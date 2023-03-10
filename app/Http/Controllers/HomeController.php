@@ -16,15 +16,15 @@ class HomeController extends Controller
 {
     public function __construct()
     {
+        view()->share('setting', Setting::first());
         view()->share('contactPhone', Contact::getPhoneContact());
         view()->share('links', Link::orderBy('id', 'desc')->get());
         view()->share('contacts', Contact::orderBy('id', 'desc')->get());
     }
     public function index()
     {
-        $setting = Setting::first();
         $sliders = Slider::orderBy('id', 'desc')->get();
-        return view('frontend.index', compact('sliders', 'setting'));
+        return view('frontend.index', compact('sliders'));
     }
     public function berita(Request $request)
     {
