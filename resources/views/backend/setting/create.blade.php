@@ -74,6 +74,7 @@
                         <div class="form-group">
                             {!! Form::label('logo', 'Logo') !!}
                             {!! Form::file('logo', ['class' => 'form-control upload-logo']) !!}
+                            <small class="text-danger">Ukuran Rekomendasi Adalah 162 x 50 pixel</small>
                             @isset($setting)
                                 <img src="{{ asset('uploads/' . $setting->logo) }}" height="100px" alt="">
                             @endisset
