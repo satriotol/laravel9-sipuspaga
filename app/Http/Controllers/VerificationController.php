@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Jobs\KirimWaJob;
 use App\Models\Verification;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -64,9 +65,12 @@ class VerificationController extends Controller
         $verification = Verification::where('status', 'REQUEST')->where('user_id', $user->id)->first();
         $otp_code = random_int(100000, 999999);
 
-        $whatsapp = new WhatsappController;
         $message = "Kode OTP Anda Adalah " . $otp_code;
-        $whatsapp->kirimPesan($message, $user->phone_number);
+        $asset = [
+            $message,
+            $user->phone_number
+        ];
+        KirimWaJob::dispatch($asset);
         $verification->update([
             'otp_code' => $otp_code
         ]);

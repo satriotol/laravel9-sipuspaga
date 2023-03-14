@@ -19,7 +19,11 @@ class DashboardController extends Controller
 {
     public function dashboard()
     {
-        return view('backend.dashboard');
+        if (Auth::user()->getUserRole(Auth::user()) == 'USER-CONFIRMATION') {
+            return view('backend.dashboard');
+        } else {
+            return redirect(route('konsultasi.index'));
+        }
     }
     public function storeUserDetail(Request $request)
     {

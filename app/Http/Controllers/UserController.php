@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Jobs\KirimWaJob;
 use App\Models\User;
 use App\Models\Verification;
 use Illuminate\Http\Request;
@@ -105,20 +106,25 @@ class UserController extends Controller
         if ($request->password) {
             $data['password'] = Hash::make($request->password);
         }
-        if ($user->phone_number != $request->phone_number) {
-            $verification = Verification::where('user_id', $user->id)->first();
-            $otp_code = random_int(100000, 999999);
-            $whatsapp = new WhatsappController;
-            $message = "Kode OTP Anda Adalah " . $otp_code;
-            $whatsapp->kirimPesan($message, $request->phone_number);
-            $verification->update([
-                'status' => 'REQUEST',
-                'otp_code' => $otp_code
-            ]);
-            DB::table('model_has_roles')->where('model_id', $user->id)->delete();
-            $user->assignRole('USER-CONFIRMATION');
-            $user->update($data);
-            return redirect(route('dashboard'));
+        if (Auth::user()->getUserRole(Auth::user()) == 'USER-CONFIRMATION' || Auth::user()->getUserRole(Auth::user()) == 'USER') {
+            if ($user->phone_number != $request->phone_number) {
+                $verification = Verification::where('user_id', $user->id)->first();
+                $otp_code = random_int(100000, 999999);
+                $message = "Kode OTP Anda Adalah " . $otp_code;
+                $asset = [
+                    $message,
+                    $request->phone_number
+                ];
+                KirimWaJob::dispatch($asset);
+                $verification->update([
+                    'status' => 'REQUEST',
+                    'otp_code' => $otp_code
+                ]);
+                DB::table('model_has_roles')->where('model_id', $user->id)->delete();
+                $user->assignRole('USER-CONFIRMATION');
+                $user->update($data);
+                return redirect(route('dashboard'));
+            }
         }
         $user->update($data);
         if ($request->roles) {
