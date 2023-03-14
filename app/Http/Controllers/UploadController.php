@@ -9,11 +9,6 @@ class UploadController extends Controller
 {
     public function store(Request $request)
     {
-        $request->validate([
-            'file' => 'mimes:pdf',
-            'logo' => 'image',
-            'images.*' => 'image'
-        ]);
         if ($request->hasFile('file')) {
             $file = $request->file('file');
             $name = $file->getClientOriginalName();
