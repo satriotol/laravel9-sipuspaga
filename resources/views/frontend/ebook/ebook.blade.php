@@ -10,37 +10,24 @@
     <!-- blog-area start -->
     <section class="blog-area pt-120 pb-80">
         <div class="container">
-            <table id="users-table">
+            <table class="table" id="users-table">
                 <thead>
                     <th>Diupload Tanggal</th>
                     <th>Nama</th>
                     <th>File</th>
                 </thead>
+                <tbody>
+                    @foreach ($ebooks as $ebook)
+                        <tr>
+                            <td>{{ $ebook->created_at }}</td>
+                            <td>{{ $ebook->name }}</td>
+                            <td><a href="{{ asset('uploads/' . $ebook->file) }}" target="_blank">Buka File</a></td>
+                        </tr>
+                    @endforeach
+                </tbody>
             </table>
         </div>
     </section>
 @endsection
 @push('script')
-    <script src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.min.js"></script>
-    <script>
-        $(function() {
-            $('#users-table').DataTable({
-                processing: true,
-                serverSide: true,
-                ajax: '{{ route('ebook.getEbook') }}',
-                columns: [{
-                    data: "created_at",
-                    name: "created_at"
-                }, {
-                    data: 'name',
-                    name: 'name'
-                }, {
-                    data: 'action',
-                    name: 'action',
-                    orderable: false,
-                    searchable: false
-                }, ]
-            });
-        });
-    </script>
 @endpush
