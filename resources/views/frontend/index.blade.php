@@ -1,9 +1,16 @@
 @extends('frontend_layouts.main')
 @section('content')
-    <div class="slider">
-        @foreach ($sliders as $slider)
-            <div><img src="{{ asset('uploads/' . $slider->image) }}" alt=""></div>
-        @endforeach
+    <div class="row">
+        <div class="col-md-4 p-0">
+            <img src="" alt="">
+        </div>
+        <div class="col-md-8 p-0">
+            <div class="slider">
+                @foreach ($sliders as $slider)
+                    <div><img src="{{ asset('uploads/' . $slider->image) }}" alt=""></div>
+                @endforeach
+            </div>
+        </div>
     </div>
     <div class="about-us-area pt-50" id="Beranda">
         <div class="container">

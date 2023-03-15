@@ -55,11 +55,17 @@ class SettingController extends Controller
             'misi' => 'required',
             'tujuan' => 'required',
             'tugas_fungsi' => 'required',
+            'slider_image' => 'required',
         ]);
         $logo = TemporaryFile::where('filename', $request->logo)->first();
         if ($logo) {
             $data['logo'] = $logo->filename;
             $logo->delete();
+        };
+        $slider_image = TemporaryFile::where('filename', $request->slider_image)->first();
+        if ($slider_image) {
+            $data['slider_image'] = $slider_image->filename;
+            $slider_image->delete();
         };
         Setting::create($data);
         session()->flash('success');
@@ -104,11 +110,17 @@ class SettingController extends Controller
             'misi' => 'required',
             'tujuan' => 'required',
             'tugas_fungsi' => 'required',
+            'slider_image' => 'nullable',
         ]);
         $logo = TemporaryFile::where('filename', $request->logo)->first();
         if ($logo) {
             $data['logo'] = $logo->filename;
             $logo->delete();
+        };
+        $slider_image = TemporaryFile::where('filename', $request->slider_image)->first();
+        if ($slider_image) {
+            $data['slider_image'] = $slider_image->filename;
+            $slider_image->delete();
         };
         $setting->update($data);
         session()->flash('success');

@@ -71,14 +71,32 @@
                                 'class' => 'form-control summernote',
                             ]) !!}
                         </div>
-                        <div class="form-group">
-                            {!! Form::label('logo', 'Logo') !!}
-                            {!! Form::file('logo', ['class' => 'form-control upload-logo']) !!}
-                            <small class="text-danger">Ukuran Rekomendasi Adalah 162 x 50 pixel</small>
-                            @isset($setting)
-                                <img src="{{ asset('uploads/' . $setting->logo) }}" height="100px" alt="">
-                            @endisset
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    {!! Form::label('logo', 'Logo') !!}
+                                    {!! Form::file('logo', ['class' => 'form-control upload-logo']) !!}
+                                    <small class="text-danger">Ukuran Rekomendasi Adalah 162 x 50 pixel</small>
+                                    @isset($setting)
+                                        <br>
+                                        <img src="{{ asset('uploads/' . $setting->logo) }}" height="100px" alt="">
+                                    @endisset
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    {!! Form::label('slider_image', 'Gambar Slider') !!}
+                                    {!! Form::file('slider_image', ['class' => 'form-control upload-icon']) !!}
+                                    <small class="text-danger">Ukuran Rekomendasi Adalah 162 x 50 pixel</small>
+                                    @isset($setting)
+                                        <br>
+                                        <img src="{{ asset('uploads/' . $setting->slider_image) }}" height="100px" alt="">
+                                    @endisset
+                                </div>
+                            </div>
                         </div>
+
+
                         <div class="text-end">
                             <a class="btn btn-warning" href="{{ url()->previous() }}">Kembali</a>
                             <button class="btn btn-primary" type="submit">Submit</button>

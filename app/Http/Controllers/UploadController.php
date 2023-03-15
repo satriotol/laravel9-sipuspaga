@@ -54,6 +54,17 @@ class UploadController extends Controller
             ]);
             return $file;
         };
+        if ($request->hasFile('slider_image')) {
+            $file = $request->file('slider_image');
+            $name = $file->getClientOriginalName();
+            $file_name = date('mdYHis') . '-' . $name;
+            $file = $file->storeAs('slider_image', $file_name, 'public_uploads');
+
+            TemporaryFile::create([
+                'filename' => $file
+            ]);
+            return $file;
+        };
     }
     public function revert(Request $request)
     {
