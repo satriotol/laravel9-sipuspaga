@@ -30,7 +30,7 @@
                                     {!! Form::label('pengertian', 'Pengertian') !!}
                                     {!! Form::textarea('pengertian', isset($setting) ? $setting->pengertian : @old('pengertian'), [
                                         'required',
-                                        'class' => 'form-control',
+                                        'class' => 'form-control summernote',
                                     ]) !!}
                                 </div>
                             </div>
@@ -50,7 +50,7 @@
                                     {!! Form::label('visi', 'Visi') !!}
                                     {!! Form::textarea('visi', isset($setting) ? $setting->visi : @old('visi'), [
                                         'required',
-                                        'class' => 'form-control',
+                                        'class' => 'form-control summernote',
                                     ]) !!}
                                 </div>
                             </div>
@@ -59,7 +59,7 @@
                                     {!! Form::label('misi', 'Misi') !!}
                                     {!! Form::textarea('misi', isset($setting) ? $setting->misi : @old('misi'), [
                                         'required',
-                                        'class' => 'form-control',
+                                        'class' => 'form-control summernote',
                                     ]) !!}
                                 </div>
                             </div>
