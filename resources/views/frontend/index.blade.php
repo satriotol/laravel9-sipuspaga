@@ -65,62 +65,33 @@
                         <span class="border-left-1"></span>
                         <span>Berita</span>
                         <span class="border-right-1"></span>
-                        <h2>Publikasi Terakhir</h2>
+                        <h2>Publikasi SIPUSPAGA</h2>
                     </div>
                 </div>
             </div>
             <div class="row">
-                <div class="col-xl-4 col-lg-4 col-md-6">
-                    <div class="blog-wrapper mb-30">
-                        <div class="blog-img">
-                            <a href="blog-details.html"><img src="frontend_assets/img/blog/01.jpg" alt=""></a>
-                            <div class="blog-date">
-                                <a href="blog-details.html">03 <br> Feb</a>
-                            </div>
-                            <div class="blog-text">
-                                <h3><a href="blog-details.html">Web Development Reading List Images Web Notification Angular
-                                        Code Splitting</a></h3>
-                                <div class="b-button b-02-button">
-                                    <a href="blog-details.html">Read More</a>
+                @foreach ($beritas as $berita)
+                    <div class="col-xl-4 col-lg-4 col-md-6">
+                        <div class="blog-wrapper mb-30">
+                            <div class="blog-img">
+                                <a href="{{ route('detailBerita', $berita->id) }}"><img
+                                        src="{{ asset('uploads/' . $berita->image) }}" alt=""></a>
+                                <div class="blog-date">
+                                    <a href="{{ route('detailBerita', $berita->id) }}">03 <br> Feb</a>
+                                </div>
+                                <div class="blog-text">
+                                    <h3 class="mb-0"><a
+                                            href="{{ route('detailBerita', $berita->id) }}">{{ $berita->title }}</a></h3>
+                                    <small>{{ $berita->created_at }}</small>
+                                    <div>{!! Str::limit($berita->content, 500, '... ', true) !!}</div>
+                                    <div class="b-button b-02-button">
+                                        <a href="{{ route('detailBerita', $berita->id) }}">Baca Lebih Lanjut</a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-xl-4 col-lg-4 col-md-6">
-                    <div class="blog-wrapper mb-30">
-                        <div class="blog-img">
-                            <a href="blog-details.html"><img src="frontend_assets/img/blog/02.jpg" alt=""></a>
-                            <div class="blog-date">
-                                <a href="blog-details.html">03 <br> Feb</a>
-                            </div>
-                            <div class="blog-text">
-                                <h3><a href="blog-details.html">Taming Advanced Color Pa Lettes In Photoshop, Sketchs And
-                                        Affinity Designer</a></h3>
-                                <div class="b-button b-02-button">
-                                    <a href="blog-details.html">Read More</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-4 col-lg-4 col-md-6">
-                    <div class="blog-wrapper mb-30">
-                        <div class="blog-img">
-                            <a href="blog-details.html"><img src="frontend_assets/img/blog/03.jpg" alt=""></a>
-                            <div class="blog-date">
-                                <a href="blog-details.html">03 <br> Feb</a>
-                            </div>
-                            <div class="blog-text">
-                                <h3><a href="blog-details.html">How To Protect Your Users With The Privacy By Design
-                                        Framework Web Notific</a></h3>
-                                <div class="b-button b-02-button">
-                                    <a href="blog-details.html">Read More</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                @endforeach
             </div>
         </div>
     </div>

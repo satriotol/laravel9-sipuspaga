@@ -24,7 +24,8 @@ class HomeController extends Controller
     public function index()
     {
         $sliders = Slider::orderBy('id', 'desc')->get();
-        return view('frontend.index', compact('sliders'));
+        $beritas = Berita::orderBy('id', 'desc')->paginate(3);
+        return view('frontend.index', compact('sliders', 'beritas'));
     }
     public function berita(Request $request)
     {
