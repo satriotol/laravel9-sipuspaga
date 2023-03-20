@@ -33,13 +33,19 @@
                         <div class="setting">
                             <div class="about-us-text pos-rel">
                                 <span>Pengertian Puspaga</span>
-                                <p style="font-size:18px">{{ $setting->pengertian }}</p>
+                                <br>
+                                {!! $setting->pengertian !!}
                             </div>
                             <div class="about-us-text pos-rel">
                                 <span>Visi Puspaga</span>
-                                <p style="font-size:18px">{{ $setting->visi }}</p>
+                                <div>
+                                    {!! $setting->visi !!}
+                                </div>
+                                <br>
                                 <span>Misi Puspaga</span>
-                                <p style="font-size:18px">{{ $setting->misi }}</p>
+                                <div>
+                                    {!! $setting->misi !!}
+                                </div>
                             </div>
                         </div>
                         <div class="newsletter-form">
@@ -51,121 +57,66 @@
             </div>
         </div>
     </div>
-    <div class="section-area theme-bg pt-125">
+    <div class="blog-area">
         <div class="container">
             <div class="row">
-                <div class="col-xl-8 col-lg-8 offset-lg-2 offset-xl-2">
-                    <div class="section-title white-title section-2 text-center pos-rel mr-80 ml-80">
-                        <span class="border-left-1 border-left-white"></span>
-                        <span>Tujuan</span>
-                        <span class="border-right-1 border-right-white"></span>
-                        <h2>Kami Sangat Terpercaya Dalam Pelayanan Kami</h2>
+                <div class="col-xl-6 col-lg-6 offset-lg-3 offset-xl-3">
+                    <div class="section-title section-2 text-center pos-rel ml-60 mr-60 mb-80">
+                        <span class="border-left-1"></span>
+                        <span>Berita</span>
+                        <span class="border-right-1"></span>
+                        <h2>Publikasi Terakhir</h2>
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
-    <div class="services-area services-padding ml-160 mr-160" id="siapa_melayani">
-        <div class="container-fluid">
-            <div class="row services-active">
-                <div class="col-xl-12">
-                    <div class="services-wrapper text-center mb-30">
-                        <div class="services-img pos-rel">
-                            <img src="{{ asset('frontend_assets/img/hover/hover1.jpg') }}" alt="">
-                            <div class="services-text" style="top: 0; text-align: left; height:100%">
-                                <h1>01</h1>
-                                <h2>Siapa yang Melayani?</h2>
-                                <p>1. Minimal Dua Tenaga Profesi (Psikolog)<br>2. Dibantu Satu Tenaga Administrasi
-                                </p>
+            <div class="row">
+                <div class="col-xl-4 col-lg-4 col-md-6">
+                    <div class="blog-wrapper mb-30">
+                        <div class="blog-img">
+                            <a href="blog-details.html"><img src="frontend_assets/img/blog/01.jpg" alt=""></a>
+                            <div class="blog-date">
+                                <a href="blog-details.html">03 <br> Feb</a>
+                            </div>
+                            <div class="blog-text">
+                                <h3><a href="blog-details.html">Web Development Reading List Images Web Notification Angular
+                                        Code Splitting</a></h3>
+                                <div class="b-button b-02-button">
+                                    <a href="blog-details.html">Read More</a>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-xl-12" id="bagaimana">
-                    <div class="services-wrapper text-center mb-30">
-                        <div class="services-img pos-rel">
-                            <img src="{{ asset('frontend_assets/img/hover/hover1.jpg') }}" alt="">
-                            <div class="services-text" style="top: 0; text-align: left; height:100%">
-                                <h1>02</h1>
-                                <h2>Bagaimana Melayaninya?</h2>
-                                <p>1. Pengguna Datang ke Puspaga.<br>2. Psiko-edukasi ke Komunitas Keluarga dan
-                                    "Jemput Bola"; Out Reach Terutama untuk Kelompok Keluarga Rentan.</p>
+                <div class="col-xl-4 col-lg-4 col-md-6">
+                    <div class="blog-wrapper mb-30">
+                        <div class="blog-img">
+                            <a href="blog-details.html"><img src="frontend_assets/img/blog/02.jpg" alt=""></a>
+                            <div class="blog-date">
+                                <a href="blog-details.html">03 <br> Feb</a>
+                            </div>
+                            <div class="blog-text">
+                                <h3><a href="blog-details.html">Taming Advanced Color Pa Lettes In Photoshop, Sketchs And
+                                        Affinity Designer</a></h3>
+                                <div class="b-button b-02-button">
+                                    <a href="blog-details.html">Read More</a>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-xl-12" id="dimana">
-                    <div class="services-wrapper text-center mb-30">
-                        <div class="services-img pos-rel">
-                            <img src="{{ asset('frontend_assets/img/hover/hover1.jpg') }}" alt="">
-                            <div class="services-text" style="top: 0; text-align: left; height:100%">
-                                <h1>03</h1>
-                                <h2>Dimana Melayaninya?</h2>
-                                <p>1. Puspaga Provinsi (Rujukan Lanjutan)<br>2. Puspaga Kab/Kota (Kecamatan, Desa,
-                                    Kelurahan)<br>3. Pengguna/Keluarga</p>
+                <div class="col-xl-4 col-lg-4 col-md-6">
+                    <div class="blog-wrapper mb-30">
+                        <div class="blog-img">
+                            <a href="blog-details.html"><img src="frontend_assets/img/blog/03.jpg" alt=""></a>
+                            <div class="blog-date">
+                                <a href="blog-details.html">03 <br> Feb</a>
                             </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-12" id="kapan">
-                    <div class="services-wrapper text-center mb-30">
-                        <div class="services-img pos-rel">
-                            <img src="{{ asset('frontend_assets/img/hover/hover1.jpg') }}" alt="">
-                            <div class="services-text" style="top: 0; text-align: left; height:100%">
-                                <h1>04</h1>
-                                <h2>Kapan Melayaninya?</h2>
-                                <p>1. Jam Kerja<br>2. Di Luar Jam Kerja (Sistem Piket)</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-12">
-                    <div class="services-wrapper text-center mb-30">
-                        <div class="services-img pos-rel">
-                            <img src="{{ asset('frontend_assets/img/hover/hover1.jpg') }}" alt="">
-                            <div class="services-text" style="top: 0; text-align: left; height:100%">
-                                <h1>01</h1>
-                                <h2>Siapa yang Melayani?</h2>
-                                <p>1. Minimal Dua Tenaga Profesi (Psikolog)<br>2. Dibantu Satu Tenaga Administrasi
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-12">
-                    <div class="services-wrapper text-center mb-30">
-                        <div class="services-img pos-rel">
-                            <img src="{{ asset('frontend_assets/img/hover/hover1.jpg') }}" alt="">
-                            <div class="services-text" style="top: 0; text-align: left; height:100%">
-                                <h1>02</h1>
-                                <h2>Bagaimana Melayaninya?</h2>
-                                <p>1. Pengguna Datang ke Puspaga.<br>2. Psiko-edukasi ke Komunitas Keluarga dan
-                                    "Jemput Bola"; Out Reach Terutama untuk Kelompok Keluarga Rentan.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-12">
-                    <div class="services-wrapper text-center mb-30">
-                        <div class="services-img pos-rel">
-                            <img src="{{ asset('frontend_assets/img/hover/hover1.jpg') }}" alt="">
-                            <div class="services-text" style="top: 0; text-align: left; height:100%">
-                                <h1>03</h1>
-                                <h2>Dimana Melayaninya?</h2>
-                                <p>1. Puspaga Provinsi (Rujukan Lanjutan)<br>2. Puspaga Kab/Kota (Kecamatan, Desa,
-                                    Kelurahan)<br>3. Pengguna/Keluarga</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-12">
-                    <div class="services-wrapper text-center mb-30">
-                        <div class="services-img pos-rel">
-                            <img src="{{ asset('frontend_assets/img/hover/hover1.jpg') }}" alt="">
-                            <div class="services-text" style="top: 0; text-align: left; height:100%">
-                                <h1>04</h1>
-                                <h2>Kapan Melayaninya?</h2>
-                                <p>1. Jam Kerja<br>2. Di Luar Jam Kerja (Sistem Piket)</p>
+                            <div class="blog-text">
+                                <h3><a href="blog-details.html">How To Protect Your Users With The Privacy By Design
+                                        Framework Web Notific</a></h3>
+                                <div class="b-button b-02-button">
+                                    <a href="blog-details.html">Read More</a>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -174,16 +125,12 @@
         </div>
     </div>
     <div class="features-02-area pos-rel grey-bg mt-125">
-        <div class="features-bg-img" style="background-image:url({{ asset('frontend_assets/img/bg/bg-04.jpg') }})">
-            <div class="play-video-icon">
-            </div>
-        </div>
-        <div class="container-fluid" id="siapadilayani">
+        <div class="container pt-100 pb-100">
             <div class="row">
-                <div class="col-xl-6 offset-xl-6 col-lg-6 offset-lg-6">
-                    <div class="features-02-wrapper">
+                <div class="col-xl-6 col-lg-6">
+                    <div>
                         <div class="about-us-wrapper">
-                            <div class="section-title pos-rel mb-35">
+                            <div class="section-title">
                                 <span>Tujuan</span>
                                 <h2>Tujuan Puspaga</h2>
                             </div>
@@ -193,17 +140,9 @@
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
-    </div>
-    <div class="skills-area grey-bg pos-rel" id="apa">
-        <div class="skills-bg-img" style="background-image:url({{ asset('frontend_assets/img/bg/bg-05.jpg') }})">
-        </div>
-        <div class="container-fluid">
-            <div class="row">
                 <div class="col-xl-6 col-lg-6">
-                    <div class="skills-wrapper">
-                        <div class="section-title pos-rel mb-40">
+                    <div>
+                        <div class="section-title">
                             <span>Tugas Fungsi</span>
                             <h2>Tugas Fungsi Puspaga</h2>
                         </div>
@@ -219,14 +158,14 @@
         style="background-image:url({{ asset('frontend_assets/img/bg/bg-04.jpg') }})">
         <div class="container">
             <div class="row">
-                <div class="col-xl-6 col-lg-6">
+                <div class="col-md-6">
                     <div class="newsletters-text mb-30">
                         <div class="section-title white-title pos-rel mb-35">
                             <h2>Buat Konsultasi Anda</h2>
                         </div>
                     </div>
                 </div>
-                <div class="col-xl-6 col-lg-6">
+                <div class="col-md-6">
                     <div class="single-newsletters mb-30">
                         <div class="newsletter-form">
                             <a href="{{ route('dashboard') }}" target="_blank" class="btn blue-success">Buat
@@ -234,18 +173,6 @@
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
-    </div>
-    <div class="modal fade" id="search-modal" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <form>
-                    <input type="text" placeholder="Search here...">
-                    <button>
-                        <i class="fa fa-search"></i>
-                    </button>
-                </form>
             </div>
         </div>
     </div>
