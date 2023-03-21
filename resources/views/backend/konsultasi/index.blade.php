@@ -25,7 +25,7 @@
                                 <tr>
                                     <th>Tanggal</th>
                                     <th>Kategori</th>
-                                    <th>User</th>
+                                    <th>Pelapor</th>
                                     <th>Status</th>
                                     <th>Action</th>
                                 </tr>
