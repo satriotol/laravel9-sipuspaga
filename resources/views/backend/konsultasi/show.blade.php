@@ -65,15 +65,22 @@
                             <td>{{ $konsultasi->konsultasi_category->name }}</td>
                         </tr>
                         <tr>
-                            <td>Catatan</td>
-                            <td>:</td>
-                            <td>{{ $konsultasi->message }}</td>
-                        </tr>
-                        <tr>
                             <td>Nama</td>
                             <td>:</td>
                             <td>{{ $konsultasi->user->name }}</td>
                         </tr>
+                        <tr>
+                            <td>Catatan</td>
+                            <td>:</td>
+                            <td>{{ $konsultasi->message }}</td>
+                        </tr>
+                        @if ($konsultasi->file)
+                            <tr>
+                                <td>Data Dukung</td>
+                                <td>:</td>
+                                <td><a href="{{ asset('uploads/' . $konsultasi->file) }}" target="_blank">Buka File</a></td>
+                            </tr>
+                        @endif
                     </table>
                 </div>
             </div>

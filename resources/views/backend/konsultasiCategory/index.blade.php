@@ -24,7 +24,7 @@
                             <thead>
                                 <tr>
                                     <th>Nama</th>
-                                    <th>OPD</th>
+                                    <th>Dinas</th>
                                     <th>Action</th>
                                 </tr>
                             </thead>
@@ -32,7 +32,7 @@
                                 @foreach ($konsultasiCategories as $konsultasiCategory)
                                     <tr>
                                         <td>{{ $konsultasiCategory->name }}</td>
-                                        <td>{{ $konsultasiCategory->opd->nama_opd }}</td>
+                                        <td>{{ $konsultasiCategory->network->name ?? '' }}</td>
                                         <td>
                                             <form
                                                 action="{{ route('konsultasiCategory.destroy', $konsultasiCategory->id) }}"

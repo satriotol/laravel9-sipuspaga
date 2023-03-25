@@ -9,11 +9,11 @@ class KonsultasiCategory extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['name', 'opd_id'];
+    protected $fillable = ['name', 'network_id'];
 
-    public function opd()
+    public function network()
     {
-        return $this->belongsTo(Opd::class, 'opd_id', 'id');
+        return $this->belongsTo(Network::class, 'network_id', 'id');
     }
     public function konsultasis()
     {

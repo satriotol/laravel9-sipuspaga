@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\KonsultasiCategory;
+use App\Models\Network;
 use App\Models\Opd;
 use Illuminate\Http\Request;
 
@@ -33,8 +34,8 @@ class KonsultasiCategoryController extends Controller
      */
     public function create()
     {
-        $opds = Opd::all();
-        return view('backend.konsultasiCategory.create', compact('opds'));
+        $networks = Network::all();
+        return view('backend.konsultasiCategory.create', compact('networks'));
     }
 
     /**
@@ -47,7 +48,7 @@ class KonsultasiCategoryController extends Controller
     {
         $data = $request->validate([
             'name' => 'required',
-            'opd_id' => 'required',
+            'network_id' => 'required',
         ]);
 
         KonsultasiCategory::create($data);
@@ -74,8 +75,8 @@ class KonsultasiCategoryController extends Controller
      */
     public function edit(KonsultasiCategory $konsultasiCategory)
     {
-        $opds = Opd::all();
-        return view('backend.konsultasiCategory.create', compact('konsultasiCategory', 'opds'));
+        $networks = Network::all();
+        return view('backend.konsultasiCategory.create', compact('konsultasiCategory', 'networks'));
     }
 
     /**
@@ -89,7 +90,7 @@ class KonsultasiCategoryController extends Controller
     {
         $data = $request->validate([
             'name' => 'required',
-            'opd_id' => 'required'
+            'network_id' => 'required'
         ]);
         $konsultasiCategory->update($data);
         session()->flash('success');

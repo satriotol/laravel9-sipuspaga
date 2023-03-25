@@ -34,12 +34,14 @@
                                 @foreach ($konsultasis as $konsultasi)
                                     <tr>
                                         <td>{{ $konsultasi->created_at }}</td>
-                                        <td>{{ $konsultasi->konsultasi_category->name }}</td>
+                                        <td>{{ $konsultasi->konsultasi_category->name ?? '' }}</td>
                                         <td>{{ $konsultasi->user->name ?? '' }}</td>
                                         <td>
-                                            <div class="badge bg-{{ $konsultasi->getLatestStatus()->status->color }}">
-                                                {{ $konsultasi->getLatestStatus()->status->name }}
-                                            </div>
+                                            @if ($konsultasi->getLatestStatus())
+                                                <div class="badge bg-{{ $konsultasi->getLatestStatus()->status->color }}">
+                                                    {{ $konsultasi->getLatestStatus()->status->name }}
+                                                </div>
+                                            @endif
                                         </td>
                                         <td>
                                             <form action="{{ route('konsultasi.destroy', $konsultasi->id) }}"

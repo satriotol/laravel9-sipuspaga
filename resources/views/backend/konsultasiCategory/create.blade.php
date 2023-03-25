@@ -31,12 +31,12 @@
                                 name="name">
                         </div>
                         <div class="form-group">
-                            <label for="opd_id">OPD</label>
-                            <select name="opd_id" class="form-control" id="" required>
-                                <option value="">Pilih OPD</option>
-                                @foreach ($opds as $opd)
-                                    <option value="{{ $opd->id }}" @selected(isset($konsultasiCategory) ? $konsultasiCategory->opd_id == $opd->id : $opd->id == @old('opd_id'))>
-                                        {{ $opd->nama_opd }}
+                            <label for="network_id">Jejaring</label>
+                            <select name="network_id" class="form-control" id="" required>
+                                <option value="">Pilih Jejaring</option>
+                                @foreach ($networks as $network)
+                                    <option value="{{ $network->id }}" @selected(isset($konsultasiCategory) ? $konsultasiCategory->network_id == $network->id : $network->id == @old('network_id'))>
+                                        {{ $network->name }}
                                     </option>
                                 @endforeach
                             </select>
