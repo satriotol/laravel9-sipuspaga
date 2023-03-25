@@ -39,6 +39,13 @@
                                 class="side-menu__label">Kategori</span></a>
                     </li>
                 @endcan
+                @can('network-index')
+                    <li>
+                        <a class="side-menu__item {{ active_class(['network.*']) }}"
+                            href="{{ route('network.index') }}"><i class="side-menu__icon fe fe-grid"></i><span
+                                class="side-menu__label">Jejaring</span></a>
+                    </li>
+                @endcan
                 @can('status-index')
                     <li>
                         <a class="side-menu__item {{ active_class(['status.*']) }}" href="{{ route('status.index') }}"><i

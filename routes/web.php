@@ -20,6 +20,7 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\VerificationController;
 use App\Http\Controllers\BeritaController;
 // URL_CRUD_GENERATOR
+use App\Http\Controllers\NetworkController;
 use App\Http\Controllers\PageController;
 use App\Http\Controllers\GalleryImageController;
 use App\Http\Controllers\GalleryController;
@@ -68,6 +69,7 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth']], function () {
     Route::resource('contact', ContactController::class);
     Route::resource('crud', CrudController::class);
     // CRUD_GENERATOR
+Route::resource('network', NetworkController::class);
 Route::resource('page', PageController::class);
     Route::resource('gallery_image', GalleryImageController::class);
     Route::resource('gallery', GalleryController::class);
