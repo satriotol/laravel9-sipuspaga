@@ -80,8 +80,9 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(User $user)
+    public function edit($uuid)
     {
+        $user = User::where('uuid', $uuid)->first();
         $roles = User::getRoles(Auth::user());
         return view('backend.user.create', compact('user', 'roles'));
     }
@@ -141,14 +142,16 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(User $user)
+    public function destroy($uuid)
     {
+        $user = User::where('uuid', $uuid)->first();
         $user->delete();
         session()->flash('success');
         return back();
     }
-    public function reset_password(User $user)
+    public function reset_password($uuid)
     {
+        $user = User::where('uuid', $uuid)->first();
         $user->update([
             'password' => ''
         ]);
