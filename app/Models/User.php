@@ -101,6 +101,14 @@ class User extends Authenticatable
     {
         return $user->getRoleNames()->first() ?? '-';
     }
+    public static function getAdmin($user)
+    {
+        $queryUser = User::query();
+        if ($user->getUserRole($user) != 'SUPERADMIN') {
+            $queryUser::notRole('SUPERADMIN');
+        }
+        return $queryUser->whereDoesntHave('user_detail');
+    }
     public static function getUser($user)
     {
         if (Auth::user()->user_detail) {

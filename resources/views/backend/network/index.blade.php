@@ -30,7 +30,7 @@
                             <tbody>
                                 @foreach ($networks as $network)
                                     <tr>
-                                        <td>{{$network->name}}</td>
+                                        <td>{{ $network->name }}</td>
                                         <td class="text-center">
                                             <form action="{{ route('network.destroy', $network->id) }}" method="post">
                                                 @csrf
@@ -40,14 +40,14 @@
                                                     Edit
                                                 </a>
                                                 <input type="submit" class="btn btn-sm btn-danger"
-                                                    onclick="return confirm('Are you sure?')" value="Delete"
-                                                    id="">
+                                                    onclick="return confirm('Are you sure?')" value="Delete" id="">
                                             </form>
                                         </td>
                                     </tr>
                                 @endforeach
                             </tbody>
                         </table>
+                        {{ $networks->links() }}
                     </div>
                 </div>
             </div>

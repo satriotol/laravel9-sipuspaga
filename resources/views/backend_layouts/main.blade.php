@@ -39,6 +39,10 @@
         .note-group-select-from-files {
             display: none;
         }
+
+        .pagination-container {
+            text-align: right;
+        }
     </style>
 
 </head>
