@@ -34,6 +34,11 @@ class UserController extends Controller
             return view('backend.user.index', compact('users'));
         }
     }
+    public function pelapor()
+    {
+        $users = User::getUser(Auth::user())->paginate();
+        return view('backend.user.pelapor', compact('users'));
+    }
 
     /**
      * Show the form for creating a new resource.

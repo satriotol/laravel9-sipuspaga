@@ -69,8 +69,9 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth']], function () {
     Route::resource('contact', ContactController::class);
     Route::resource('crud', CrudController::class);
     // CRUD_GENERATOR
-Route::resource('network', NetworkController::class);
-Route::resource('page', PageController::class);
+    Route::resource('network', NetworkController::class);
+    Route::resource('page', PageController::class);
+    Route::get('pelapor', [UserController::class, 'pelapor'])->name('user.pelapor');
     Route::resource('gallery_image', GalleryImageController::class);
     Route::resource('gallery', GalleryController::class);
     Route::resource('ebook', EbookController::class);
