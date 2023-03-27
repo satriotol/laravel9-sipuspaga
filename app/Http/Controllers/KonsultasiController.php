@@ -27,8 +27,10 @@ class KonsultasiController extends Controller
     }
     public function index()
     {
-        $konsultasis = Konsultasi::getKonsultasis()->paginate();
-        return view('backend.konsultasi.index', compact('konsultasis'));
+        $konsultasisQuery = Konsultasi::getKonsultasis();
+        $countKonsultasi = $konsultasisQuery->get()->count();
+        $konsultasis = $konsultasisQuery->paginate();
+        return view('backend.konsultasi.index', compact('konsultasis', 'countKonsultasi'));
     }
 
     /**
