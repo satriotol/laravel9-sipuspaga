@@ -23,6 +23,7 @@
                                     <th>Name</th>
                                     <th>Email</th>
                                     <th>Nomor HP</th>
+                                    <th>Usia</th>
                                     <th>Role</th>
                                     <th>Action</th>
                                 </tr>
@@ -33,6 +34,7 @@
                                         <td>{{ $user->name }}</td>
                                         <td>{{ $user->email }}</td>
                                         <td>{{ $user->phone_number }}</td>
+                                        <td>{{ $user->user_detail->age() }} Tahun</td>
                                         <td>{{ $user->getUserRole($user) }}</td>
                                         <td>
                                             <form action="{{ route('user.destroy', $user->uuid) }}" method="post">

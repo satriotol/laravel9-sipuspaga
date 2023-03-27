@@ -42,7 +42,7 @@
                                     name="phone_number">
                             </div>
                         @endhasrole
-                        @hasrole(['USER'])
+                        @if ($user->user_detail)
                             <div class="form-group">
                                 {!! Form::label('born_place', 'Kota Kelahiran') !!}
                                 {!! Form::text('born_place', isset($user) ? $user->user_detail->born_place : @old('born_place'), [
@@ -64,7 +64,7 @@
                                     'required',
                                 ]) !!}
                             </div>
-                        @endhasrole
+                        @endif
                         <div class="form-group">
                             <label>Password</label>
                             <input type="password" class="form-control" value="""

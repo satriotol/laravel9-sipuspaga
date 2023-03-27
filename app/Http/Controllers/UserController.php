@@ -106,12 +106,15 @@ class UserController extends Controller
      */
     public function update(Request $request, User $user)
     {
-        $data = $this->validate($request, [
+        $data = $request->validate([
             'name' => 'required',
             'email' => 'required|unique:users,email,' . $user->id,
             'password' => 'nullable|confirmed',
             'roles' => 'nullable',
             'phone_number' => 'nullable',
+            'born_place' => 'required',
+            'birth' => 'required',
+            'address' => 'required'
         ]);
         $data = $request->except('password');
         if ($request->password) {
@@ -134,16 +137,22 @@ class UserController extends Controller
                 DB::table('model_has_roles')->where('model_id', $user->id)->delete();
                 $user->assignRole('USER-CONFIRMATION');
                 $user->update($data);
+                $user->user_detail->update($data);
                 return redirect(route('dashboard'));
             }
         }
         $user->update($data);
+        $user->user_detail->update($data);
         if ($request->roles) {
             DB::table('model_has_roles')->where('model_id', $user->id)->delete();
             $user->assignRole($request['roles']);
         }
         session()->flash('success');
-        return redirect(route('user.index'));
+        if ($user->user_detail) {
+            return redirect(route('user.pelapor'));
+        } else {
+            return redirect(route('user.index'));
+        }
     }
 
     /**

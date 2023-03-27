@@ -65,9 +65,14 @@
                             <td>{{ $konsultasi->konsultasi_category->name }}</td>
                         </tr>
                         <tr>
-                            <td>Nama</td>
+                            <td>Nama / Usia</td>
                             <td>:</td>
-                            <td>{{ $konsultasi->user->name }}</td>
+                            <td>{{ $konsultasi->user->name }} / {{ $konsultasi->user->user_detail->age() }} Tahun</td>
+                        </tr>
+                        <tr>
+                            <td>Nomor HP</td>
+                            <td>:</td>
+                            <td>{{ $konsultasi->user->phone_number }}</td>
                         </tr>
                         <tr>
                             <td>Catatan</td>
@@ -78,7 +83,8 @@
                             <tr>
                                 <td>Data Dukung</td>
                                 <td>:</td>
-                                <td><a href="{{ asset('uploads/' . $konsultasi->file) }}" target="_blank">Buka File</a></td>
+                                <td><a href="{{ asset('uploads/' . $konsultasi->file) }}" target="_blank">Buka File</a>
+                                </td>
                             </tr>
                         @endif
                     </table>

@@ -32,7 +32,7 @@
                                 class="side-menu__label">Konsultasi</span></a>
                     </li>
                 @endcan
-                @can('user-index')
+                @can('user-pelapor')
                     <li>
                         <a class="side-menu__item {{ active_class(['user.*']) }}" href="{{ route('user.pelapor') }}"><i
                                 class="side-menu__icon fe fe-grid"></i><span class="side-menu__label">Pelapor</span></a>
