@@ -27,8 +27,12 @@ class UserController extends Controller
     }
     public function index()
     {
-        $users = User::getAdmin(Auth::user())->paginate();
-        return view('backend.user.index', compact('users'));
+        if (Auth::user()->user_detail) {
+            return redirect(route('user.edit', Auth::user()->uuid));
+        } else {
+            $users = User::getAdmin(Auth::user())->paginate();
+            return view('backend.user.index', compact('users'));
+        }
     }
 
     /**
