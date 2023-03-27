@@ -57,6 +57,7 @@
                             </tbody>
                         </table>
                     </div>
+                    {{ $beritas->appends($_GET)->links('pagination::bootstrap-5')->withClass('pagination-container') }}
                 </div>
             </div>
         </div>

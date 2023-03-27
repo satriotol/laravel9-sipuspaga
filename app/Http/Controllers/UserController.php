@@ -27,7 +27,7 @@ class UserController extends Controller
     }
     public function index()
     {
-        $users = User::getAdmin(Auth::user())->paginate(1);
+        $users = User::getAdmin(Auth::user())->paginate();
         return view('backend.user.index', compact('users'));
     }
 

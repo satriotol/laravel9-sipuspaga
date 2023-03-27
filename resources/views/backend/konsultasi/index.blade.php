@@ -20,7 +20,7 @@
                         <a href="{{ route('konsultasi.create') }}" class="btn btn-sm btn-primary">Tambah</a>
                     </div>
                     <div class="table-responsive">
-                        <table id="example2" class="table table-bordered text-nowrap border-bottom">
+                        <table class="table border table-bordered text-nowrap text-md-nowrap table-sm mb-0">
                             <thead>
                                 <tr>
                                     <th>Tanggal</th>
@@ -65,6 +65,8 @@
                             </tbody>
                         </table>
                     </div>
+                    {{ $konsultasis->appends($_GET)->links('pagination::bootstrap-5')->withClass('pagination-container') }}
+
                 </div>
             </div>
         </div>
