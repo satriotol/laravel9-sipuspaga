@@ -112,7 +112,11 @@ class User extends Authenticatable
     public static function getUser()
     {
         $queryUser = User::orderBy('name', 'asc');
-        return $queryUser->whereHas('user_detail');
+        if (Auth::user()->getRoleNames()->first() == 'USER') {
+            return $queryUser->where('email', Auth::user()->email);
+        } else {
+            return $queryUser->whereHas('user_detail');
+        }
     }
     public static function getRoles($user)
     {

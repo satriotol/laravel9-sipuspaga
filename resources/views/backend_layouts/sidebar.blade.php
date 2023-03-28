@@ -28,28 +28,28 @@
                 @can('konsultasi-index')
                     <li>
                         <a class="side-menu__item {{ active_class(['konsultasi.*']) }}"
-                            href="{{ route('konsultasi.index') }}"><i class="side-menu__icon fe fe-grid"></i><span
+                            href="{{ route('konsultasi.index') }}"><i class="side-menu__icon fe fe-user-plus"></i><span
                                 class="side-menu__label">Konsultasi</span></a>
                     </li>
                 @endcan
                 @can('user-pelapor')
                     <li>
                         <a class="side-menu__item {{ active_class(['user.pelapor']) }}"
-                            href="{{ route('user.pelapor') }}"><i class="side-menu__icon fe fe-grid"></i><span
+                            href="{{ route('user.pelapor') }}"><i class="side-menu__icon fe fe-users"></i><span
                                 class="side-menu__label">Pelapor</span></a>
                     </li>
                 @endcan
                 @can('konsultasiCategory-index')
                     <li>
                         <a class="side-menu__item {{ active_class(['konsultasiCategory.*']) }}"
-                            href="{{ route('konsultasiCategory.index') }}"><i class="side-menu__icon fe fe-grid"></i><span
+                            href="{{ route('konsultasiCategory.index') }}"><i class="side-menu__icon fe fe-copy"></i><span
                                 class="side-menu__label">Kategori</span></a>
                     </li>
                 @endcan
                 @can('network-index')
                     <li>
                         <a class="side-menu__item {{ active_class(['network.*']) }}"
-                            href="{{ route('network.index') }}"><i class="side-menu__icon fe fe-grid"></i><span
+                            href="{{ route('network.index') }}"><i class="side-menu__icon fe fe-share-2"></i><span
                                 class="side-menu__label">Jejaring</span></a>
                     </li>
                 @endcan
@@ -67,20 +67,20 @@
                 @can('beritaCategory-index')
                     <li>
                         <a class="side-menu__item {{ active_class(['beritaCategory.*']) }}"
-                            href="{{ route('beritaCategory.index') }}"><i class="side-menu__icon fe fe-grid"></i><span
+                            href="{{ route('beritaCategory.index') }}"><i class="side-menu__icon fe fe-copy"></i><span
                                 class="side-menu__label">Kategori</span></a>
                     </li>
                 @endcan
                 @can('berita-index')
                     <li>
                         <a class="side-menu__item {{ active_class(['berita.*']) }}" href="{{ route('berita.index') }}"><i
-                                class="side-menu__icon fe fe-grid"></i><span class="side-menu__label">Berita</span></a>
+                                class="side-menu__icon fe fe-bell"></i><span class="side-menu__label">Berita</span></a>
                     </li>
                 @endcan
                 @can('ebook-index')
                     <li>
                         <a class="side-menu__item {{ active_class(['ebook.*']) }}" href="{{ route('ebook.index') }}"><i
-                                class="side-menu__icon fe fe-grid"></i><span class="side-menu__label">E-Book</span></a>
+                                class="side-menu__icon fe fe-book-open"></i><span class="side-menu__label">E-Book</span></a>
                     </li>
                 @endcan
                 @canany(['gallery-index'])
@@ -91,7 +91,7 @@
                 @can('gallery-index')
                     <li>
                         <a class="side-menu__item {{ active_class(['gallery.*']) }}"
-                            href="{{ route('gallery.index') }}"><i class="side-menu__icon fe fe-grid"></i><span
+                            href="{{ route('gallery.index') }}"><i class="side-menu__icon fe fe-image"></i><span
                                 class="side-menu__label">Galeri</span></a>
                     </li>
                 @endcan
@@ -103,14 +103,14 @@
                 @can('setting-index')
                     <li>
                         <a class="side-menu__item {{ active_class(['setting.*']) }}"
-                            href="{{ route('setting.index') }}"><i class="side-menu__icon fe fe-grid"></i><span
+                            href="{{ route('setting.index') }}"><i class="side-menu__icon fe fe-settings"></i><span
                                 class="side-menu__label">Setting</span></a>
                     </li>
                 @endcan
                 @can('slider-index')
                     <li>
                         <a class="side-menu__item {{ active_class(['slider.*']) }}" href="{{ route('slider.index') }}"><i
-                                class="side-menu__icon fe fe-grid"></i><span class="side-menu__label">Slider</span></a>
+                                class="side-menu__icon fe fe-image"></i><span class="side-menu__label">Slider</span></a>
                     </li>
                 @endcan
                 @can('page-index')
@@ -122,13 +122,13 @@
                 @can('link-index')
                     <li>
                         <a class="side-menu__item {{ active_class(['link.*']) }}" href="{{ route('link.index') }}"><i
-                                class="side-menu__icon fe fe-grid"></i><span class="side-menu__label">Link</span></a>
+                                class="side-menu__icon fe fe-link"></i><span class="side-menu__label">Link</span></a>
                     </li>
                 @endcan
                 @can('contact-index')
                     <li>
                         <a class="side-menu__item {{ active_class(['contact.*']) }}"
-                            href="{{ route('contact.index') }}"><i class="side-menu__icon fe fe-grid"></i><span
+                            href="{{ route('contact.index') }}"><i class="side-menu__icon fe fe-phone"></i><span
                                 class="side-menu__label">Kontak</span></a>
                     </li>
                 @endcan
