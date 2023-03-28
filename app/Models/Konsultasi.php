@@ -22,19 +22,19 @@ class Konsultasi extends Model
     }
     public function konsultasi_statuses()
     {
-        return $this->hasMany(KonsultasiStatus::class, 'konsultasi_id', 'id')->orderBy('id', 'asc');
+        return $this->hasMany(KonsultasiStatus::class, 'konsultasi_id', 'id')->orderBy('created_at', 'desc');
+    }
+    public function konsultasi_status()
+    {
+        return $this->hasOne(KonsultasiStatus::class, 'konsultasi_id', 'id')->latest();
     }
 
     public static function getKonsultasis()
     {
         if (Auth::user()->user_detail) {
             return Konsultasi::where('user_id', Auth::user()->id);
-        }else{
+        } else {
             return Konsultasi::query();
         }
-    }
-    public function getLatestStatus()
-    {
-        return $this->konsultasi_statuses->last();
     }
 }

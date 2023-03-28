@@ -60,6 +60,7 @@
                                     'placeholder' => 'Cari Pelapor',
                                 ]) !!}
                             </div>
+
                         </div>
                         <div class="text-end">
                             {!! Form::submit('Cari', ['class' => 'btn btn-success']) !!}
@@ -93,11 +94,14 @@
                                         <td>{{ $konsultasi->konsultasi_category->name ?? '' }}</td>
                                         <td>{{ $konsultasi->user->name ?? '' }}</td>
                                         <td>
-                                            @if ($konsultasi->getLatestStatus())
+                                            {{-- @if ($konsultasi->getLatestStatus())
                                                 <div class="badge bg-{{ $konsultasi->getLatestStatus()->status->color }}">
                                                     {{ $konsultasi->getLatestStatus()->status->name }}
                                                 </div>
-                                            @endif
+                                            @endif --}}
+                                            <div class="badge bg-{{ $konsultasi->konsultasi_status->status->color }}">
+                                                {{ $konsultasi->konsultasi_status->status->name }}
+                                            </div>
                                         </td>
                                         <td>
                                             <form action="{{ route('konsultasi.destroy', $konsultasi->id) }}"

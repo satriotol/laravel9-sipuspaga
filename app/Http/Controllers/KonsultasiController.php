@@ -30,8 +30,11 @@ class KonsultasiController extends Controller
     public function index(Request $request)
     {
         $konsultasisQuery = Konsultasi::getKonsultasis();
+        $konsultasiCategories = KonsultasiCategory::all()->pluck('name', 'id');
+        $pelapors = User::getUser()->get()->pluck('name', 'uuid');
         $konsultasi_category_id = $request->konsultasi_category_id;
         $user_id = $request->user_id;
+        $status_id = $request->status_id;
         if ($konsultasi_category_id) {
             $konsultasisQuery->where('konsultasi_category_id', $konsultasi_category_id);
         }
@@ -40,13 +43,11 @@ class KonsultasiController extends Controller
                 $q->where('uuid', $user_id);
             });
         }
-        $konsultasiCategories = KonsultasiCategory::all()->pluck('name', 'id');
-        $pelapors = User::getUser()->get()->pluck('name', 'uuid');
-        $konsultasis = $konsultasisQuery->latest()->paginate();
+        $konsultasis = $konsultasisQuery->with('konsultasi_status')->latest()->paginate();
         $countKonsultasi = $konsultasisQuery->get()->count();
         $countKonsultasiToday = $konsultasisQuery->whereDate('created_at', '=', Carbon::today())->get()->count();
         $request->flash();
-        return view('backend.konsultasi.index', compact('konsultasis', 'countKonsultasi', 'pelapors', 'konsultasiCategories', 'countKonsultasiToday'));
+        return view('backend.konsultasi.index', compact('konsultasis',  'countKonsultasi', 'pelapors', 'konsultasiCategories', 'countKonsultasiToday'));
     }
 
     /**
