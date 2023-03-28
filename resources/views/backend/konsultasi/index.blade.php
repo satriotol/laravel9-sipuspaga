@@ -56,7 +56,7 @@
                             <div class="col-md-6">
                                 {!! Form::label('user_id', 'Pelapor') !!}
                                 {!! Form::select('user_id', $pelapors, @old('user_id'), [
-                                    'class' => 'form-control select2',
+                                    'class' => 'form-control select2-show-search ',
                                     'placeholder' => 'Cari Pelapor',
                                 ]) !!}
                             </div>

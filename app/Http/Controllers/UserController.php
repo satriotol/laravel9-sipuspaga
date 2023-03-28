@@ -31,7 +31,7 @@ class UserController extends Controller
         if (Auth::user()->user_detail) {
             return redirect(route('user.edit', Auth::user()->uuid));
         } else {
-            $users = User::getAdmin(Auth::user())->paginate();
+            $users = User::getAdmin(Auth::user())->paginate(5);
             return view('backend.user.index', compact('users'));
         }
     }
