@@ -24,6 +24,19 @@
                     </div>
                 </div>
             </div>
+            <div class="col-sm-6 col-md-6 col-lg-6 col-xl-3">
+                <div class="card bg-success img-card box-success-shadow">
+                    <div class="card-body">
+                        <div class="d-flex">
+                            <div class="text-white">
+                                <h2 class="mb-0 number-font">{{ $countKonsultasiToday }}</h2>
+                                <p class="text-white mb-0">Total Konsultasi Hari Ini </p>
+                            </div>
+                            <div class="ms-auto"> <i class="fa fa-user-o text-white fs-30 me-2 mt-2"></i> </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
         <div class="col-lg-12">
             <div class="card">
@@ -33,11 +46,18 @@
                 <div class="card-body">
                     <form action="" method="get">
                         <div class="row">
-                            <div class="col-md">
+                            <div class="col-md-6">
                                 {!! Form::label('konsultasi_category_id', 'Kategori') !!}
                                 {!! Form::select('konsultasi_category_id', $konsultasiCategories, @old('konsultasi_category_id'), [
                                     'class' => 'form-control select2',
                                     'placeholder' => 'Cari Kategori',
+                                ]) !!}
+                            </div>
+                            <div class="col-md-6">
+                                {!! Form::label('user_id', 'Pelapor') !!}
+                                {!! Form::select('user_id', $pelapors, @old('user_id'), [
+                                    'class' => 'form-control select2',
+                                    'placeholder' => 'Cari Pelapor',
                                 ]) !!}
                             </div>
                         </div>

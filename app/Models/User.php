@@ -109,9 +109,9 @@ class User extends Authenticatable
         }
         return $queryUser->whereDoesntHave('user_detail');
     }
-    public static function getUser($user)
+    public static function getUser()
     {
-        $queryUser = User::query();
+        $queryUser = User::orderBy('name', 'asc');
         return $queryUser->whereHas('user_detail');
     }
     public static function getRoles($user)

@@ -146,7 +146,7 @@
                 @can('user-index')
                     <li>
                         <a class="side-menu__item {{ active_class(['user.*']) }}" href="{{ route('user.index') }}"><i
-                                class="side-menu__icon fe fe-grid"></i><span class="side-menu__label">User</span></a>
+                                class="side-menu__icon fe fe-users"></i><span class="side-menu__label">User</span></a>
                     </li>
                 @endcan
                 @can('role-index')

@@ -8,6 +8,8 @@ use App\Models\KonsultasiCategory;
 use App\Models\KonsultasiStatus;
 use App\Models\Status;
 use App\Models\TemporaryFile;
+use App\Models\User;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -29,13 +31,22 @@ class KonsultasiController extends Controller
     {
         $konsultasisQuery = Konsultasi::getKonsultasis();
         $konsultasi_category_id = $request->konsultasi_category_id;
+        $user_id = $request->user_id;
         if ($konsultasi_category_id) {
             $konsultasisQuery->where('konsultasi_category_id', $konsultasi_category_id);
         }
+        if ($user_id) {
+            $konsultasisQuery->whereHas('user', function ($q) use ($user_id) {
+                $q->where('uuid', $user_id);
+            });
+        }
         $konsultasiCategories = KonsultasiCategory::all()->pluck('name', 'id');
+        $pelapors = User::getUser()->get()->pluck('name', 'uuid');
+        $konsultasis = $konsultasisQuery->latest()->paginate();
         $countKonsultasi = $konsultasisQuery->get()->count();
-        $konsultasis = $konsultasisQuery->paginate();
-        return view('backend.konsultasi.index', compact('konsultasis', 'countKonsultasi', 'konsultasiCategories'));
+        $countKonsultasiToday = $konsultasisQuery->whereDate('created_at', '=', Carbon::today())->get()->count();
+        $request->flash();
+        return view('backend.konsultasi.index', compact('konsultasis', 'countKonsultasi', 'pelapors', 'konsultasiCategories', 'countKonsultasiToday'));
     }
 
     /**

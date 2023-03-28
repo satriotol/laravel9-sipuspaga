@@ -67,7 +67,7 @@
                         <tr>
                             <td>Nama / Usia</td>
                             <td>:</td>
-                            <td>{{ $konsultasi->user->name }} / {{ $konsultasi->user->user_detail->age() }} Tahun</td>
+                            <td>{{ $konsultasi->user->name }} / {{ $konsultasi->user->user_detail?->age() }} Tahun</td>
                         </tr>
                         <tr>
                             <td>Nomor HP</td>
