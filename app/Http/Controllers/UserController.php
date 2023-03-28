@@ -112,9 +112,9 @@ class UserController extends Controller
             'password' => 'nullable|confirmed',
             'roles' => 'nullable',
             'phone_number' => 'nullable',
-            'born_place' => 'required',
-            'birth' => 'required',
-            'address' => 'required'
+            'born_place' => 'nullable',
+            'birth' => 'nullable',
+            'address' => 'nullable'
         ]);
         $data = $request->except('password');
         if ($request->password) {
@@ -142,7 +142,10 @@ class UserController extends Controller
             }
         }
         $user->update($data);
-        $user->user_detail->update($data);
+        if ($user->user_detail) {
+            # code...
+            $user->user_detail->update($data);
+        }
         if ($request->roles) {
             DB::table('model_has_roles')->where('model_id', $user->id)->delete();
             $user->assignRole($request['roles']);

@@ -25,12 +25,17 @@ class KonsultasiController extends Controller
         $this->middleware('permission:konsultasi-edit', ['only' => ['edit', 'update']]);
         $this->middleware('permission:konsultasi-delete', ['only' => ['destroy']]);
     }
-    public function index()
+    public function index(Request $request)
     {
         $konsultasisQuery = Konsultasi::getKonsultasis();
+        $konsultasi_category_id = $request->konsultasi_category_id;
+        if ($konsultasi_category_id) {
+            $konsultasisQuery->where('konsultasi_category_id', $konsultasi_category_id);
+        }
+        $konsultasiCategories = KonsultasiCategory::all()->pluck('name', 'id');
         $countKonsultasi = $konsultasisQuery->get()->count();
         $konsultasis = $konsultasisQuery->paginate();
-        return view('backend.konsultasi.index', compact('konsultasis', 'countKonsultasi'));
+        return view('backend.konsultasi.index', compact('konsultasis', 'countKonsultasi', 'konsultasiCategories'));
     }
 
     /**

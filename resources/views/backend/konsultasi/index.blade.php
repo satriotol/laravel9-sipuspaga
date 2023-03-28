@@ -28,6 +28,27 @@
         <div class="col-lg-12">
             <div class="card">
                 <div class="card-header">
+                    <h3 class="card-title">Pencarian</h3>
+                </div>
+                <div class="card-body">
+                    <form action="" method="get">
+                        <div class="row">
+                            <div class="col-md">
+                                {!! Form::label('konsultasi_category_id', 'Kategori') !!}
+                                {!! Form::select('konsultasi_category_id', $konsultasiCategories, @old('konsultasi_category_id'), [
+                                    'class' => 'form-control select2',
+                                    'placeholder' => 'Cari Kategori',
+                                ]) !!}
+                            </div>
+                        </div>
+                        <div class="text-end">
+                            {!! Form::submit('Cari', ['class' => 'btn btn-success']) !!}
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header">
                     <h3 class="card-title">Konsultasi</h3>
                 </div>
                 <div class="card-body">

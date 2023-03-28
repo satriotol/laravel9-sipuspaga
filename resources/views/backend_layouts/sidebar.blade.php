@@ -34,8 +34,9 @@
                 @endcan
                 @can('user-pelapor')
                     <li>
-                        <a class="side-menu__item {{ active_class(['user.*']) }}" href="{{ route('user.pelapor') }}"><i
-                                class="side-menu__icon fe fe-grid"></i><span class="side-menu__label">Pelapor</span></a>
+                        <a class="side-menu__item {{ active_class(['user.pelapor']) }}"
+                            href="{{ route('user.pelapor') }}"><i class="side-menu__icon fe fe-grid"></i><span
+                                class="side-menu__label">Pelapor</span></a>
                     </li>
                 @endcan
                 @can('konsultasiCategory-index')
