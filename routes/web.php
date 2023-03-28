@@ -20,6 +20,7 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\VerificationController;
 use App\Http\Controllers\BeritaController;
 // URL_CRUD_GENERATOR
+use App\Http\Controllers\KonsultasiCategoryNetworkController;
 use App\Http\Controllers\NetworkController;
 use App\Http\Controllers\PageController;
 use App\Http\Controllers\GalleryImageController;
@@ -69,6 +70,7 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth']], function () {
     Route::resource('contact', ContactController::class);
     Route::resource('crud', CrudController::class);
     // CRUD_GENERATOR
+Route::resource('konsultasi_category_network', KonsultasiCategoryNetworkController::class);
     Route::resource('network', NetworkController::class);
     Route::resource('page', PageController::class);
     Route::get('pelapor', [UserController::class, 'pelapor'])->name('user.pelapor');

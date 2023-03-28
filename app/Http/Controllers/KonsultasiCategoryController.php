@@ -50,8 +50,8 @@ class KonsultasiCategoryController extends Controller
             'name' => 'required',
             'network_id' => 'required',
         ]);
-
-        KonsultasiCategory::create($data);
+        $konsultasiCategory = KonsultasiCategory::create($data);
+        $konsultasiCategory->networks()->sync($request->network_id);
         session()->flash('success');
         return redirect(route('konsultasiCategory.index'));
     }
@@ -93,6 +93,7 @@ class KonsultasiCategoryController extends Controller
             'network_id' => 'required'
         ]);
         $konsultasiCategory->update($data);
+        $konsultasiCategory->networks()->sync($request->network_id);
         session()->flash('success');
         return redirect(route('konsultasiCategory.index'));
     }

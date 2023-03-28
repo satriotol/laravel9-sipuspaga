@@ -32,14 +32,23 @@
                         </div>
                         <div class="form-group">
                             <label for="network_id">Jejaring</label>
-                            <select name="network_id" class="form-control" id="" required>
-                                <option value="">Pilih Jejaring</option>
+                            {!! Form::select(
+                                'network_id[]',
+                                $networks->pluck('name', 'id'),
+                                isset($konsultasiCategory) ? $konsultasiCategory->networks->pluck('id')->toArray() : @old('network_id'),
+                                [
+                                    'class' => 'form-control select2',
+                                    'multiple',
+                                    'required',
+                                ],
+                            ) !!}
+                            {{-- <select name="network_id[]" class="form-control select2" multiple id="" required>
                                 @foreach ($networks as $network)
-                                    <option value="{{ $network->id }}" @selected(isset($konsultasiCategory) ? $konsultasiCategory->network_id == $network->id : $network->id == @old('network_id'))>
+                                    <option value="{{ $network->id }}" @selected(isset($konsultasiCategory) ? $konsultasiCategory->networks->pluck('id')->toArray() : $network->id == @old('network_id'))>
                                         {{ $network->name }}
                                     </option>
                                 @endforeach
-                            </select>
+                            </select> --}}
                         </div>
                         <div class="text-end">
                             <a class="btn btn-warning" href="{{ url()->previous() }}">Kembali</a>

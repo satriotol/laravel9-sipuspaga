@@ -14,4 +14,9 @@ class Network extends Model implements Auditable
     protected $table = 'networks';
 
     protected $fillable = ["name"];
+
+    public function konsultasi_categories()
+    {
+        return $this->belongsToMany(KonsultasiCategory::class, 'konsultasi_category_network');
+    }
 }

@@ -24,7 +24,7 @@
                             <thead>
                                 <tr>
                                     <th>Nama</th>
-                                    <th>Dinas</th>
+                                    <th>Jejaring</th>
                                     <th>Action</th>
                                 </tr>
                             </thead>
@@ -32,7 +32,11 @@
                                 @foreach ($konsultasiCategories as $konsultasiCategory)
                                     <tr>
                                         <td>{{ $konsultasiCategory->name }}</td>
-                                        <td>{{ $konsultasiCategory->network->name ?? '' }}</td>
+                                        <td>
+                                            @foreach ($konsultasiCategory->networks as $network)
+                                                <div class="badge bg-primary">{{ $network->name }}</div>
+                                            @endforeach
+                                        </td>
                                         <td>
                                             <form
                                                 action="{{ route('konsultasiCategory.destroy', $konsultasiCategory->id) }}"

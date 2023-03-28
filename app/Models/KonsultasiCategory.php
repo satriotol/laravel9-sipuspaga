@@ -9,11 +9,14 @@ class KonsultasiCategory extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['name', 'network_id'];
-
-    public function network()
+    protected $fillable = ['name'];
+    // public function network()
+    // {
+    //     return $this->belongsTo(Network::class, 'network_id', 'id');
+    // }
+    public function networks()
     {
-        return $this->belongsTo(Network::class, 'network_id', 'id');
+        return $this->belongsToMany(Network::class, 'konsultasi_category_network');
     }
     public function konsultasis()
     {
