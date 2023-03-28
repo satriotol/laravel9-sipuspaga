@@ -42,29 +42,31 @@
                                     name="phone_number">
                             </div>
                         @endhasrole
-                        @if ($user->user_detail)
-                            <div class="form-group">
-                                {!! Form::label('born_place', 'Kota Kelahiran') !!}
-                                {!! Form::text('born_place', isset($user) ? $user->user_detail->born_place : @old('born_place'), [
-                                    'class' => 'form-control',
-                                    'required',
-                                ]) !!}
-                            </div>
-                            <div class="form-group">
-                                {!! Form::label('birth', 'Tanggal Kelahiran') !!}
-                                {!! Form::date('birth', isset($user) ? $user->user_detail->birth : @old('birth'), [
-                                    'class' => 'form-control',
-                                    'required',
-                                ]) !!}
-                            </div>
-                            <div class="form-group">
-                                {!! Form::label('address', 'Alamat Rumah') !!}
-                                {!! Form::text('address', isset($user) ? $user->user_detail->address : @old('address'), [
-                                    'class' => 'form-control',
-                                    'required',
-                                ]) !!}
-                            </div>
-                        @endif
+                        @isset($user)
+                            @if ($user->user_detail)
+                                <div class="form-group">
+                                    {!! Form::label('born_place', 'Kota Kelahiran') !!}
+                                    {!! Form::text('born_place', isset($user) ? $user->user_detail->born_place : @old('born_place'), [
+                                        'class' => 'form-control',
+                                        'required',
+                                    ]) !!}
+                                </div>
+                                <div class="form-group">
+                                    {!! Form::label('birth', 'Tanggal Kelahiran') !!}
+                                    {!! Form::date('birth', isset($user) ? $user->user_detail->birth : @old('birth'), [
+                                        'class' => 'form-control',
+                                        'required',
+                                    ]) !!}
+                                </div>
+                                <div class="form-group">
+                                    {!! Form::label('address', 'Alamat Rumah') !!}
+                                    {!! Form::text('address', isset($user) ? $user->user_detail->address : @old('address'), [
+                                        'class' => 'form-control',
+                                        'required',
+                                    ]) !!}
+                                </div>
+                            @endif
+                        @endisset
                         <div class="form-group">
                             <label>Password</label>
                             <input type="password" class="form-control" value="""
