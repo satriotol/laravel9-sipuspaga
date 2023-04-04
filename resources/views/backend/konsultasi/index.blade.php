@@ -46,21 +46,27 @@
                 <div class="card-body">
                     <form action="" method="get">
                         <div class="row">
-                            <div class="col-md-6">
+                            <div class="col-md-4">
                                 {!! Form::label('konsultasi_category_id', 'Kategori') !!}
                                 {!! Form::select('konsultasi_category_id', $konsultasiCategories, @old('konsultasi_category_id'), [
                                     'class' => 'form-control select2',
                                     'placeholder' => 'Cari Kategori',
                                 ]) !!}
                             </div>
-                            <div class="col-md-6">
+                            <div class="col-md-4">
                                 {!! Form::label('user_id', 'Pelapor') !!}
                                 {!! Form::select('user_id', $pelapors, @old('user_id'), [
                                     'class' => 'form-control select2-show-search ',
                                     'placeholder' => 'Cari Pelapor',
                                 ]) !!}
                             </div>
-
+                            <div class="col-md-4">
+                                {!! Form::label('status_id', 'Status') !!}
+                                {!! Form::select('status_id', $statuses, @old('status_id'), [
+                                    'class' => 'form-control select2-show-search ',
+                                    'placeholder' => 'Cari Status',
+                                ]) !!}
+                            </div>
                         </div>
                         <div class="text-end">
                             {!! Form::submit('Cari', ['class' => 'btn btn-success']) !!}
