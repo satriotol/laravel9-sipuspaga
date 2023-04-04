@@ -102,10 +102,13 @@ class KonsultasiController extends Controller
                 $konsultasi->user->phone_number
             ];
             KirimWaJob::dispatch($asset);
-            foreach (User::where('network_id', $konsultasi->konsultasi_category->networks) as $user) {
+            $users = User::whereHas('network.konsultasi_categories', function ($query) use ($konsultasi) {
+                $query->where('name', $konsultasi->konsultasi_category->name);
+            })->get();
+            foreach ($users as $user) {
                 $assetJejaring = [
                     'Ada Konsultasi Baru, Silahakan Dicek',
-                    $user->phone
+                    $user->phone_number
                 ];
                 KirimWaJob::dispatch($assetJejaring);
             }

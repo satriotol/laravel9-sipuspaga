@@ -67,7 +67,7 @@ class UserController extends Controller
             'email' => 'required|unique:users,email|email',
             'password' => 'required|confirmed',
             'roles' => 'required',
-            'phone' => 'nullable',
+            'phone_number' => 'nullable',
             'network_id' => 'nullable',
         ]);
         $data['password'] = Hash::make($request->password);

@@ -78,8 +78,8 @@
                                 @empty($user) required @endempty name="password_confirmation">
                         </div>
                         <div class="form-group">
-                            {!! Form::label('phone', 'Nomor HP') !!}
-                            {!! Form::number('phone', isset($user) ? $user->phone : @old('phone'), ['class' => 'form-control']) !!}
+                            {!! Form::label('phone_number', 'Nomor HP') !!}
+                            {!! Form::number('phone_number', isset($user) ? $user->phone_number : @old('phone_number'), ['class' => 'form-control']) !!}
                         </div>
                         @can('user-create')
                             <div class="form-group">
