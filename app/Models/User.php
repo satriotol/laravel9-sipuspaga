@@ -30,7 +30,8 @@ class User extends Authenticatable
         'password',
         'phone_number',
         'profile_pic',
-        'uuid'
+        'uuid',
+        'network_id'
     ];
 
     /**
@@ -130,5 +131,9 @@ class User extends Authenticatable
     public function user_detail()
     {
         return $this->hasOne(UserDetail::class, 'user_id', 'id');
+    }
+    public function network()
+    {
+        return $this->belongsTo(Network::class,'network_id','id');
     }
 }

@@ -18,6 +18,10 @@ class KonsultasiCategory extends Model
     {
         return $this->belongsToMany(Network::class, 'konsultasi_category_network');
     }
+    public function users()
+    {
+        return $this->hasManyThrough(User::class, Network::class);
+    }
     public function konsultasis()
     {
         return $this->hasMany(Konsultasi::class, 'konsultasi_category_id', 'id');

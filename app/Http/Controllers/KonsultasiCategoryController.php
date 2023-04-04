@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\KonsultasiCategory;
 use App\Models\Network;
 use App\Models\Opd;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class KonsultasiCategoryController extends Controller

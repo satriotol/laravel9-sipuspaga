@@ -77,7 +77,20 @@
                             <input type="password" class="form-control" value=""
                                 @empty($user) required @endempty name="password_confirmation">
                         </div>
+                        <div class="form-group">
+                            {!! Form::label('phone', 'Nomor HP') !!}
+                            {!! Form::number('phone', isset($user) ? $user->phone : @old('phone'), ['class' => 'form-control']) !!}
+                        </div>
                         @can('user-create')
+                            <div class="form-group">
+                                {!! Form::label('network_id', 'Jejaring') !!}
+                                {!! Form::select(
+                                    'network_id',
+                                    $networks->pluck('name', 'id'),
+                                    isset($user) ? $user->network_id : @old('network_id'),
+                                    ['class' => 'form-control select2'],
+                                ) !!}
+                            </div>
                             <div class="form-group">
                                 <label for="roles">Role</label>
                                 <select name="roles" class="form-control" id="" required>

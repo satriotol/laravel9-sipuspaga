@@ -26,6 +26,7 @@
                                     <th>Name</th>
                                     <th>Email</th>
                                     <th>Role</th>
+                                    <th>Jejaring</th>
                                     <th>Action</th>
                                 </tr>
                             </thead>
@@ -35,6 +36,7 @@
                                         <td>{{ $user->name }}</td>
                                         <td>{{ $user->email }}</td>
                                         <td>{{ $user->getUserRole($user) }}</td>
+                                        <td>{{ $user->network->name ?? '' }}</td>
                                         <td>
                                             <form action="{{ route('user.destroy', $user->uuid) }}" method="post">
                                                 @csrf

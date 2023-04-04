@@ -14,5 +14,14 @@ class KonsultasiCategoryNetwork extends Model implements Auditable
 
     protected $table = 'konsultasi_category_network';
 
-    protected $fillable = ["konsultasi_category_id","network_id"];
+    protected $fillable = ["konsultasi_category_id", "network_id"];
+
+    public function konsultasi_category()
+    {
+        return $this->belongsTo(KonsultasiCategory::class, 'konsultasi_category_id');
+    }
+    public function network()
+    {
+        return $this->belongsTo(Network::class, 'network_id');
+    }
 }

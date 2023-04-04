@@ -19,4 +19,8 @@ class Network extends Model implements Auditable
     {
         return $this->belongsToMany(KonsultasiCategory::class, 'konsultasi_category_network');
     }
+    public function users()
+    {
+        return $this->hasMany(User::class, 'user_id', 'id');
+    }
 }

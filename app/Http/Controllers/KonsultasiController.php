@@ -12,6 +12,7 @@ use App\Models\User;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 
 class KonsultasiController extends Controller
 {
@@ -87,18 +88,32 @@ class KonsultasiController extends Controller
             $data['file'] = $temporaryFile->filename;
             $temporaryFile->delete();
         };
-        $konsultasi = Konsultasi::create($data);
-        KonsultasiStatus::create([
-            'konsultasi_id' => $konsultasi->id,
-            'status_id' => Status::where('is_waiting', 1)->first()->id,
-            'user_id' => Auth::user()->id,
-            'description' => 'Status Pengajuan Sudah Masuk Sistem',
-        ]);
-        $asset = [
-            'SIPUSPAGA, Status Pengajuan Anda Sedang Kami Proses',
-            $konsultasi->user->phone_number
-        ];
-        KirimWaJob::dispatch($asset);
+        DB::beginTransaction();
+        try {
+            $konsultasi = Konsultasi::create($data);
+            KonsultasiStatus::create([
+                'konsultasi_id' => $konsultasi->id,
+                'status_id' => Status::where('is_waiting', 1)->first()->id,
+                'user_id' => Auth::user()->id,
+                'description' => 'Status Pengajuan Sudah Masuk Sistem',
+            ]);
+            $asset = [
+                'SIPUSPAGA, Status Pengajuan Anda Sedang Kami Proses',
+                $konsultasi->user->phone_number
+            ];
+            KirimWaJob::dispatch($asset);
+            foreach (User::where('network_id', $konsultasi->konsultasi_category->networks) as $user) {
+                $assetJejaring = [
+                    'Ada Konsultasi Baru, Silahakan Dicek',
+                    $user->phone
+                ];
+                KirimWaJob::dispatch($assetJejaring);
+            }
+            DB::commit();
+        } catch (\Throwable $th) {
+            DB::rollBack();
+        }
+
         session()->flash('success');
         return redirect(route('konsultasi.index'));
     }

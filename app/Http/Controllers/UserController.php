@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Jobs\KirimWaJob;
+use App\Models\Network;
 use App\Models\User;
 use App\Models\Verification;
 use Illuminate\Http\Request;
@@ -49,7 +50,8 @@ class UserController extends Controller
     public function create()
     {
         $roles = User::getRoles(Auth::user());
-        return view('backend.user.create', compact('roles'));
+        $networks = Network::all();
+        return view('backend.user.create', compact('roles', 'networks'));
     }
 
     /**
@@ -64,7 +66,9 @@ class UserController extends Controller
             'name' => 'required',
             'email' => 'required|unique:users,email|email',
             'password' => 'required|confirmed',
-            'roles' => 'required'
+            'roles' => 'required',
+            'phone' => 'nullable',
+            'network_id' => 'nullable',
         ]);
         $data['password'] = Hash::make($request->password);
         $user = User::create($data);
@@ -94,7 +98,8 @@ class UserController extends Controller
     {
         $user = User::where('uuid', $uuid)->first();
         $roles = User::getRoles(Auth::user());
-        return view('backend.user.create', compact('user', 'roles'));
+        $networks = Network::all();
+        return view('backend.user.create', compact('user', 'roles', 'networks'));
     }
 
     /**
@@ -114,7 +119,8 @@ class UserController extends Controller
             'phone_number' => 'nullable',
             'born_place' => 'nullable',
             'birth' => 'nullable',
-            'address' => 'nullable'
+            'address' => 'nullable',
+            'network_id' => 'nullable',
         ]);
         $data = $request->except('password');
         if ($request->password) {
