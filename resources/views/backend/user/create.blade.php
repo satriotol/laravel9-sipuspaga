@@ -79,7 +79,9 @@
                         </div>
                         <div class="form-group">
                             {!! Form::label('phone_number', 'Nomor HP') !!}
-                            {!! Form::number('phone_number', isset($user) ? $user->phone_number : @old('phone_number'), ['class' => 'form-control']) !!}
+                            {!! Form::number('phone_number', isset($user) ? $user->phone_number : @old('phone_number'), [
+                                'class' => 'form-control',
+                            ]) !!}
                         </div>
                         @can('user-create')
                             <div class="form-group">
@@ -88,7 +90,7 @@
                                     'network_id',
                                     $networks->pluck('name', 'id'),
                                     isset($user) ? $user->network_id : @old('network_id'),
-                                    ['class' => 'form-control select2'],
+                                    ['class' => 'form-control select2', 'placeholder' => 'Pilih Jejaring'],
                                 ) !!}
                             </div>
                             <div class="form-group">
