@@ -21,8 +21,9 @@ class HomeController extends Controller
         view()->share('links', Link::orderBy('id', 'desc')->get());
         view()->share('contacts', Contact::orderBy('id', 'desc')->get());
     }
-    public function index()
+    public function index(Request $request)
     {
+        dd($request->ip());
         $sliders = Slider::orderBy('id', 'desc')->get();
         $beritas = Berita::orderBy('id', 'desc')->paginate(3);
         return view('frontend.index', compact('sliders', 'beritas'));
