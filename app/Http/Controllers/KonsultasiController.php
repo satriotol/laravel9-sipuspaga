@@ -107,7 +107,7 @@ class KonsultasiController extends Controller
             })->get();
             foreach ($users as $user) {
                 $assetJejaring = [
-                    'Ada Konsultasi Baru, Silahakan Dicek',
+                    "Ada Konsultasi Baru, Silahakan Dicek \n\n" . route('konsultasi.show', $konsultasi->id),
                     $user->phone_number
                 ];
                 KirimWaJob::dispatch($assetJejaring);
