@@ -130,7 +130,7 @@ class UserController extends Controller
             if ($user->phone_number != $request->phone_number) {
                 $verification = Verification::where('user_id', $user->id)->first();
                 $otp_code = random_int(100000, 999999);
-                $message = "Kode OTP Anda Adalah " . $otp_code;
+                $message = "SIPUSPAGA \n Kode OTP Anda Adalah " . $otp_code;
                 $asset = [
                     $message,
                     $request->phone_number

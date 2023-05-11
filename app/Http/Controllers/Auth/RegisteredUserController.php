@@ -67,7 +67,7 @@ class RegisteredUserController extends Controller
         ]);
 
         $whatsapp = new WhatsappController;
-        $message = "Kode OTP Anda Adalah " . $verification->otp_code;
+        $message = "SIPUSPAGA \n Kode OTP Anda Adalah " . $verification->otp_code;
         $whatsapp->kirimPesan($message, $user->phone_number);
 
         $user->assignRole('USER-CONFIRMATION');
