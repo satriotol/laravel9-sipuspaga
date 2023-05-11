@@ -98,7 +98,7 @@ class KonsultasiController extends Controller
                 'description' => 'Status Pengajuan Sudah Masuk Sistem',
             ]);
             $asset = [
-                'SIPUSPAGA, Status Pengajuan Anda Sedang Kami Proses',
+                'Status Pengajuan Anda Sedang Kami Proses',
                 $konsultasi->user->phone_number
             ];
             KirimWaJob::dispatch($asset);

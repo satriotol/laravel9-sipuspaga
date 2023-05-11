@@ -56,7 +56,7 @@ class KonsultasiStatusController extends Controller
         $konsultasiStatus = KonsultasiStatus::create($data);
         if ($request->kirimWa) {
             $asset = [
-                $data['description'],
+                $data['description']  . "\nDijawab Oleh : " . Auth::user()->name . "\n" . route('konsultasi.show', $konsultasiStatus->konsultasi_id),
                 $konsultasiStatus->konsultasi->user->phone_number
             ];
             KirimWaJob::dispatch($asset);
