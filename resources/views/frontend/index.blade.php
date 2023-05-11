@@ -74,7 +74,8 @@
                     <div class="col-xl-4 col-lg-4 col-md-6">
                         <div class="blog-wrapper mb-30">
                             <div class="blog-img">
-                                <a href="{{ route('detailBerita', $berita->id) }}"><img
+                                <a href="{{ route('detailBerita', $berita->id) }}">
+                                    <img style="height: 300px;width: 300px;object-fit: cover;" class="img-thumbnail"
                                         src="{{ asset('uploads/' . $berita->image) }}" alt=""></a>
                                 <div class="blog-date">
                                     <a href="{{ route('detailBerita', $berita->id) }}">03 <br> Feb</a>
