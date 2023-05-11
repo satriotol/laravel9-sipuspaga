@@ -107,7 +107,7 @@ class KonsultasiController extends Controller
             })->get();
             foreach ($users as $user) {
                 $assetJejaring = [
-                    "Ada Konsultasi Baru, Silahakan Dicek \n\n" . route('konsultasi.show', $konsultasi->id),
+                    "Ada Konsultasi Baru, Silahakan Dicek \n\n" . route('konsultasi.show', $konsultasi->uuid),
                     $user->phone_number
                 ];
                 KirimWaJob::dispatch($assetJejaring);
@@ -127,8 +127,9 @@ class KonsultasiController extends Controller
      * @param  \App\Models\Konsultasi  $konsultasi
      * @return \Illuminate\Http\Response
      */
-    public function show(Konsultasi $konsultasi)
+    public function show($uuid)
     {
+        $konsultasi = Konsultasi::where('uuid', $uuid)->firstOrFail();
         $user = Auth::user();
         if (Auth::user()->user_detail) {
             if ($user->id != $konsultasi->user_id) {
@@ -146,8 +147,9 @@ class KonsultasiController extends Controller
      * @param  \App\Models\Konsultasi  $konsultasi
      * @return \Illuminate\Http\Response
      */
-    public function edit(Konsultasi $konsultasi)
+    public function edit($uuid)
     {
+        $konsultasi = Konsultasi::where('uuid', $uuid)->firstOrFail();
         $user = Auth::user();
         if (Auth::user()->user_detail) {
             if ($user->id != $konsultasi->user_id) {
@@ -189,8 +191,9 @@ class KonsultasiController extends Controller
      * @param  \App\Models\Konsultasi  $konsultasi
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Konsultasi $konsultasi)
+    public function destroy($uuid)
     {
+        $konsultasi = Konsultasi::where('uuid', $uuid)->firstOrFail();
         $konsultasi->delete();
         session()->flash('success');
         return back();

@@ -110,16 +110,16 @@
                                             </div>
                                         </td>
                                         <td>
-                                            <form action="{{ route('konsultasi.destroy', $konsultasi->id) }}"
+                                            <form action="{{ route('konsultasi.destroy', $konsultasi->uuid) }}"
                                                 method="post">
                                                 @csrf
                                                 @method('delete')
                                                 <a class="btn btn-sm btn-primary"
-                                                    href="{{ route('konsultasi.show', $konsultasi->id) }}">
+                                                    href="{{ route('konsultasi.show', $konsultasi->uuid) }}">
                                                     Detail
                                                 </a>
                                                 <a class="btn btn-sm btn-warning"
-                                                    href="{{ route('konsultasi.edit', $konsultasi->id) }}">
+                                                    href="{{ route('konsultasi.edit', $konsultasi->uuid) }}">
                                                     Edit
                                                 </a>
                                                 <input type="submit" class="btn btn-sm btn-danger"

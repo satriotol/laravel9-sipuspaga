@@ -5,13 +5,21 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Str;
 
 class Konsultasi extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['user_id', 'konsultasi_category_id', 'message', 'file'];
+    protected $fillable = ['user_id', 'uuid', 'konsultasi_category_id', 'message', 'file'];
+    protected static function boot()
+    {
+        parent::boot();
 
+        static::creating(function ($model) {
+            $model->uuid = Str::uuid()->toString();
+        });
+    }
     public function user()
     {
         return $this->belongsTo(User::class, 'user_id', 'id');
