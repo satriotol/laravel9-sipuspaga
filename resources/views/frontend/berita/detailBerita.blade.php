@@ -13,10 +13,10 @@
                 <div class="col-lg-8">
                     <article class="ostbox post format-image mb-40"
                         style="box-shadow: -9px 14px 13px -3px rgba(0, 0, 0, 0.35);">
-                        <div class="postbox__thumb">
+                        <div class="text-center">
                             <a href="#">
-                                <img src="{{ asset('uploads/' . $beritum->image) }}" style="object-fit: cover"
-                                    alt="blog image">
+                                <img src="{{ asset('uploads/' . $beritum->image) }}" class="img-thumbnail"
+                                    style="height:400px">
                             </a>
                         </div>
                         <div class="postbox__text p-30">

@@ -74,20 +74,21 @@
                     <div class="col-xl-4 col-lg-4 col-md-6">
                         <div class="blog-wrapper mb-30">
                             <div class="blog-img">
-                                <a href="{{ route('detailBerita', $berita->id) }}">
-                                    <img style="height: 300px;width: 300px;object-fit: cover;" class="img-thumbnail"
-                                        src="{{ asset('uploads/' . $berita->image) }}" alt=""></a>
-                                <div class="blog-date">
-                                    <a href="{{ route('detailBerita', $berita->id) }}">03 <br> Feb</a>
-                                </div>
-                                <div class="blog-text">
-                                    <h3 class="mb-0"><a
-                                            href="{{ route('detailBerita', $berita->id) }}">{{ $berita->title }}</a></h3>
-                                    <small>{{ $berita->created_at }}</small>
-                                    <div>{!! Str::limit($berita->content, 500, '... ', true) !!}</div>
-                                    <div class="b-button b-02-button">
-                                        <a href="{{ route('detailBerita', $berita->id) }}">Baca Lebih Lanjut</a>
-                                    </div>
+                                <a href="{{ route('detailBerita', $berita->id) }}" style="display: block">
+                                    <img style="height: 300px;width: 100%;object-fit: cover;" class="img-thumbnail"
+                                        src="{{ asset('uploads/' . $berita->image) }}" alt="">
+                                </a>
+                            </div>
+                            <div class="blog-date">
+                                <a href="{{ route('detailBerita', $berita->id) }}">03 <br> Feb</a>
+                            </div>
+                            <div class="blog-text">
+                                <h3 class="mb-0"><a
+                                        href="{{ route('detailBerita', $berita->id) }}">{{ $berita->title }}</a></h3>
+                                <small>{{ $berita->created_at }}</small>
+                                <div>{!! Str::limit($berita->content, 500, '... ', true) !!}</div>
+                                <div class="b-button b-02-button">
+                                    <a href="{{ route('detailBerita', $berita->id) }}">Baca Lebih Lanjut</a>
                                 </div>
                             </div>
                         </div>
