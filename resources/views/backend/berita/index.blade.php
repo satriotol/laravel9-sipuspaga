@@ -33,7 +33,7 @@
                             <tbody>
                                 @foreach ($beritas as $berita)
                                     <tr>
-                                        <td>{{ $berita->title }} <br>
+                                        <td class="text-wrap">{{ $berita->title }} <br>
                                             <div class="badge bg-primary">{{ $berita->created_at }}</div>
                                         </td>
                                         <td>{{ $berita->berita_category->name }}</td>
