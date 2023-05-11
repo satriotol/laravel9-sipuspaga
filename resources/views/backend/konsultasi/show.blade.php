@@ -10,49 +10,55 @@
         </div>
     </div>
     <div class="row">
-        <div class="col-md-4">
-            @empty(Auth::user()->user_detail)
-                <div class="card">
-                    <div class="card-header">
-                        <h3 class="card-title">Proses Konsultasi</h3>
-                    </div>
-                    <div class="card-body">
-                        <form action="{{ route('konsultasiStatus.store') }}" method="POST" enctype="multipart/form-data">
-                            @csrf
-                            <input type="text" value="{{ $konsultasi->id }}" name="konsultasi_id" id=""
-                                class="d-none">
-                            <div class="form-group">
-                                <label>Status</label>
-                                <select name="status_id" class="form-control select2-show-search form-select" required>
-                                    <option value="">Pilih Status</option>
-                                    @foreach ($statuses as $status)
-                                        <option value="{{ $status->id }}">
-                                            {{ $status->name }}</option>
-                                    @endforeach
-                                </select>
-                            </div>
-                            <div class="form-group">
-                                <label>Deskripsi</label>
-                                <textarea class="form-control" cols="30" rows="5" placeholder="Isikan Deskripsi" name="description" required></textarea>
-                            </div>
-                            <li class="list-group-item">
-                                Kirim Whatsapp
-                                <div class="material-switch pull-right">
-                                    <input id="someSwitchOptionPrimary" name="kirimWa" type="checkbox" />
-                                    <label for="someSwitchOptionPrimary" class="label-primary"></label>
-                                </div>
-                            </li>
-                            <div class="form-group">
-                                <label>File</label>
-                                <input type="file" class="form-control upload-file" name="file">
-                            </div>
-                            <div class="text-end">
-                                <button class="btn btn-primary" type="submit" id="submit-button">Submit</button>
-                            </div>
-                        </form>
-                    </div>
+        <div @class([
+            'col-md-4' => !Auth::user()->user_detail,
+            'd-none' => Auth::user()->user_detail,
+        ])>
+            <div class="card">
+                <div class="card-header">
+                    <h3 class="card-title">Proses Konsultasi</h3>
                 </div>
-            @endempty
+                <div class="card-body">
+                    <form action="{{ route('konsultasiStatus.store') }}" method="POST" enctype="multipart/form-data">
+                        @csrf
+                        <input type="text" value="{{ $konsultasi->id }}" name="konsultasi_id" id=""
+                            class="d-none">
+                        <div class="form-group">
+                            <label>Status</label>
+                            <select name="status_id" class="form-control select2-show-search form-select" required>
+                                <option value="">Pilih Status</option>
+                                @foreach ($statuses as $status)
+                                    <option value="{{ $status->id }}">
+                                        {{ $status->name }}</option>
+                                @endforeach
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Deskripsi</label>
+                            <textarea class="form-control" cols="30" rows="5" placeholder="Isikan Deskripsi" name="description" required></textarea>
+                        </div>
+                        <li class="list-group-item">
+                            Kirim Whatsapp
+                            <div class="material-switch pull-right">
+                                <input id="someSwitchOptionPrimary" name="kirimWa" type="checkbox" />
+                                <label for="someSwitchOptionPrimary" class="label-primary"></label>
+                            </div>
+                        </li>
+                        <div class="form-group">
+                            <label>File</label>
+                            <input type="file" class="form-control upload-file" name="file">
+                        </div>
+                        <div class="text-end">
+                            <button class="btn btn-primary" type="submit" id="submit-button">Submit</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div @class([
+            'col-md-8' => !Auth::user()->user_detail,
+            'col-md-12' => Auth::user()->user_detail,
+        ])>
             <div class="card">
                 <div class="card-header">
                     <h3 class="card-title">Konsultasi</h3>
@@ -90,8 +96,6 @@
                     </table>
                 </div>
             </div>
-        </div>
-        <div class="col-md-8">
             <div class="card">
                 <div class="card-header">
                     <h3 class="card-title">Timeline Konsultasi</h3>
