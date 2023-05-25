@@ -26,7 +26,7 @@
                         @endisset
                         <div class="form-group">
                             <label>Gambar</label>
-                            <input type="file" accept="image/*" class="form-control" name="image" required>
+                            <input type="file" accept="image/*" class="form-control upload-filepond" name="image" required>
                         </div>
                         @isset($slider)
                             <img src="{{ asset('uploads/' . $slider->image) }}" class="img-thumbnail" alt="">

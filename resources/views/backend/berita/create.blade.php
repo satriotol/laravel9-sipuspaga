@@ -53,7 +53,7 @@
                             {!! Form::label('image', 'Gambar') !!}
                             {!! Form::text('image', isset($beritum) ? $beritum->image : @old('image'), [
                                 isset($beritum) ? '' : 'required',
-                                'class' => 'form-control',
+                                'class' => 'form-control upload-filepond',
                                 'placeholder' => 'Masukkan image',
                             ]) !!}
                             @isset($beritum)

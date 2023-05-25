@@ -38,8 +38,9 @@
                             {!! Form::label('file', 'Gambar') !!}
                             {!! Form::text('file', isset($ebook) ? $ebook->file : @old('file'), [
                                 isset($ebook) ? '' : 'required',
-                                'class' => 'form-control upload-file',
+                                'class' => 'form-control upload-filepond',
                                 'placeholder' => 'Masukkan file',
+                                'accept' => 'application/pdf,application/vnd.ms-excel',
                             ]) !!}
                             @isset($ebook)
                                 <a href="{{ asset('uploads/' . $ebook->file) }}" target="_blank">Buka File</a>

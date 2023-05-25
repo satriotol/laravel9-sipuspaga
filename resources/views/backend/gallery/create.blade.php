@@ -37,7 +37,8 @@
                             {!! Form::file('images[]', [
                                 'multiple',
                                 isset($gallery) ? '' : 'required',
-                                'class' => 'form-control upload-images',
+                                'class' => 'form-control upload-filepond',
+                                'accept' => 'image/*',
                             ]) !!}
                         </div>
                         <div class="text-end">

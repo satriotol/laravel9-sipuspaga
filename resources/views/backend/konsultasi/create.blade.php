@@ -42,8 +42,8 @@
                                 name="message">
                         </div>
                         <div class="form-group">
-                            <label>File</label>
-                            <input type="file" class="form-control upload-file" name="file">
+                            <label>Data Dukung</label>
+                            <input type="file" class="form-control upload-filepond" accept="image/*" name="file">
                             @isset($konsultasi->file)
                                 <a href="{{ asset('uploads/' . $konsultasi->file) }}" target="_blank">Buka Lampiran</a>
                             @endisset

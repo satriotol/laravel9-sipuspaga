@@ -46,7 +46,7 @@
                         </li>
                         <div class="form-group">
                             <label>File</label>
-                            <input type="file" class="form-control upload-file" name="file">
+                            <input type="file" class="form-control upload-filepond" name="file">
                         </div>
                         <div class="text-end">
                             <button class="btn btn-primary" type="submit" id="submit-button">Submit</button>
