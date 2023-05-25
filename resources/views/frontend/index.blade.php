@@ -57,6 +57,48 @@
             </div>
         </div>
     </div>
+    <div class="working-area pt-125 pb-95">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-8 col-lg-8 offset-lg-2 offset-xl-2">
+                    <div class="section-title section-2 text-center pos-rel mr-60 ml-60 mb-75">
+                        <span class="border-left-1"></span>
+                        <span>Layanan Kami</span>
+                        <span class="border-right-1"></span>
+                        <h2>Konsultasi Dan Pembelajaran </h2>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="working-wrapper text-center mb-30">
+                        <div class="working-img">
+                            <img src="{{ asset('frontend_assets/img/working/01.png') }}" alt="">
+                        </div>
+                        <div class="working-text">
+                            <h3>Konsultasi</h3>
+                            <p>Konsultasi adalah langkah bijak untuk mencari pemahaman lebih dalam. Kami siap membantu Anda.
+                                Silakan daftarkan diri Anda, sehingga kami dapat berdiskusi secara pribadi setelah kami
+                                melakukan penelusuran awal</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="working-wrapper text-center mb-30">
+                        <div class="working-img">
+                            <img src="{{ asset('frontend_assets/img/working/02.png') }}" alt="">
+                        </div>
+                        <div class="working-text">
+                            <h3>Pembelajaran</h3>
+                            <p>Pembelajaran adalah kunci untuk pertumbuhan dan pengembangan diri. Dapatkan kesempatan
+                                belajar melalui ebook dan publikasi yang kami sediakan di Puspaga. Tingkatkan pengetahuan
+                                Anda dan raih potensi terbaik Anda</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
     <div class="blog-area">
         <div class="container">
             <div class="row">
