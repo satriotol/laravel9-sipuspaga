@@ -99,38 +99,47 @@
             </div>
         </div>
     </div>
-    <div class="blog-area">
+    <div class="project-02-area pt-125 pb-100">
         <div class="container">
             <div class="row">
-                <div class="col-xl-6 col-lg-6 offset-lg-3 offset-xl-3">
-                    <div class="section-title section-2 text-center pos-rel ml-60 mr-60 mb-80">
+                <div class="col-xl-8 col-lg-8 offset-lg-2 offset-xl-2">
+                    <div class="section-title section-2 text-center pos-rel mr-60 ml-60 mb-75">
                         <span class="border-left-1"></span>
-                        <span>Berita</span>
+                        <span>Publikasi</span>
                         <span class="border-right-1"></span>
                         <h2>Publikasi SIPUSPAGA</h2>
                     </div>
                 </div>
             </div>
+        </div>
+        <div class="container-fluid">
             <div class="row">
                 @foreach ($beritas as $berita)
                     <div class="col-xl-4 col-lg-4 col-md-6">
-                        <div class="blog-wrapper mb-30">
-                            <div class="blog-img">
-                                <a href="{{ route('detailBerita', $berita->id) }}" style="display: block">
-                                    <img style="height: 300px;width: 100%;object-fit: cover;" class="img-thumbnail"
-                                        src="{{ asset('uploads/' . $berita->image) }}" alt="">
-                                </a>
+                        <div class="single-project single-02-project">
+                            <div class="project-img">
+                                <a href="{{ route('detailBerita', $berita->id) }}"><img
+                                        style="height: 300px;width: 100%;object-fit: cover;"
+                                        src="{{ asset('uploads/' . $berita->image) }}" alt=""></a>
                             </div>
-                            <div class="blog-date">
-                                <a href="{{ route('detailBerita', $berita->id) }}">03 <br> Feb</a>
-                            </div>
-                            <div class="blog-text">
-                                <h3 class="mb-0"><a
-                                        href="{{ route('detailBerita', $berita->id) }}">{{ $berita->title }}</a></h3>
-                                <small>{{ $berita->created_at }}</small>
-                                <div>{!! Str::limit($berita->content, 500, '... ', true) !!}</div>
-                                <div class="b-button b-02-button">
-                                    <a href="{{ route('detailBerita', $berita->id) }}">Baca Lebih Lanjut</a>
+                            <div class="inner-project">
+                                <div class="project-text">
+                                    <div class="project-link-info">
+                                    </div>
+                                    <div class="project-content">
+                                        <h3><a href="{{ route('detailBerita', $berita->id) }}"
+                                                style="font-size:1rem">{{ $berita->title }}</a>
+                                        </h3>
+                                    </div>
+                                    <div class="project-button">
+                                        <div class="b-button b-02-button f-left">
+                                            <a href="{{ route('detailBerita', $berita->id) }}">Baca Lebih Lanjut</a>
+                                        </div>
+                                        <div class="project-b-button f-right">
+                                            <a href="{{ route('detailBerita', $berita->id) }}"><i
+                                                    class="far fa-plus"></i></a>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
