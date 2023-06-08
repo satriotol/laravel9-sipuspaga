@@ -224,7 +224,6 @@
                     // console.log(this.form);
                     axios.post('/register', this.form)
                         .then((res) => {
-                            console.log(res);
                             Swal.fire({
                                 title: 'Sukses',
                                 icon: 'success',
