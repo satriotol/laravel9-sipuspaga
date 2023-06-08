@@ -64,36 +64,40 @@
                     <h3 class="card-title">Konsultasi</h3>
                 </div>
                 <div class="card-body">
-                    <table class="table">
-                        <tr>
-                            <td>Kategori</td>
-                            <td>:</td>
-                            <td>{{ $konsultasi->konsultasi_category->name }}</td>
-                        </tr>
-                        <tr>
-                            <td>Nama / Usia</td>
-                            <td>:</td>
-                            <td>{{ $konsultasi->user->name }} / {{ $konsultasi->user->user_detail?->age() }} Tahun</td>
-                        </tr>
-                        <tr>
-                            <td>Nomor HP</td>
-                            <td>:</td>
-                            <td>{{ $konsultasi->user->phone_number }}</td>
-                        </tr>
-                        <tr>
-                            <td>Catatan</td>
-                            <td>:</td>
-                            <td>{{ $konsultasi->message }}</td>
-                        </tr>
-                        @if ($konsultasi->file)
+                    <div class="row">
+                        <table class="table">
                             <tr>
-                                <td>Data Dukung</td>
+                                <td>Kategori</td>
                                 <td>:</td>
-                                <td><a href="{{ asset('uploads/' . $konsultasi->file) }}" target="_blank">Buka File</a>
+                                <td>{{ $konsultasi->konsultasi_category->name }}</td>
+                            </tr>
+                            <tr>
+                                <td>Nama / Usia</td>
+                                <td>:</td>
+                                <td>{{ $konsultasi->user->name }} / {{ $konsultasi->user->user_detail?->age() }} Tahun
                                 </td>
                             </tr>
-                        @endif
-                    </table>
+                            <tr>
+                                <td>Nomor HP</td>
+                                <td>:</td>
+                                <td>{{ $konsultasi->user->phone_number }}</td>
+                            </tr>
+                            <tr>
+                                <td>Catatan</td>
+                                <td>:</td>
+                                <td>{{ $konsultasi->message }}</td>
+                            </tr>
+                            @if ($konsultasi->file)
+                                <tr>
+                                    <td>Data Dukung</td>
+                                    <td>:</td>
+                                    <td><a href="{{ asset('uploads/' . $konsultasi->file) }}" target="_blank">Buka
+                                            File</a>
+                                    </td>
+                                </tr>
+                            @endif
+                        </table>
+                    </div>
                 </div>
             </div>
             <div class="card">

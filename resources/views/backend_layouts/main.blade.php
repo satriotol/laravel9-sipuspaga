@@ -214,6 +214,35 @@
             });
         });
     </script>
+    <script>
+        const inputElementsPdf = document.querySelectorAll('.upload-filepondpdf');
+        FilePond.registerPlugin(FilePondPluginFileValidateType);
+        inputElementsPdf.forEach(inputElement => {
+            FilePond.create(inputElement, {
+                acceptedFileTypes: ['application/pdf'],
+                fileValidateTypeLabelExpectedTypes: {
+                    'application/pdf': '.pdf',
+                },
+                onaddfile: (error, file) => {
+                    if (error) {
+                        // Tampilkan pesan kesalahan jika file tidak sesuai dengan aturan validasi
+                        console.log(error);
+                    } else {
+                        // File sesuai dengan aturan validasi, lanjutkan dengan mengirimkan ke server
+                        console.log('File valid:', file);
+                    }
+                },
+                server: {
+                    process: '{{ route('upload.store') }}',
+                    revert: '{{ route('upload.revert') }}',
+                    headers: {
+                        'X-CSRF-TOKEN': '{{ csrf_token() }}'
+                    }
+                },
+                maxFileSize: '100MB'
+            });
+        });
+    </script>
     @stack('custom-scripts')
 </body>
 

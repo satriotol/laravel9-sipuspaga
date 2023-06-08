@@ -43,7 +43,11 @@
                         </div>
                         <div class="form-group">
                             <label>Data Dukung</label>
-                            <input type="file" class="form-control upload-filepond" accept="image/*" name="file">
+                            {!! Form::file('file', [
+                                'class' => 'form-control upload-filepondpdf',
+                                'required' => isset($konsultasi) ? 'false' : 'true',
+                            ]) !!}
+                            <small class="text-danger">Format Data Dukung Adalah PDF</small>
                             @isset($konsultasi->file)
                                 <a href="{{ asset('uploads/' . $konsultasi->file) }}" target="_blank">Buka Lampiran</a>
                             @endisset

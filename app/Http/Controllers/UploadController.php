@@ -4,12 +4,16 @@ namespace App\Http\Controllers;
 
 use App\Models\TemporaryFile;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
 
 class UploadController extends Controller
 {
     public function store(Request $request)
     {
-        if ($request->hasFile('file')) {
+        $validator = Validator::make($request->all(), [
+            'file' => 'file|mimes:pdf',
+        ]);
+        if ($request->file('file')) {
             $file = $request->file('file');
             $name = $file->getClientOriginalName();
             $file_name = date('mdYHis') . '-' . $name;
