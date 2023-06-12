@@ -1,5 +1,6 @@
 <div class="breadcrumb-area pt-100 pb-100"
-    style="background-image:url(https://inspektorat.semarangkota.go.id/public/uploads/file/12172022105115-banner.jpg)">
+    style="background-image:url({{ asset('uploads/' . $setting->banner) }});background-color: rgba(0, 0, 0, 0.5);
+    background-blend-mode: multiply;">
     <div class="container">
         <div class="row">
             <div class="col-xl-12">

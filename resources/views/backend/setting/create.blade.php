@@ -90,7 +90,19 @@
                                     <small class="text-danger">Ukuran Rekomendasi Adalah 162 x 50 pixel</small>
                                     @isset($setting)
                                         <br>
-                                        <img src="{{ asset('uploads/' . $setting->slider_image) }}" height="100px" alt="">
+                                        <img src="{{ asset('uploads/' . $setting->slider_image) }}" height="100px"
+                                            alt="">
+                                    @endisset
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    {!! Form::label('banner', 'Gambar Slider') !!}
+                                    {!! Form::file('banner', ['class' => 'form-control upload-filepond']) !!}
+                                    @isset($setting)
+                                        <br>
+                                        <img src="{{ asset('uploads/' . $setting->banner) }}" height="100px"
+                                            alt="">
                                     @endisset
                                 </div>
                             </div>

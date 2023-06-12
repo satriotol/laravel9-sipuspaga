@@ -11,6 +11,6 @@ class Setting extends Model
 
     protected $fillable = [
         'logo', 'pengertian',
-        'visi', 'misi', 'tujuan', 'tugas_fungsi', 'slider_image'
+        'visi', 'misi', 'tujuan', 'tugas_fungsi', 'slider_image', 'banner'
     ];
 }
