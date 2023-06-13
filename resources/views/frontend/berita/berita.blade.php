@@ -12,7 +12,7 @@
 @endpush
 @section('content')
     @include('frontend.breadcumb', [
-        'mainTitle' => 'Berita',
+        'mainTitle' => 'Publikasi',
     ])
     <!-- breadcrumb-area-end -->
     <!-- blog-area start -->
@@ -40,7 +40,7 @@
                                                     {{ $berita->berita_category->name }}</a></span>
                                         </div>
                                         <h3 class="blog-title">
-                                            <a href="{{ route('detailBerita', $berita->id) }}">{{ $berita->title }}</a>
+                                            <a style="font-size: 1rem" href="{{ route('detailBerita', $berita->id) }}">{{ $berita->title }}</a>
                                         </h3>
                                         <div class="read-more mt-30">
                                             <a href="{{ route('detailBerita', $berita->id) }}">Lihat Selengkapnya</a>

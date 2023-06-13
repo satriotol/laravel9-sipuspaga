@@ -1,7 +1,7 @@
 @extends('frontend_layouts.main')
 @section('content')
     @include('frontend.breadcumb', [
-        'mainTitle' => 'Berita',
+        'mainTitle' => 'Publikasi',
         'subTitle' => $beritum->title,
         'route' => 'berita',
     ])

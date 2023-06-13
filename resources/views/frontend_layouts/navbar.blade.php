@@ -27,7 +27,7 @@
                                     <a href="{{ route('home.index') }}">Beranda</a>
                                 </li>
                                 <li class="{{ active_class(['berita', 'detailBerita']) }}">
-                                    <a href="{{ route('berita') }}">Berita</a>
+                                    <a href="{{ route('berita') }}">Publikasi</a>
                                 </li>
                                 <li class="{{ active_class(['ebook']) }}">
                                     <a href="{{ route('ebook') }}">E-Book</a>

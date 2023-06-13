@@ -22,7 +22,7 @@
                 <div class="col-lg-12">
                     <div class="row">
                         @foreach ($galleries as $gallery)
-                            <div class="col-md-3">
+                            <div class="col-md-4">
                                 <article class="postbox post format-image mb-40"
                                     style="box-shadow: -9px 14px 13px -3px rgba(0, 0, 0, 0.35);">
                                     <div class="postbox__thumb">
@@ -37,7 +37,8 @@
                                             <span><i class="far fa-calendar-check"></i> {{ $gallery->created_at }} </span>
                                         </div>
                                         <h3 class="blog-title">
-                                            <a href="{{ route('detailGaleri', $gallery->id) }}">{{ $gallery->title }}</a>
+                                            <a style="font-size: 1rem"
+                                                href="{{ route('detailGaleri', $gallery->id) }}">{{ $gallery->title }}</a>
                                         </h3>
                                     </div>
                                 </article>
